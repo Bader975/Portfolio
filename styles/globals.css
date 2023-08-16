@@ -1,7 +1,17 @@
+/* html {
+  overflow-x: hidden;
+  background: url("../public/banner3.jpg") no-repeat center center !important;
+  -webkit-background-size: cover  !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+  color: #f1f1f1;
+} */
 body {
   box-sizing: border-box;
   margin: 0;
-  
+  background-color: black;
+  overflow-x: hidden;
 
 }
 
@@ -34,14 +44,4 @@ body {
   height: 20px;
   border-radius: 50%;
   background-color: #f1f1f1;
-}
-
-html {
-  overflow-x: hidden;
-  background: url("../public/banner3.jpg") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  color: #f1f1f1;
 }

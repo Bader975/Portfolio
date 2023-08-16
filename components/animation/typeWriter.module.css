@@ -1,0 +1,56 @@
+.container {
+    /* font-size: "25px"; */
+    box-sizing: border-box;
+    width: 100dvw;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    padding: 100px 100px 100px 100px;
+    /* background-color: #000000; */
+    min-height: 800px;
+    /* position: absolute; */
+    position: relative;
+    border-radius: 0px 0px 0px 0px;
+    overflow-x: hidden;
+    height: auto;
+}
+
+.typeWriter {
+    margin-left: 5px;
+    width: 100%;
+    height: auto;
+    /* white-space: pre; */
+    z-index: 5;
+    font-weight: 400;
+    font-style: italic;
+    font-family: "Monoton", monospace;
+    color: #ffffffc9;
+    font-size: 50px;
+    text-transform: uppercase;
+    line-height: 1;
+    text-align: center;
+    /* position: absolute; */
+    position: relative;
+
+}
+
+/* The second one will be applay */
+/* .typeWriter{
+flex-shrink: 0;
+  width: 100%;
+  height: auto; 
+  white-space: pre;
+  z-index: 4;
+  position: relative;
+  font-weight: 400;
+  font-style: italic;
+  font-family: "Monoton", monospace;
+  color: #f4f9e9;
+  font-size: 50px;
+  letter-spacing: 0em;
+  text-transform: uppercase;
+  line-height: 1;
+  text-align: center;
+
+} */
+
