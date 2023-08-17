@@ -1,27 +1,49 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
+
+
 /* html {
   overflow-x: hidden;
-  background: url("../public/banner3.jpg") no-repeat center center !important;
+  background: url("../public/banner.jpg") no-repeat center center !important;
   -webkit-background-size: cover  !important;
   -moz-background-size: cover !important;
   -o-background-size: cover !important;
   background-size: cover !important;
   color: #f1f1f1;
 } */
-body {
+* {
   box-sizing: border-box;
+}
+
+body {
+  font-family: 'Mulish', sans-serif;
   margin: 0;
-  background-color: black;
   overflow-x: hidden;
+}
+
+main{
+  /* The image used */
+  background-image: url("../public/banner2.jpg") !important;
+  /* height: 100vh !important; */
+  height: 100% !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-repeat: repeat-y; */
+  background-size: cover;
+
 
 }
 
+
 #mouse-follower {
-  position: absolute;
-  /* width: 10px;
-  height: 10px; */
+  position: fixed;
   border-radius: 50%;
   background-color: rgb(240, 224, 224);
   pointer-events: none;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+ 
 }
 
 
