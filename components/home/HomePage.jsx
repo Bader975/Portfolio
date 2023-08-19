@@ -6,7 +6,8 @@ import ButtonContainer from './ButtonContainer'
 import Skill from '../skills/Skill'
 export default function HomePage() {
 
-    // The function which move the cursor around
+
+
     MouseTraker();
 
     return (

@@ -1,92 +1,70 @@
+import { Box, Flex, Spacer, IconButton, useColorMode, Avatar } from "@chakra-ui/react";
+import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { useState, useEffect } from 'react'
+function Navbar() {
+  const { colorMode, toggleColorMode } = useColorMode();
+  const [BGtoggle, setBGtoggle] = useState(false)
 
-import {
-  Box,
-  Flex,
-  Avatar,
-  Text,
-  Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
-  useDisclosure,
-  useColorModeValue,
-  Stack,
-  useColorMode,
-  Center,
-} from '@chakra-ui/react'
-import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 
-const NavLink = (props) => {
-  const { children } = props
+  useEffect(() => {
+    const mainTag = document.getElementById("main");
 
+    if (BGtoggle) {
+      // mainTag.style.backgroundImage = "url(/banner7.jpg)";
+      mainTag.style = " background-image: url(/banner8.jpg); background-position: center; background-repeat: no-repeat; background-size: cover;";
+    } else {
+      mainTag.style.backgroundImage = "url(/banner.jpg)";
+     
+    }
+  }, [BGtoggle]);
+
+  function toggleBackground() {
+    setBGtoggle(!BGtoggle);
+    
+  }
+
+  // function toggleBackground() {
+  //   const mainTage = document.getElementById("main")
+  //   setBGtoggle(!BGtoggle)
+  //   if (BGtoggle) {
+  //     mainTage.style.backgroundImage = "url(/banner5.jpg)"
+  //   }
+  //   else {
+  //     mainTage.style.backgroundImage = "url(/banner.jpg)";
+  //   }
+
+  // }
   return (
-    <Box
-      as="a"
-      px={2}
-      py={1}
-      rounded={'md'}
-      _hover={{
-        textDecoration: 'none',
-        bg: useColorModeValue('gray.200', 'gray.700'),
-      }}
-      href={'#'}>
-      {children}
+    <Box bg="gray.800" py={4} px={6}>
+      <Flex alignItems="center">
+        <Box>
+          <IconButton
+            icon={<HamburgerIcon />}
+            aria-label="Menu"
+            variant="ghost"
+            color="white"
+            size="md"
+            mr={2}
+          />
+
+        </Box>
+        <Box flex="1" color="white">
+          <Avatar src="/space-ship.png" />
+        </Box>
+        <Spacer />
+        <Box>
+          <IconButton
+            icon={!BGtoggle ? <SunIcon /> : <MoonIcon />}
+            aria-label="Toggle Dark Mode"
+            variant="ghost"
+            color="white"
+            onClick={toggleBackground}
+            size="md"
+          />
+        </Box>
+      </Flex>
     </Box>
-  )
+  );
 }
 
-export default function NavBar() {
-  const { colorMode, toggleColorMode } = useColorMode()
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  return (
-    <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
-        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Box>Logo</Box>
-
-          <Flex alignItems={'center'}>
-            <Stack direction={'row'} spacing={7}>
-              <Button onClick={toggleColorMode}>
-                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-              </Button>
-
-              <Menu>
-                <MenuButton
-                  as={Button}
-                  rounded={'full'}
-                  variant={'link'}
-                  cursor={'pointer'}
-                  minW={0}>
-                  <Avatar
-                    size={'sm'}
-                    src={'https://avatars.dicebear.com/api/male/username.svg'}
-                  />
-                </MenuButton>
-                <MenuList alignItems={'center'}>
-                  <br />
-                  <Center>
-                    <Avatar
-                      size={'2xl'}
-                      src={'https://avatars.dicebear.com/api/male/username.svg'}
-                    />
-                  </Center>
-                  <br />
-                  <Center>
-                    <p>Username</p>
-                  </Center>
-                  <br />
-                  <MenuDivider />
-                  <MenuItem>Your Servers</MenuItem>
-                  <MenuItem>Account Settings</MenuItem>
-                  <MenuItem>Logout</MenuItem>
-                </MenuList>
-              </Menu>
-            </Stack>
-          </Flex>
-        </Flex>
-      </Box>
-    </>
-  )
-}
+export default Navbar;
