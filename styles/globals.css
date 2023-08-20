@@ -26,8 +26,8 @@ body {
 
 main{
   /* The image used */
-  background-image: url("../public/banner5.jpg")  ;
-  height: 100% !important;
+  /* background-image: url("../public/banner5.jpg")  ; */
+  height: 100% ;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
