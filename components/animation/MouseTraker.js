@@ -1,6 +1,7 @@
 
 
 export default function MouseTraker() {
+  
   if (typeof document === 'object') {
 
     function handleMouseMove(e) {

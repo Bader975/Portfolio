@@ -14,6 +14,7 @@
 } */
 * {
   box-sizing: border-box;
+  /* font-family: 'Mulish', sans-serif; */
 }
 
 body {
@@ -25,7 +26,7 @@ body {
 
 main{
   /* The image used */
-  background-image: url("../public/banner8.jpg")  ;
+  background-image: url("../public/banner5.jpg")  ;
   height: 100% !important;
   background-position: center;
   background-repeat: no-repeat;

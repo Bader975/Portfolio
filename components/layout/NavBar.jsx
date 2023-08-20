@@ -1,26 +1,37 @@
-import { Box, Flex, Spacer, IconButton, useColorMode, Avatar } from "@chakra-ui/react";
+import { Box, Flex, Spacer, IconButton, useColorMode, Avatar, useBoolean } from "@chakra-ui/react";
 import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { useState, useEffect } from 'react'
 function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
-  const [BGtoggle, setBGtoggle] = useState(false)
+  // const [BGtoggle, setBGtoggle] = useState(false)
+  const [BGtoggle, setBGtoggle] = useBoolean(false);
+  const [isButtonDisabled, setIsButtonDisabled] = useBoolean(false);
 
 
   useEffect(() => {
     const mainTag = document.getElementById("main");
 
     if (BGtoggle) {
-      // mainTag.style.backgroundImage = "url(/banner7.jpg)";
       mainTag.style = " background-image: url(/banner8.jpg); background-position: center; background-repeat: no-repeat; background-size: cover;";
     } else {
-      mainTag.style.backgroundImage = "url(/banner.jpg)";
-     
+      mainTag.style.backgroundImage = "url(/banner4.jpg)";
+
     }
   }, [BGtoggle]);
 
   function toggleBackground() {
     setBGtoggle(!BGtoggle);
-    
+
+  }
+
+
+
+  function toggleBackground() {
+    setIsButtonDisabled.on();
+    setBGtoggle.toggle();
+    setTimeout(() => {
+      setIsButtonDisabled.off();
+    }, 500); // Adjust the timeout value as needed
   }
 
   // function toggleBackground() {
@@ -60,6 +71,7 @@ function Navbar() {
             color="white"
             onClick={toggleBackground}
             size="md"
+            isDisabled={isButtonDisabled}
           />
         </Box>
       </Flex>

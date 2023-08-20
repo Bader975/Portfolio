@@ -6,8 +6,10 @@ import ButtonContainer from './ButtonContainer'
 import Skill from '../skills/Skill'
 export default function HomePage() {
 
+    // console.log(typeof window == "object" && window.navigator.platform);
 
-
+   
+// The Mouse Traker Function
     MouseTraker();
 
     return (
