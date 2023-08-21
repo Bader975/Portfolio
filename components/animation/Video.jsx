@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useLayoutEffect } from 'react'
 export default function Video({ toggleBG }) {
     const videoRef = useRef(null);
     // console.log("BOOLEN VALUE ", toggleBG)
-    const videoUrl = !toggleBG ? "/bgVideoDark.mp4" : "/bgVideoLight.mp4";
+    const videoUrl = toggleBG ? "/bgVideoLight.mp4" : "/bgVideoDark.mp4";
     // console.log("URL ", videoUrl)
     function handelVideo() {
         if (typeof document == "object") {
