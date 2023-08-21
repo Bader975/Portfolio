@@ -7,33 +7,25 @@ export default function Content() {
     const bg = useColorModeValue("#EEF0EB", 'grey.200')
     const color = useColorModeValue("#153243", 'white')
 
-    function DarkMode() {
-        const { colorMode, toggleColorMode } = useColorMode()
-        return (
-            <header>
-                <Button onClick={toggleColorMode}>
-                    Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-                </Button>
-            </header>
-        )
-    }
+   
     return (
         <>
             {/* <DarkMode /> */}
             {/* display={"flex"} justifyContent={"center"} alignContent={"center"} */}
-            <SimpleGrid w={"auto"} h={"auto"} columns={[1, 1, 1]} mx={"auto"} spacingY={5} >
+            <SimpleGrid w={"auto"} h={"auto"} columns={1} mx={"auto"} spacingY={5} >
                 {/* Fist Card *1 */}
                 {/* bg={bg}  */}
-                <Box mx={"auto"} p={6} pos={"static"} rounded={"3xl"} w={"auto"}  shadow={"2xl"} maxH={"80%"}>
-                    <Heading color={"#fff"} p={5} fontSize={[18, 20, 25]}  opacity={"0.90"}  textAlign={"center"}>
+                <Box mx={"auto"} p={6} pos={"static"} rounded={"3xl"} w={"auto"} shadow={"2xl"} maxH={"80%"}>
+                    <Heading color={"#fff"} p={5} fontSize={[18, 20, 25]}  textAlign={"center"}>
                         Hello,
-                        <Spacer/> I'm so happy that you vised my Porfolio
-                        My name is Bader Mohammad <Text display={"inline"}  fontStyle={"italic"} color={"yellow.200"}>JavaScript</Text> and <Text display={"inline"} fontStyle={"italic"} color={"blue.200"} fontWeight={"bold"} mr={1}>TypeScript</Text> 
+                        <Spacer />
+                        I'm so happy that you visited my Portfolio
+                        My name is Bader Mohammad <Text display={"inline"} fontStyle={"italic"} color={"yellow.200"}>JavaScript</Text> and <Text display={"inline"} fontStyle={"italic"} color={"blue.200"} fontWeight={"bold"} mr={1}>TypeScript</Text>
                         Developer
                     </Heading>
                 </Box>
 
-                <Image rounded={"xl"} mixBlendMode={"color-burn"} mt={1} w={["80%", "80%", "70%"]} h={"auto"} maxH={"70%"} src='https://img.freepik.com/free-vector/astronaut-suit-illustration_114360-8538.jpg?w=826&t=st=1692213174~exp=1692213774~hmac=f25a5f88796116df4ec7b630b643bdd45a39de1ced64f560fc11395cdecf30d7' />
+                {/* <Image rounded={"xl"} mixBlendMode={"darken"} mt={1} w={["80%", "80%", "70%"]} h={"full"} maxH={"70%"} src='https://img.freepik.com/free-vector/astronaut-suit-illustration_114360-8538.jpg?w=826&t=st=1692213174~exp=1692213774~hmac=f25a5f88796116df4ec7b630b643bdd45a39de1ced64f560fc11395cdecf30d7' /> */}
                 {/* Fist Card *2 */}
                 {/* bg={bg} */}
 
