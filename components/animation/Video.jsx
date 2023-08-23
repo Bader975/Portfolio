@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useLayoutEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
 
 export default function Video({ toggleBG }) {
     const videoRef = useRef(null);
-    // console.log("BOOLEN VALUE ", toggleBG)
+
     const videoUrl = toggleBG ? "/bgVideoLight.mp4" : "/bgVideoDark.mp4";
-    // console.log("URL ", videoUrl)
+
     function handelVideo() {
         if (typeof document == "object") {
             const video = document.getElementById("video").play();
@@ -24,17 +24,11 @@ export default function Video({ toggleBG }) {
     }
 
     useEffect(() => {
-        console.log("RENDER VIDEO")
         handelVideo()
         video.load();
 
-
     }, [handelVideo, toggleBG])
-    // const handlePlay = () => {
-    //     if (videoRef.current) {
-    //         videoRef.current.play();
-    //     }
-    // };
+   
     return (
         <>
             <video
@@ -46,7 +40,7 @@ export default function Video({ toggleBG }) {
                 playsInline
                 style={{
                     position: "fixed",
-                    zIndex: - 1,
+                    zIndex: -1,
                     objectFit: "cover",
                 }}
             >

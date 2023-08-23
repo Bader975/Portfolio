@@ -18,8 +18,6 @@ export default function MouseTraker() {
       mouseFollower.style.top = `${y}px`;
     }
 
-
-
     function checkScreenSize() {
       // check The Screen Size to Know that if the screen for mobile devices or PCs or laptops
       if (window.matchMedia("(max-width: 768px)").matches) {
@@ -34,9 +32,5 @@ export default function MouseTraker() {
     checkScreenSize();
     window.addEventListener("resize", checkScreenSize);
 
-
-    // if (typeof document === 'object') {
-    //   document.addEventListener("mousemove",)
-    // }
   }
 }

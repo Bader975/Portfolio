@@ -1,31 +1,21 @@
-import HomePage from '../components/home/HomePage'
-import ButtonComp from '../components/UI/ButtonComp'
-
-
-
-
+import HomePage from '@/components/home/HomePage'
+import Head from 'next/head'
 export default function Home() {
 
 
   return (
     <>
+      <Head>
+        <title>Portfolio</title>
+        <meta name="description" content="This is my portfolio website showcasing my work and skills."/>
+        <meta name="keywords" content="portfolio, web development, design, projects"/>
+        <meta name="author" content="Bader Alyami"/>
+        <link rel="icon" href="/briefcase.webp" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
 
       <HomePage />
-
-      {/* <ButtonComp color = {"red"} link={"/test"} >go to test</ButtonComp>
-      <ButtonComp color = {"black"} bg={"red"} link={"/test"} >go to test</ButtonComp> */}
 
     </>
   )
 }
-
-// export async function getServerSideProps(context) {
-
-//   const { req, res, params } = context
-
-//   return {
-//     props: {
-//       username: "username"
-//     }
-//   }
-// }

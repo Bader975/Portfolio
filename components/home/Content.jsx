@@ -1,20 +1,21 @@
-import { Box, Heading, Image, SimpleGrid, useColorMode, Button, useColorModeValue, Text, Spacer } from '@chakra-ui/react'
+import { Box, Heading, Image, SimpleGrid, Text, Spacer } from '@chakra-ui/react'
 import React from 'react'
-
+import { motion } from 'framer-motion';
 export default function Content() {
-    // const { toggleColorMode } = useColorMode()
-
-    const bg = useColorModeValue("#EEF0EB", 'grey.200')
-    const color = useColorModeValue("#153243", 'white')
-
    
     return (
         <>
-            {/* <DarkMode /> */}
-            {/* display={"flex"} justifyContent={"center"} alignContent={"center"} */}
-            <SimpleGrid w={"auto"} h={"auto"} columns={1} mx={"auto"} spacingY={5} >
+            <SimpleGrid w={"full"} h={"full"} columns={1} mx={"auto"} pt={10} >
                 {/* Fist Card *1 */}
-                {/* bg={bg}  */}
+                <motion.div
+                initial={{ opacity: 0 }} // Set initial opacity to 0
+                animate={{ opacity: 1 }} // Animate opacity to 1
+                transition={{ duration: 2.5 }} // Set the transition duration
+    style={{marginBottom:"auto"}}
+            >
+                <Image  w={["50%", "60%", "30%"]} h={"60%"} maxH={"90%"} src="/Astronaut suit.gif" alt="Animated GIF" />
+            </motion.div>
+
                 <Box mx={"auto"} p={6} pos={"static"} rounded={"3xl"} w={"auto"} shadow={"2xl"} maxH={"80%"}>
                     <Heading color={"#fff"} p={5} fontSize={[18, 20, 25]}  textAlign={"center"}>
                         Hello,
@@ -25,7 +26,6 @@ export default function Content() {
                     </Heading>
                 </Box>
 
-                {/* <Image rounded={"xl"} mixBlendMode={"darken"} mt={1} w={["80%", "80%", "70%"]} h={"full"} maxH={"70%"} src='https://img.freepik.com/free-vector/astronaut-suit-illustration_114360-8538.jpg?w=826&t=st=1692213174~exp=1692213774~hmac=f25a5f88796116df4ec7b630b643bdd45a39de1ced64f560fc11395cdecf30d7' /> */}
                 {/* Fist Card *2 */}
                 {/* bg={bg} */}
 

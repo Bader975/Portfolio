@@ -6,12 +6,12 @@ export default function ImageComp({ image }) {
         <>
 
             <Image mx={"auto"} opacity={0.75} loading={"lazy"} _hover={{ opacity: 1, transform: "scale(1.02)", transition: "transform 0.5s" }}
-                rounded={"xl"} w={"full"}
-                h={"auto"} maxH={"70%"} maxW={"70%"}
+                rounded={"xl"} w={"100%"}
+                h={"100%"} maxH={"70%"} maxW={"70%"}
                 src={image}
                 transition="transform 0.8s"
+                alt={"Image of One my skills "}
             />
-
         </>
     )
 }

@@ -3,8 +3,7 @@ import Typewriter from 'typewriter-effect';
 import classes from './typeWriter.module.css'
 
 
-
-export default function TypeWriter({ chlidren }) {
+export default function TypeWriter() {
 
 
     return (
@@ -16,14 +15,15 @@ export default function TypeWriter({ chlidren }) {
                 I'm
                 <Typewriter
                     options={{
-                        strings: ['Bader Alyami', ' Web Devoleper ', ' REACT Devoleper', 'JS/TS Devoleper'],
+                        strings: ['Bader Alyami', 'Web Devoleper', 'REACT Devoleper', 'JS/TS Devoleper'],
                         autoStart: true,
                         loop: true,
+
 
                     }}
                 />
             </span>
-            {chlidren}
+
         </div>
 
 
