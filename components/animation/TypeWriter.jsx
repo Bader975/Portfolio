@@ -1,6 +1,6 @@
 import React from 'react'
 import Typewriter from 'typewriter-effect';
-import classes from './TypeWriter.module.css'
+import classes from './typeWriter.module.css'
 
 
 export default function TypeWriter() {
