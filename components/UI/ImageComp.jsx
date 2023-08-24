@@ -9,6 +9,8 @@ export default function ImageComp({ image }) {
                 rounded={"xl"} w={"100%"}
                 h={"100%"} maxH={"70%"} maxW={"70%"}
                 src={image}
+                my={"5%"} 
+                objectFit="contain"
                 transition="transform 0.8s"
                 alt={"Image of One my skills "}
             />

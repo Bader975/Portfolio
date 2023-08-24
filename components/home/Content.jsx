@@ -13,7 +13,8 @@ export default function Content() {
                     transition={{ duration: 2.5 }} // Set the transition duration
                     style={{ marginBottom: "auto" }}
                 >
-                    <Image w={["50%", "60%", "30%"]} h={"60%"} maxH={"90%"} src="/Astronaut suit.gif" alt="Animated GIF" />
+                    {/* <Image w={["50%", "60%", "30%"]} h={"60%"} maxH={"90%"} src="/Astronaut suit.gif" alt="Animated GIF" /> */}
+                    <Image w={["50%", "60%", "30%"]} h={"60%"} maxH={"90%"} src="/astronaut-suit-animate.svg" alt="Animated SVG" />
                    
                 </motion.div>
 

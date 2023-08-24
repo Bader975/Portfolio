@@ -39,6 +39,7 @@ export default function Skill() {
             {/*------------------ Grid number 2 ------------*/}
 
             <SimpleGrid w={"full"} h={"full"} columns={[1, 1, 2]} rounded={"xl"} mx={"auto"} pl={10} pr={10} spacingX={10} spacingY={5} mt={10} >
+               
                 <Box my={"auto"} mx={"auto"}>
                     <Heading color={"#fff"} p={2} fontSize={[16, 20, 25]} rounded={"xl"} h={"90%"} opacity={"0.90"} bg={"#00000080"} textAlign={"left"} >
                         node js for all things
@@ -53,12 +54,12 @@ export default function Skill() {
                 <Box my={"auto"} mx={"auto"}>
                     <Heading color={"#fff"} p={2} fontSize={[16, 20, 24]} rounded={"xl"} opacity={"0.90"} bg={"#00000080"} textAlign={"left"} >
                         Last But not Least The King and Monster Of Web devlobment
-                        <Image mx={"auto"} rounded={"xl"} w={"40%"} maxH={"30%"} my={2} mixBlendMode={"color-burn"} src='/monster.webp' />
+                        <Image mx={"auto"} rounded={"xl"} w={"40%"} h={"100%"} maxH={"30%"} my={2} mixBlendMode={"color-burn"} src='/monster.webp'  alt='monster photo'/>
                         <Text display={"inline"} fontStyle={"italic"} color={"yellow.200"}>JavaScript</Text> It is responsible for the interaction of the application with the user and all events such as (Click and Touch) and in NEXT.JS it Optimize the App and optimizes all the images and tools used to make the website load faster<AiFillFire color='yellow' size={"2rem"} />
                     </Heading>
                 </Box>
 
-                <Box bg={bg} rounded={"xl"} my={"auto"}  h={"60%"}>
+                <Box bg={bg} rounded={"xl"} my={"auto"}  h={"80%"}>
                  
                     <ImageComp  image={"js.webp"} />
                 </Box>
