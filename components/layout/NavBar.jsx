@@ -1,32 +1,21 @@
 import { Box, Flex, Spacer, IconButton, useColorMode, useBoolean } from "@chakra-ui/react";
-import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import { useState, useEffect } from 'react'
 import { AiOutlineHome } from 'react-icons/ai';
-
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import Video from "../animation/Video";
+import { toggleBG } from "../../redux/toggle";
 import { useRouter } from "next/router";
+import { useSelector, useDispatch } from 'react-redux'
+
+
 function Navbar() {
-  const [BGtoggle, setBGtoggle] = useBoolean(false);
-  const [isButtonDisabled, setIsButtonDisabled] = useBoolean(false);
-  const [isButtonActive, setIsButtonActive] = useState(false)
   const router = useRouter()
-
-  const mainTag = typeof document == "object" ? document.getElementById("main") : undefined
-
-  function toggleBackground() {
-    setIsButtonDisabled.on();
-    setBGtoggle.toggle();
-    setTimeout(() => {
-      setIsButtonDisabled.off();
-
-    }, 500); // Adjust the timeout value as needed
-  }
-
+  const dispatch = useDispatch()
+  const backgroundMode = useSelector((state) => state.background.backgroundMode)
 
   return (
     <>
 
-      <Video toggleBG={BGtoggle} />
+      <Video />
       <Box bg="transparent" py={4} px={6} pb={5} pos={"sticky"} top={0} zIndex={2} >
         <Flex alignItems="center">
           <Box>
@@ -47,15 +36,14 @@ function Navbar() {
           <Spacer />
           <Box>
             <IconButton
-              icon={BGtoggle ? <MoonIcon /> : <SunIcon />}
+              icon={backgroundMode ? <MoonIcon /> : <SunIcon />}
               aria-label="Toggle Dark Mode"
               variant="white"
               color="white"
               bg="transparent"
-              onClick={toggleBackground}
+              // onClick={ toggleBackground}
+              onClick={() => dispatch(toggleBG())}
               size="md"
-              isDisabled={isButtonDisabled}
-              isActive={isButtonActive}
 
             />
           </Box>

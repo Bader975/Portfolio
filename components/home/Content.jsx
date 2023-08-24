@@ -2,22 +2,23 @@ import { Box, Heading, Image, SimpleGrid, Text, Spacer } from '@chakra-ui/react'
 import React from 'react'
 import { motion } from 'framer-motion';
 export default function Content() {
-   
+
     return (
         <>
             <SimpleGrid w={"full"} h={"full"} columns={1} mx={"auto"} pt={10} >
                 {/* Fist Card *1 */}
                 <motion.div
-                initial={{ opacity: 0 }} // Set initial opacity to 0
-                animate={{ opacity: 1 }} // Animate opacity to 1
-                transition={{ duration: 2.5 }} // Set the transition duration
-    style={{marginBottom:"auto"}}
-            >
-                <Image  w={["50%", "60%", "30%"]} h={"60%"} maxH={"90%"} src="/Astronaut suit.gif" alt="Animated GIF" />
-            </motion.div>
+                    initial={{ opacity: 0 }} // Set initial opacity to 0
+                    animate={{ opacity: 1 }} // Animate opacity to 1
+                    transition={{ duration: 2.5 }} // Set the transition duration
+                    style={{ marginBottom: "auto" }}
+                >
+                    <Image w={["50%", "60%", "30%"]} h={"60%"} maxH={"90%"} src="/Astronaut suit.gif" alt="Animated GIF" />
+                   
+                </motion.div>
 
                 <Box mx={"auto"} p={6} pos={"static"} rounded={"3xl"} w={"auto"} shadow={"2xl"} maxH={"80%"}>
-                    <Heading color={"#fff"} p={5} fontSize={[18, 20, 25]}  textAlign={"center"}>
+                    <Heading color={"#fff"} p={5} fontSize={[18, 20, 25]} textAlign={"center"}>
                         Hello,
                         <Spacer />
                         I'm so happy that you visited my Portfolio

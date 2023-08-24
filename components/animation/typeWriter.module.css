@@ -4,13 +4,12 @@
   justify-content: center;
   padding: 100px 0px 0px 0px;
   min-height: 300px;
-  position: relative;
   overflow-x: hidden;
   height: 10%;
+  text-align: center;
 }
 
 .typeWriter {
-  margin-left: 1px;
   width: 100%;
   height: 100%;
   text-align: center;
@@ -20,6 +19,7 @@
   color: #ffffffc9;
   text-transform: uppercase;
   font-size: 50px;
+  position: relative;
 }
 
 /* to reduce the font size in small screen  */

@@ -22,7 +22,6 @@ export default function MouseTraker() {
       // check The Screen Size to Know that if the screen for mobile devices or PCs or laptops
       if (window.matchMedia("(max-width: 768px)").matches) {
         document.removeEventListener("mousemove", handleMouseMove);
-        // document.getElementById("main").style.backgroundImage = "100vh"
       } else {
         document.addEventListener("mousemove", handleMouseMove);
       }

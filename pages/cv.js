@@ -13,7 +13,7 @@ export default function CvPage() {
         <title>My CV</title>
         <meta name="description" content="Check out my PDF CV to learn more about my skills and experience." />
         <link rel="icon" href="/resume.webp" />
-        <meta name="author" content="Your Name" />
+        <meta name="author" content="Bader Alyami" />
         <meta name="keywords" content="CV, resume, portfolio" />
         <meta name="application-name" content="Portfolio" />
         <meta name="robots" content="noindex, nofollow" />

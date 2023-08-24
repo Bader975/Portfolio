@@ -1,14 +1,11 @@
 import React from 'react'
 import Typewriter from 'typewriter-effect';
-import classes from './typeWriter.module.css'
+import classes from './TypeWriter.module.css'
 
 
 export default function TypeWriter() {
 
-
     return (
-
-
 
         <div className={classes.container}>
             <span className={classes.typeWriter}>
@@ -19,15 +16,10 @@ export default function TypeWriter() {
                         autoStart: true,
                         loop: true,
 
-
                     }}
                 />
             </span>
-
         </div>
-
-
-
 
     )
 }
