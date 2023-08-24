@@ -1,11 +1,7 @@
 import React from 'react'
-import dynamic from 'next/dynamic'
 import Head from 'next/head'
-const CvComponent = dynamic(() => import('@/components/cv/Cv'), {
-  ssr: false,
-  loading: () => <p>Loading...</p>
+import Cv from '../components/cv/Cv'
 
-})
 export default function CvPage() {
   return (
     <>
@@ -22,7 +18,7 @@ export default function CvPage() {
 
       </Head>
 
-      <CvComponent />
+      <Cv />
 
     </>
   )

@@ -1,4 +1,4 @@
-import Layout from "@/components/layout/Layout"
+import Layout from "../components/layout/Layout"
 import "../styles/globals.css"
 import { ChakraProvider } from '@chakra-ui/react'
 import { store } from '../redux/store'
@@ -6,7 +6,8 @@ import { Provider } from "react-redux"
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <Provider store={store}> {/*  <== Redux Store */}
+    {/*  <== Redux Store */}
+      <Provider store={store}> 
         <ChakraProvider>
           <Layout>
             <Component {...pageProps} />
