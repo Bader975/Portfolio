@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import anime from 'animejs';
 import Image from 'next/image';
+import Head from 'next/head';
 
 export default function SplashScreen({ endLoading }) {
 
@@ -18,19 +19,28 @@ export default function SplashScreen({ endLoading }) {
             })
             .add({
                 targets: '#logo',
-                    // translateY: ['0%', '100%'],
-                    scale :["1","1.5"],
-                    opacity: [1, 0],
-                    delay: 1000,
-                    duration: 1000,
+                // translateY: ['0%', '100%'],
+                scale: ["1", "1.5"],
+                opacity: [1, 0],
+                delay: 1000,
+                duration: 1000,
                 complete: () => endLoading()
                 // Animation complete, navigate to the main app screen or perform any necessary actions    
             });
     }, []);
     return (
-        <div className="splash-screen">
+        <>
+            <Head>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Welcome</title>
+                <meta name="description" content="splash screen" />
+                <link rel="icon" href="/space-ship.webp" />
+            </Head>
 
-            <Image id="logo" src='/next.svg' width={200} height={200} alt="NEXT.JS LOGO"/>
-        </div>
+            <div className="splash-screen">
+
+                <Image id="logo" src='/next.svg' width={200} height={200} alt="NEXT.JS LOGO" />
+            </div>
+        </>
     )
 }
