@@ -18,17 +18,19 @@ export default function SplashScreen({ endLoading }) {
             })
             .add({
                 targets: '#logo',
-                    translateY: ['0%', '100%'],
+                    // translateY: ['0%', '100%'],
+                    scale :["1","1.5"],
                     opacity: [1, 0],
                     delay: 1000,
-                    duration: 2000,
+                    duration: 1000,
                 complete: () => endLoading()
                 // Animation complete, navigate to the main app screen or perform any necessary actions    
             });
     }, []);
     return (
         <div className="splash-screen">
-            <Image id="logo" src='/Astronaut suit.gif' width={200} height={200} />
+
+            <Image id="logo" src='/next.svg' width={200} height={200} alt="NEXT.JS LOGO"/>
         </div>
     )
 }

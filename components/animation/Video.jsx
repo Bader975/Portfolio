@@ -1,23 +1,25 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 
 
 export default function Video() {
 
-
+    const videoRef = useRef(null);
     const backgroundMode = useSelector((state) => state.background.backgroundMode)
-
-    function handelVideo() {
+    
+    async function handelVideo() {
         if (typeof document == "object") {
             const video = document.getElementById("video").play();
 
-        // this code was provided by google to make the background video play
+            // this code was provided by google to make the background video play
             if (video !== undefined) {
                 video.then(() => {
-                    // Autoplay started!
+                    // Autoplay started! 
+                    console.log("Autoplay started! ");
                 }).catch(error => {
                     // Autoplay was prevented.
                     // Show a "Play" button so that user can start playback.
+                    console.log(error);
                 });
             }
 
@@ -32,6 +34,7 @@ export default function Video() {
     return (
         <>
             <video
+                ref={videoRef}
                 id="video"
                 muted
                 autoPlay
