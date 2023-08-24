@@ -35,6 +35,8 @@ export default function SplashScreen({ endLoading }) {
                 <title>Welcome</title>
                 <meta name="description" content="splash screen" />
                 <link rel="icon" href="/space-ship.webp" />
+                <meta name="application-name" content="Portfolio" />
+                <meta name="robots" content="noindex, nofollow" />
             </Head>
 
             <div className="splash-screen">

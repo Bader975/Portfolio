@@ -12,6 +12,8 @@ export default function Home() {
         <meta name="keywords" content="portfolio, web development, design, projects"/>
         <meta name="author" content="Bader Alyami"/>
         <link rel="icon" href="/space-ship.webp" />
+        <meta name="application-name" content="Portfolio" />
+        <meta name="robots" content="noindex, nofollow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
