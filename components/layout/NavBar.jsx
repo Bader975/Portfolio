@@ -1,22 +1,33 @@
-import { Box, Flex, Spacer, IconButton, useColorMode, useBoolean } from "@chakra-ui/react";
+import { Box, Flex, Spacer, IconButton } from "@chakra-ui/react";
 import { AiOutlineHome } from 'react-icons/ai';
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import Video from "../animation/Video";
 import { toggleBG } from "../../redux/toggle";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from 'react-redux'
-
-
+import dynamic from 'next/dynamic'
+const VideoNoSSR = dynamic(
+  () => import("../animation/Video"),
+  { ssr: false }
+)
 function Navbar() {
   const router = useRouter()
   const dispatch = useDispatch()
+  // -------Redux------
   const backgroundMode = useSelector((state) => state.background.backgroundMode)
+
+  // ---------Context ------------
+  // const backgroundCtx = useContext(BackgroundContext)
+  // const backgroundModeCtx=backgroundCtx.backgroundMode;
+
+
 
   return (
     <>
 
-      <Video />
-      <Box bg="transparent" py={4} px={6} pb={5} pos={"sticky"} top={0} zIndex={2} >
+      <VideoNoSSR />
+
+      <Box as={"nav"} bg="transparent" py={4} px={6} pb={5} pos={"sticky"} top={0} zIndex={2} >
         <Flex alignItems="center">
           <Box>
             <IconButton

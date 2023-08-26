@@ -1,16 +1,14 @@
 import React, { useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 
-
 export default function Video() {
-
-    const videoRef = useRef(null);
-    const backgroundMode = useSelector((state) => state.background.backgroundMode)
     
-    async function handelVideo() {
-        if (typeof document == "object") {
-            const video = document.getElementById("video").play();
+    const videoRef = useRef(null);
 
+    const backgroundMode = useSelector((state) => state.background.backgroundMode)
+
+    async function handelVideo() {
+            const video = document.getElementById("video").play();
             // this code was provided by google to make the background video play
             if (video !== undefined) {
                 video.then(() => {
@@ -22,8 +20,6 @@ export default function Video() {
                     console.log(error);
                 });
             }
-
-        }
     }
 
     useEffect(() => {

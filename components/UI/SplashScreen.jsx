@@ -20,7 +20,7 @@ export default function SplashScreen({ endLoading }) {
             .add({
                 targets: '#logo',
                 // translateY: ['0%', '100%'],
-                scale: ["1", "1.5"],
+                scale: ["1", "1.8"],
                 opacity: [1, 0],
                 delay: 1000,
                 duration: 1000,
@@ -31,7 +31,6 @@ export default function SplashScreen({ endLoading }) {
     return (
         <>
             <Head>
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>Welcome</title>
                 <meta name="description" content="splash screen" />
                 <link rel="icon" href="/space-ship.webp" />
@@ -40,8 +39,7 @@ export default function SplashScreen({ endLoading }) {
             </Head>
 
             <div className="splash-screen">
-
-                <Image id="logo" src='/next.svg' width={200} height={200} alt="NEXT.JS LOGO" />
+                <Image id="logo" src='/next.svg' width={100} height={100} alt="NEXT.JS LOGO" />
             </div>
         </>
     )

@@ -4,25 +4,23 @@ import { Viewer, Worker } from '@react-pdf-viewer/core';
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+import { Box } from '@chakra-ui/react'
 export default function Cv() {
-    const router = useRouter()
 
-  
+
+
     const defaultLayoutPluginInstance = defaultLayoutPlugin();
     return (
         <>
             <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.9.179/build/pdf.worker.js">
-                <div>
+                <Box w={"100vw"} h={"100vh"}>
                     <Viewer
                         fileUrl="/myCV.pdf"
-
                         plugins={[
                             defaultLayoutPluginInstance,
-
-
                         ]}
                     />
-                </div>
+                </Box>
             </Worker>
 
         </>

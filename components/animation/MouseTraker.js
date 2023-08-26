@@ -1,9 +1,7 @@
 
-
 export default function MouseTraker() {
 
   if (typeof document === 'object') {
-
     function handleMouseMove(e) {
       let mouseFollower = document.getElementById("mouse-follower");
       if (!mouseFollower) {

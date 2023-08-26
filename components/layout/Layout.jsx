@@ -17,7 +17,7 @@ export default function Layout({ children }) {
         <>
             {isLoading && isHome ? <SplashScreen endLoading={() => setIsLoading(false)} /> : <>
                 <NavBar />
-                <main >{children}</main>
+                <main>{children}</main>
 
             </>}
         </>
