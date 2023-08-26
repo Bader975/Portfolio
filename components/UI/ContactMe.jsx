@@ -34,7 +34,7 @@ export default function ContactMe() {
                         animate={{ translateX: inView ? "0%" : "-100%", opacity: inView ? 1 : 0 }}
                         transition={{ duration: 1 }}
                     >
-                        <Image rounded={"xl"} w={"100%"} h={"100%"} src="/mobile-Marketing.svg" alt="Animated SVG" />
+                        <Image rounded={"xl"} w={"100%"} h={"100%"} src="mobile-Marketing.svg" alt="Animated SVG" />
                     </motion.div>
 
                 </Box>
