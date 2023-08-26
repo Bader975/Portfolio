@@ -1,7 +1,6 @@
 import { Box, Flex, Spacer, IconButton } from "@chakra-ui/react";
 import { AiOutlineHome } from 'react-icons/ai';
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import Video from "../animation/Video";
 import { toggleBG } from "../../redux/toggle";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from 'react-redux'
@@ -15,11 +14,6 @@ function Navbar() {
   const dispatch = useDispatch()
   // -------Redux------
   const backgroundMode = useSelector((state) => state.background.backgroundMode)
-
-  // ---------Context ------------
-  // const backgroundCtx = useContext(BackgroundContext)
-  // const backgroundModeCtx=backgroundCtx.backgroundMode;
-
 
 
   return (

@@ -4,12 +4,13 @@ import { motion } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import Link from 'next/link';
+
 export default function ContactMe() {
 
     const [showDiv, setShowDiv] = useState(false);
     const [ref, inView] = useInView({
         triggerOnce: false,
-        rootMargin: "0px 0px", 
+        rootMargin: "-100px 0px", 
         threshold: 0
     });
 
@@ -38,7 +39,6 @@ export default function ContactMe() {
                     </motion.div>
 
                 </Box>
-
                 {/* -------------Social Buttons------------------- */}
                 <Box>
                     <HStack>

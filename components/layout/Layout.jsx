@@ -15,11 +15,14 @@ export default function Layout({ children }) {
 
     return (
         <>
-            {isLoading && isHome ? <SplashScreen endLoading={() => setIsLoading(false)} /> : <>
+            {isLoading && isHome ? <div ><SplashScreen endLoading={() => setIsLoading(false)} /></div>  : <>
                 <NavBar />
                 <main>{children}</main>
 
             </>}
+
+
+           
         </>
     )
 }

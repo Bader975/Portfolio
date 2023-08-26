@@ -1,8 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import anime from 'animejs';
 import Image from 'next/image';
 import Head from 'next/head';
-
+import dynamic from 'next/dynamic'
+const VideoNoSSR = dynamic(
+    () => import("../animation/Video"),
+    { ssr: false }
+)
 export default function SplashScreen({ endLoading }) {
 
     useEffect(() => {
@@ -24,7 +28,9 @@ export default function SplashScreen({ endLoading }) {
                 opacity: [1, 0],
                 delay: 1000,
                 duration: 1000,
-                complete: () => endLoading()
+                complete: () => endLoading(),
+               
+                
                 // Animation complete, navigate to the main app screen or perform any necessary actions    
             });
     }, []);
@@ -37,7 +43,7 @@ export default function SplashScreen({ endLoading }) {
                 <meta name="application-name" content="Portfolio" />
                 <meta name="robots" content="noindex, nofollow" />
             </Head>
-
+            
             <div className="splash-screen">
                 <Image id="logo" src='/next.svg' width={100} height={100} alt="NEXT.JS LOGO" />
             </div>

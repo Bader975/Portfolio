@@ -80,7 +80,7 @@ img {
   width: 100vw;
   height:100vh;
    /* The image used */
-   background-color: rgb(177, 188, 204);
+   /* background-color: rgb(177, 188, 204); */
    /* Center and scale the image nicely */
    background-position: center;
    background-repeat: no-repeat;
