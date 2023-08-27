@@ -1,4 +1,4 @@
-import HomePage from '@/components/home/HomePage';
+import HomePage from '../components/home/HomePage';
 import Head from 'next/head';
 export default function Home() {
 
@@ -11,7 +11,6 @@ export default function Home() {
         <meta name="keywords" content="portfolio, web development, design, projects"/>
         <meta name="author" content="Bader Alyami"/>
         <link rel="icon" href="/space-ship.webp" />
-
       </Head>
 
       <HomePage />

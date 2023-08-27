@@ -1,4 +1,4 @@
-import { Box, Flex, Spacer, IconButton } from "@chakra-ui/react";
+import { Box, Flex, Spacer, IconButton, Text } from "@chakra-ui/react";
 import { AiOutlineHome } from 'react-icons/ai';
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { toggleBG } from "../../redux/toggle";
@@ -40,8 +40,9 @@ function Navbar() {
           </Box>
           <Spacer />
           <Box>
+            <Text color="white" display={"inline"} bg={"#00000080"} rounded={"xl"} p={5}> Toggle Mode To {backgroundMode ? <u>Night</u> : <u>Day</u>}</Text>
             <IconButton
-              icon={backgroundMode ? <MoonIcon /> : <SunIcon />}
+              icon={backgroundMode ? <MoonIcon boxSize={"1.5rem"} /> : <SunIcon boxSize={"1.5rem"} />}
               aria-label="Toggle Dark Mode"
               variant="white"
               color="white"
@@ -51,6 +52,7 @@ function Navbar() {
               size="md"
 
             />
+
           </Box>
         </Flex >
       </Box >

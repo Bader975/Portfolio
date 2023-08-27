@@ -15,7 +15,6 @@ export default function CvPage() {
         <meta name="robots" content="noindex, nofollow" />
         <meta property="og:title" content="PDF CV - Bader" />
         <meta property="og:description" content="Check out my PDF CV" />
-
       </Head>
 
       <Cv />

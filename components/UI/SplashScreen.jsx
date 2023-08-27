@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import anime from 'animejs';
 import Image from 'next/image';
 import Head from 'next/head';
@@ -29,21 +29,21 @@ export default function SplashScreen({ endLoading }) {
                 delay: 1000,
                 duration: 1000,
                 complete: () => endLoading(),
-               
-                
+
+
                 // Animation complete, navigate to the main app screen or perform any necessary actions    
             });
     }, []);
     return (
         <>
             <Head>
-                <title>Welcome</title>
-                <meta name="description" content="splash screen" />
+                <title>Portfolio</title>
+                <meta name="description" content="This is my portfolio website showcasing my work and skills."/>
                 <link rel="icon" href="/space-ship.webp" />
                 <meta name="application-name" content="Portfolio" />
                 <meta name="robots" content="noindex, nofollow" />
             </Head>
-            
+
             <div className="splash-screen">
                 <Image id="logo" src='/next.svg' width={100} height={100} alt="NEXT.JS LOGO" />
             </div>
