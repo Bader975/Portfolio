@@ -1,5 +1,5 @@
 import React from 'react'
-import ButtonComp from '../ui/ButtonComp'
+import ButtonComp from '@/ui/ButtonComp'
 import { SimpleGrid, Image, Box,Stack } from '@chakra-ui/react'
 import { useSelector } from 'react-redux'
 
