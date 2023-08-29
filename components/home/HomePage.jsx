@@ -5,7 +5,7 @@ import Content from './Content'
 import ButtonContainer from './ButtonContainer'
 import Skill from '../skills/Skill'
 import ContactMe from '../ui/ContactMe';
-import { Box, Image } from '@chakra-ui/react'
+
 export default function HomePage() {
 
     // The Mouse Traker Function
