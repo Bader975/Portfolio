@@ -2,11 +2,8 @@ import React, { useEffect, useState } from 'react';
 import anime from 'animejs';
 import Image from 'next/image';
 import Head from 'next/head';
-import dynamic from 'next/dynamic'
-const VideoNoSSR = dynamic(
-    () => import("../animation/Video"),
-    { ssr: false }
-)
+
+
 export default function SplashScreen({ endLoading }) {
 
     useEffect(() => {

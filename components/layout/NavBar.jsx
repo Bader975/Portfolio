@@ -4,14 +4,13 @@ import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { toggleBG } from "../../redux/toggle";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from 'react-redux'
-import dynamic from 'next/dynamic'
-const VideoNoSSR = dynamic(
-  () => import("../animation/Video"),
-  { ssr: false }
-)
+
+
 function Navbar() {
   const router = useRouter()
   const dispatch = useDispatch()
+
+
   // -------Redux------
   const backgroundMode = useSelector((state) => state.background.backgroundMode)
 
@@ -19,34 +18,31 @@ function Navbar() {
   return (
     <>
 
-      <VideoNoSSR />
-
-      <Box as={"nav"} bg="transparent" py={4} px={6} pb={5} pos={"sticky"} top={0} zIndex={2} >
+      <Box as={"nav"} py={4} px={6} pb={5} bg={"#fff"}color={"#0000"} pos={"sticky"} shadow={"lg"} top={0} zIndex={2} >
         <Flex alignItems="center">
           <Box>
             <IconButton
-              icon={<AiOutlineHome size={"2rem"} />}
+              icon={<AiOutlineHome size={"2rem"} color={"#000"} />}
               aria-label="Menu"
-              variant="white"
-              color="white"
+              variant="balck"
+              color="balck"
               size="md"
               mr={2}
               onClick={() => { router.pathname !== "/" && router.push("/") }}
             />
 
           </Box>
-          <Box flex="1" color="white" >
+          <Box flex="1" color="balck" >
 
           </Box>
           <Spacer />
           <Box>
-            <Text color="white" display={"inline"} bg={"#00000080"} rounded={"xl"} p={5}> Toggle Mode To {backgroundMode ? <u>Night</u> : <u>Day</u>}</Text>
+            {/* <Text color="white" display={"inline"} bg={"#00000080"} rounded={"xl"} p={5}> Toggle Mode To {backgroundMode ? <u>Night</u> : <u>Day</u>}</Text> */}
             <IconButton
-              icon={backgroundMode ? <MoonIcon boxSize={"1.5rem"} /> : <SunIcon boxSize={"1.5rem"} />}
+              icon={backgroundMode ? <MoonIcon boxSize={"1.5rem"} color={"#000"} /> : <SunIcon boxSize={"1.5rem"} color={"#000"} />}
               aria-label="Toggle Dark Mode"
               variant="white"
-              color="white"
-              bg="transparent"
+              color="balck"
               // onClick={ toggleBackground}
               onClick={() => dispatch(toggleBG())}
               size="md"

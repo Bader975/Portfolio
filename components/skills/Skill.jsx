@@ -1,5 +1,5 @@
 import React from 'react'
-import ImageComp from '../UI/ImageComp'
+import ImageComp from '../ui/ImageComp'
 import { Box, Heading, Image, SimpleGrid, Divider, Text } from '@chakra-ui/react'
 
 import { PiEngineFill } from 'react-icons/pi'
@@ -9,7 +9,7 @@ export default function Skill() {
     return (
         <>
 
-            <Box my={"auto"} mx={"auto"} p={5} bg={"#00000080"} rounded={"xl"} >
+            <Box my={"auto"} mx={"auto"} p={5} bg={"#00000080"} w={"80%"} rounded={"xl"} >
                 <Heading color={"#fff"} my={"auto"} fontSize={[18, 20, 25]} opacity={"0.90"} textAlign={"center"} >
                     I used for this Project NEXT.js Page Router<Divider /> NEXT.js is so powerful becuse of Server-side Rendering (SSR) and Search engine optimization (SEO) <PiEngineFill color='lightblue' style={{ display: "inline"}} />
                 </Heading>
