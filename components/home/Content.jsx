@@ -3,25 +3,26 @@ import React from 'react'
 import { motion } from 'framer-motion';
 
 export default function Content() {
-
+const textColor="#fff"
+const bg = "#00000080"
     return (
         <>
             <SimpleGrid w={"full"} h={"full"} columns={1} mx={"auto"} pt={10} >
                 {/* Fist Card *1 */}
-                <motion.div
+                {/* <motion.div
                     // initial={{ opacity: 0 }} // Set initial opacity to 0
                     initial={{ translateY: "-100%" }} // Set initial opacity to 0
                     // animate={{ opacity: 1 }} // Animate opacity to 1
                     animate={{ translateY: "0%" }} // Animate opacity to 1
                     transition={{ duration: 2.5 }} // Set the transition duration
-                    style={{ marginBottom: "auto" }}
-                >
+                    style={{ marginBottom: "auto" }} */}
+                {/* > */}
                     {/* <Image w={["50%", "60%", "30%"]} h={"60%"} maxH={"90%"} src="/Astronaut suit.gif" alt="Animated GIF" /> */}
-                    <Image w={["50%", "60%", "30%"]} h={"60%"} maxH={"90%"} src="/astronaut-suit-animate.svg" alt="Animated SVG" />
-                </motion.div>
+                    {/* <Image w={["50%", "60%", "30%"]} h={"60%"} maxH={"90%"} src="/astronaut-suit-animate.svg" alt="Animated SVG" /> */}
+                {/* </motion.div> */}
 
-                <Box mx={"auto"} p={6} pos={"static"} rounded={"3xl"} w={"auto"} shadow={"2xl"} maxH={"90%"}>
-                    <Heading color={"#fff"} p={5} fontSize={[18, 20, 25]} textAlign={"center"}>
+                <Box mx={"auto"} p={6} pos={"static"} bg={bg} rounded={"3xl"} w={"80%"} shadow={"2xl"} maxH={"90%"}>
+                    <Heading color={textColor} p={5} fontSize={[18, 20, 25]} textAlign={"center"}>
                         Hello,
                         <Spacer />
                         I'm so happy that you visited my Portfolio
