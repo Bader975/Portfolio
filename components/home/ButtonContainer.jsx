@@ -19,6 +19,7 @@ export default function ButtonContainer() {
         <>
  {/* display={"flex"} justifyContent={"center"} alignContent={"center"}  */}
             <SimpleGrid w={"full"} columns={[1, 1, 2]} spacing={10} px={5} >
+                <h1>test</h1>
                 <Box w={"100%"}>
                     <Image  w={"100%"} h={"auto"} rounded={"xl"} dropShadow={"xl"}src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" />
                 </Box>
