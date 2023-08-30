@@ -23,7 +23,7 @@ export default function ButtonContainer() {
                     <ButtonComp _hover={{
                         bg: "gray.500", color: "3fff", opacity: 1, transform: "scale(1.1)", transition:
                             "transform 0.5s"
-                    }} rounded={"xl"} color={"#fff"} bg={"#153243"} w={"100%"} link={"/cv"}  onClick={() => router.push("/cv")}>Take a look at my CV</ButtonComp>
+                    }} rounded={"xl"} color={"#fff"} bg={"#153243"} w={"100%"} link={"/"} onClick={() => router.push("/cv")}>Take a look at my CV</ButtonComp>
                     {/* link={"/cv"} target={"_blank"} */}
                 </Stack>
 
