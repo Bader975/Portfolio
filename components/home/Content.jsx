@@ -1,6 +1,5 @@
 import { Box, Heading, Image, SimpleGrid, Text, Spacer } from '@chakra-ui/react'
 import React from 'react'
-import { motion } from 'framer-motion';
 
 export default function Content() {
 const textColor="#fff"
