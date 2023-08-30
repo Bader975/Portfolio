@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import NavBar from './NavBar'
-import SplashScreen from '../ui/SplashScreen'
-import { usePathname } from 'next/navigation'
+import React, { useState, useEffect } from 'react';
+import NavBar from './NavBar';
+import SplashScreen from '../ui/SplashScreen';
+import { usePathname } from 'next/navigation';
 
 export default function Layout({ children }) {
     const pathName = usePathname()
@@ -15,10 +15,10 @@ export default function Layout({ children }) {
 
     return (
         <>
-            {/* {isLoading && isHome ? <div ><SplashScreen endLoading={() => setIsLoading(false)} /></div>  : <> */}
+            {isLoading && isHome ? <div ><SplashScreen endLoading={() => setIsLoading(false)} /></div>  : <>
                 <NavBar />
                 <main>{children}</main>
-            {/* </>} */}
+            </>}
 
 
            

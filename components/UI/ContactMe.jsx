@@ -1,5 +1,5 @@
-import { Image, SimpleGrid, Box, HStack, Button, Heading } from '@chakra-ui/react'
-import React, { useEffect, useState } from 'react'
+import { Image, SimpleGrid, Box, HStack, Button, Heading } from '@chakra-ui/react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
 import { FaLinkedin, FaGithub } from 'react-icons/fa';

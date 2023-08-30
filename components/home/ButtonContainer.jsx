@@ -1,11 +1,9 @@
-import React from 'react'
-import ButtonComp from '../ui/ButtonComp'
-import { SimpleGrid, Image, Box,Stack } from '@chakra-ui/react'
-import { useSelector } from 'react-redux'
+import React from 'react';
+import ButtonComp from '../ui/ButtonComp';
+import { SimpleGrid, Image, Box,Stack } from '@chakra-ui/react';
+
 
 export default function ButtonContainer() {
-    const isLightMode = useSelector(state => state.background.backgroundMode)
-
 
 
 
@@ -21,7 +19,7 @@ export default function ButtonContainer() {
                     <ButtonComp _hover={{
                         bg: "gray.500", color: "#fff", opacity: 1, transform: "scale(1.1)", transition:
                             "transform 0.5s"
-                    }} rounded={"xl"} color={isLightMode ? "#fff" : "#153243"} link={"/#my-skills"} w={"100%"} bg={"transparent"}  >My Skills</ButtonComp>
+                    }} rounded={"xl"} color={"#153243"} link={"/#my-skills"} w={"100%"} bg={"transparent"}  >My Skills</ButtonComp>
                     <ButtonComp _hover={{
                         bg: "gray.500", color: "3fff", opacity: 1, transform: "scale(1.1)", transition:
                             "transform 0.5s"

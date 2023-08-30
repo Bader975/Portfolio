@@ -1,9 +1,8 @@
 import React from 'react'
-import ImageComp from '../ui/ImageComp'
+import ImageComp from '../ui/ImageComp';
 import { Box, Heading, Image, SimpleGrid, Divider, Text } from '@chakra-ui/react'
 
 import { PiEngineFill } from 'react-icons/pi'
-import { AiFillFire } from 'react-icons/ai'
 const bg = "#00000080"
 export default function Skill() {
     return (

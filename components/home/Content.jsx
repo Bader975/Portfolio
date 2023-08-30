@@ -1,4 +1,4 @@
-import { Box, Heading, Image, SimpleGrid, Text, Spacer } from '@chakra-ui/react'
+import { Box, Heading, SimpleGrid, Text, Spacer } from '@chakra-ui/react'
 import React from 'react'
 
 export default function Content() {
