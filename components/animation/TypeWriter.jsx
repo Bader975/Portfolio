@@ -16,7 +16,6 @@ export default function TypeWriter() {
                         strings: arrOfStrings,
                         autoStart: true,
                         loop: true,
-
                     }}
                 />
             </span>

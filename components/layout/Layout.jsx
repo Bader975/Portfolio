@@ -15,10 +15,10 @@ export default function Layout({ children }) {
 
     return (
         <>
-            {isLoading && isHome ? <div ><SplashScreen endLoading={() => setIsLoading(false)} /></div>  : <>
+            {/* {isLoading && isHome ? <div ><SplashScreen endLoading={() => setIsLoading(false)} /></div>  : <> */}
                 <NavBar />
                 <main>{children}</main>
-            </>}
+            {/* </>} */}
 
 
            

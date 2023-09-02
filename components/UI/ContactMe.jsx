@@ -1,8 +1,9 @@
-import { Image, SimpleGrid, Box, HStack, Button, Heading } from '@chakra-ui/react';
+import { Image, SimpleGrid, Box, HStack, Link as ChakraLink, Button, Heading } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { AiOutlineMail} from 'react-icons/ai';
 import Link from 'next/link';
 
 export default function ContactMe() {
@@ -35,21 +36,22 @@ export default function ContactMe() {
                         animate={{ translateX: inView ? "0%" : "-100%", opacity: inView ? 1 : 0 }}
                         transition={{ duration: 1 }}
                     >
-                        <Image rounded={"xl"} w={"100%"} h={"100%"} src="/mobile-marketing.svg" alt="Animated SVG" />
+                        <Image rounded={"xl"} loading={"lazy"} w={"100%"} h={"100%"} src="/mobile-marketing.svg" alt="Animated SVG" />
+                        
                     </motion.div>
 
                 </Box>
                 {/* -------------Social Buttons------------------- */}
                 <Box>
-                    <HStack>
+                    <HStack >
                         {/* -------------Linkedin------------------ */}
-                        <Link href={"https://www.linkedin.com/in/bader-mohammad-al/"} target='_blank' >
+                        <ChakraLink href={"https://www.linkedin.com/in/bader-mohammad-al/"} isExternal>
                             <Button colorScheme='linkedin' leftIcon={<FaLinkedin />}>
                                 Linkedin
                             </Button>
-                        </Link>
+                        </ChakraLink>
                         {/* -------------Github----------------- */}
-                        <Link href={"https://github.com/Bader975"} target='_blank' >
+                        <ChakraLink href={"https://github.com/Bader975"} isExternal>
                             <Button colorScheme="gray"
                                 color="white"
                                 bg="gray.900"
@@ -58,8 +60,20 @@ export default function ContactMe() {
                                 _focus={{ boxShadow: "outline" }} leftIcon={<FaGithub />}>
                                 Github
                             </Button>
-                        </Link>
-                        {/* -------------3----------------- */}
+                        </ChakraLink>
+                        {/* ------------Email-------------- */}
+
+
+                        <ChakraLink href={"mailto:bader97alyami@hotmail.com"} isExternal >
+                            <Button colorScheme="blue"
+                                color="white"
+                                bg="blue.300"
+                                _hover={{ bg:"blue.500" }}
+                                _active={{ bg: "gray.800" }}
+                                _focus={{ boxShadow: "outline" }} leftIcon={<AiOutlineMail />}>
+                               Email Me
+                            </Button>
+                        </ChakraLink>
                     </HStack>
 
                 </Box>

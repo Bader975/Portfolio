@@ -21,7 +21,8 @@ export default function SplashScreen({ endLoading }) {
             .add({
                 targets: '#logo',
                 // translateY: ['0%', '100%'],
-                scale: ["1", "1.8"],
+                // scale: ["1", "1.8"],
+                scale: ["1", "2"],
                 opacity: [1, 0],
                 delay: 1000,
                 duration: 1000,

@@ -1,19 +1,13 @@
 import { Box, Flex, Spacer, IconButton, Text } from "@chakra-ui/react";
 import { AiOutlineHome } from 'react-icons/ai';
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import { toggleBG } from "../../redux/toggle";
 import { useRouter } from "next/router";
-import { useSelector, useDispatch } from 'react-redux'
+
 
 
 function Navbar() {
   const router = useRouter()
-  const dispatch = useDispatch()
-
-
-  // -------Redux------
-  const backgroundMode = useSelector((state) => state.background.backgroundMode)
-
+  let backgroundMode=true;
 
   return (
     <>
@@ -44,7 +38,6 @@ function Navbar() {
               variant="white"
               color="balck"
               // onClick={ toggleBackground}
-              onClick={() => dispatch(toggleBG())}
               size="md"
 
             />
