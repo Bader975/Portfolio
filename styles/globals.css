@@ -1,17 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
-
 :root {
   --backGroundColor: #fff;
   --textColor: #000;
   --balckColor: #000;
   scroll-behavior: smooth;
 }
-
 * {
   box-sizing: border-box;
-  /* font-family: 'Mulish', sans-serif; */
-
+  margin:0;
 }
+
 
 body {
   font-family: 'Mulish', sans-serif;
@@ -21,9 +18,7 @@ body {
 }
 
 main {
-  height: 100%;
-  /* background-color: #ECECEC; */
-  color: #0000 !important;
+  color: #0000 ;
 }
 
 
@@ -32,7 +27,6 @@ main {
 span.Typewriter__wrapper {
   text-decoration: underline;
   text-align: center;
-  /* color:var(--balckColor); */
 }
 
 span .Typewriter__cursor {
@@ -52,9 +46,6 @@ img {
 .splash-screen {
   width: 100vw;
   height: 100vh;
-  /* The image used */
-  /* background-color: rgb(177, 188, 204); */
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

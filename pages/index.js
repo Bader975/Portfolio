@@ -3,7 +3,6 @@ import Head from 'next/head';
 
 export default function Home({ projects }) {
 
-
   return (
     <>
       <Head>
@@ -27,6 +26,7 @@ export async function getStaticProps() {
     {
       id: 1,
       title: "Tuwaiq Projects",
+      discription:"One website helps Tuwaiq students to get project ideas provided by companies, upload their projects, and display them for any company. They can also modify their projects if they wish.",
       href: "https://github.com/Bader975/Tuwaiq-Projects",
       image: "https://user-images.githubusercontent.com/80196102/226158760-ae515f25-346c-4c1e-989a-ac1441d51bf2.png"
     },

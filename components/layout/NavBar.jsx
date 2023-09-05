@@ -1,6 +1,5 @@
-import { Box, Flex, Spacer, IconButton, Text } from "@chakra-ui/react";
+import { Box, Flex, Spacer, IconButton, Image,Avatar } from "@chakra-ui/react";
 import { AiOutlineHome } from 'react-icons/ai';
-import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { useRouter } from "next/router";
 
 
@@ -12,19 +11,21 @@ function Navbar() {
   return (
     <>
 
-      <Box as={"nav"} py={4} px={6} pb={5} bg={"#fff"}color={"#0000"} pos={"sticky"} shadow={"lg"} top={0} zIndex={2} >
-        <Flex alignItems="center">
+      <Box as={"nav"} py={4} px={[0,5]} pb={5} bg={"#fff"} color={"#0000"} pos={"sticky"} 
+      boxShadow={"lg"} top={0} zIndex={5} overflowY={"hidden"}>
+        <Flex alignItems="flex-start">
           <Box>
             <IconButton
-              icon={<AiOutlineHome size={"2rem"} color={"#000"} />}
               aria-label="Menu"
               variant="balck"
               color="balck"
-              size="md"
-              mr={2}
+              size="lg"
+              rounded={"2xl"}
+              mr={[0,2]}
               onClick={() => { router.pathname !== "/" && router.push("/") }}
-            />
-
+            >
+              <Image src={"https://github-production-user-asset-6210df.s3.amazonaws.com/80196102/265249572-047258c4-09b1-486f-a582-348d22b7cdab.png"}  objectFit={"contain"} w={200} h={"100vh"}/>
+            </IconButton>
           </Box>
           <Box flex="1" color="balck" >
 
@@ -33,7 +34,7 @@ function Navbar() {
           <Box>
             {/* <Text color="white" display={"inline"} bg={"#00000080"} rounded={"xl"} p={5}> Toggle Mode To {backgroundMode ? <u>Night</u> : <u>Day</u>}</Text> */}
             <IconButton
-              icon={backgroundMode ? <MoonIcon boxSize={"1.5rem"} color={"#000"} /> : <SunIcon boxSize={"1.5rem"} color={"#000"} />}
+              // icon={ <AiOutlineHome size={"2.5rem"} color={"#000"} />}
               aria-label="Toggle Dark Mode"
               variant="white"
               color="balck"

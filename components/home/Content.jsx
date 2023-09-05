@@ -2,7 +2,6 @@ import { Box, Heading, SimpleGrid, Text, Spacer, Divider, Icon } from '@chakra-u
 import React from 'react'
 import { PiEngineFill } from 'react-icons/pi'
 import { SiNextdotjs, SiEngineFill } from "react-icons/si";
-// import { PiEngineFill } from "react-icons/pi"; // Updated to SiEngineFill
 export default function Content() {
     const textColor = "#fff"
     const bg = "#00000080"
@@ -17,12 +16,12 @@ export default function Content() {
                     <Spacer />
                     <Text display={"inline"}>
                         I'm so happy that you visited my Portfolio
-                        My name is Bader Mohammad </Text> <Text display="inline" fontStyle="italic" fontWeight={"600"} color="yellow.400">
-                        JavaScript
+                        My name is Bader Mohammad</Text><Text display="inline" fontStyle="italic" fontWeight={"600"} color="yellow.400">
+                          {" "} JavaScript  
                     </Text>{" "}
-                    and{" "}
+                   {"  "} and {" "}
                     <Text display="inline" fontStyle="italic" color="blue.200" fontWeight={"600"} mr={1}>
-                        TypeScript
+                        TypeScript {" "}
                     </Text>
                     <Text display={"inline"}>
                         Developer

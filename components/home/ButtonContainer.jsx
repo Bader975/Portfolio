@@ -1,6 +1,6 @@
 import React from 'react';
 import ButtonComp from '../ui/ButtonComp';
-import { SimpleGrid, Image, Box, Stack } from '@chakra-ui/react';
+import { SimpleGrid, Stack } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { BsFiletypePdf } from 'react-icons/bs';
 import { BiLogoReact } from 'react-icons/bi';
@@ -12,7 +12,7 @@ export default function ButtonContainer() {
     return (
         <>
             {/* display={"flex"} justifyContent={"center"} alignContent={"center"}  */}
-            <SimpleGrid w={"full"} h={"full"} columns={[1, 1, 2]} pt={5} spacing={10} px={5} >
+            <SimpleGrid w={"full"} h={"full"} columns={[1, 1, 1]} pt={5} spacing={10} px={5}>
 
                 {/* ------------------Hero Image-------------------------------------  */}
                 {/* <Box w={"100%"} h={"full"}>
@@ -23,11 +23,11 @@ export default function ButtonContainer() {
                     <ButtonComp _hover={{
                         bg: "gray.500", color: "#fff", opacity: 1, transform: "scale(1.1)", transition:
                             "transform 0.5s"
-                    }} rounded={"xl"} color={"#153243"} link={"/#my-projects"} w={"100%"} bg={"transparent"} leftIcon={<BiLogoReact size={25} />}> My Projects</ButtonComp>
+                    }} rounded={"xl"} color={"#153243"} link={"/#my-projects"} boxShadow={"md"}   w={"100%"} bg={"transparent"} leftIcon={<BiLogoReact size={25} />}> My Projects</ButtonComp>
                     <ButtonComp _hover={{
                         bg: "gray.500", color: "3fff", opacity: 1, transform: "scale(1.1)", transition:
                             "transform 0.5s"
-                    }} rounded={"xl"} color={"#fff"} bg={"#153243"} w={"100%"} link={"/"} p={5} leftIcon={<BsFiletypePdf size={25}  />} > Take a look at my CV</ButtonComp>
+                    }} rounded={"xl"} color={"#fff"} bg={"#153243"} boxShadow={"md"} w={"100%"} link={"/"} p={5} leftIcon={<BsFiletypePdf size={25}  />} onClick={() => router.push("/cv")}> Take a look at my CV</ButtonComp>
                     {/* link={"/cv"} target={"_blank"} */}
 
 
