@@ -1,7 +1,7 @@
 import { Box, Heading, SimpleGrid, Text, Spacer, Divider, Icon } from '@chakra-ui/react'
 import React from 'react'
 import { PiEngineFill } from 'react-icons/pi'
-import { SiNextdotjs, SiEngineFill } from "react-icons/si";
+import { SiNextdotjs } from "react-icons/si";
 export default function Content() {
     const textColor = "#fff"
     const bg = "#00000080"

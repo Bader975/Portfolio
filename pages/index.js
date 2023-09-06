@@ -26,34 +26,53 @@ export async function getStaticProps() {
     {
       id: 1,
       title: "Tuwaiq Projects",
-      discription:"One website helps Tuwaiq students to get project ideas provided by companies, upload their projects, and display them for any company. They can also modify their projects if they wish.",
+      discription:" website used (React.TS - Node.js - Express.js) helps Tuwaiq students to get project ideas provided by companies, upload their projects, and display them for any company. They can also modify their projects if they wish.",
       href: "https://github.com/Bader975/Tuwaiq-Projects",
-      image: "https://user-images.githubusercontent.com/80196102/226158760-ae515f25-346c-4c1e-989a-ac1441d51bf2.png"
+      image: "/tuwaiq-projets.webp"
     },
     {
       id: 2,
       title: "Invest With Us",
+      discription:"An investment platform for informed decision-making and linking between the invester and thecompany ",
       href: "https://invest-with-us.vercel.app/",
-      image: "https://github.com/Bader975/README/assets/80196102/4fde5233-1112-438f-8d68-5130a0d0215a"
+      image: "/invest-with-us.webp"
     },
     {
       id: 3,
-      title: "Aramco Direct Hires Dashboard",
-      href: "https://bader10alyami.000webhostapp.com/Aramco%20Pages/Dashboard/index.html",
-      image: "https://github.com/Bader975/README/assets/80196102/7d0382d4-4c8d-4e74-b6a4-115c931f08b7"
+      title: "NEXT.JS App MeetUp",
+      discription:"Web app that uses NEXT.JS and Mongodb to add and manage your meetups and put the important in favorites meetup",
+      href: "https://github.com/Bader975/nextjs-meetup/tree/main",
+      image: "/nextjs-meetup.webp"
     },
     {
       id: 4,
+      title: "NEXT.JS Auth ",
+      discription:"Used NextAuth to implement login and logout operations and sessions",
+      href: "https://github.com/Bader975/NEXT-Auth",
+      image: "/nextjs-auth.webp"
+    },
+    {
+      id: 5,
+      title: "Aramco Direct Hires Dashboard",
+      discription:"A comprehensive dashboard by (HTML - Bootstrp - Jquery - chart.js) that streamlines the direct hiring process at Aramco, enhancing the need for employees by displaying charts and improving communication between candidates and recruiters",
+      href: "https://bader10alyami.000webhostapp.com/Aramco%20Pages/Dashboard/index.html",
+      image: "/dashboard-aramco.webp"
+    }, 
+    
+    {
+      id: 6,
       title: "Aramco Home Page",
+      discription:" A visually appealing and user-friendly home page for Aramco, showcasing their brand and providing easy access to essential information.",
       href: "https://bader10alyami.000webhostapp.com/Aramco%20Pages/Aramco%20Home%20Page/aramco%20page%20.html",
-      image: "https://github.com/Bader975/README/assets/80196102/5a74bca0-0c38-4529-803d-608723123e7c"
+      image: "/home-page-aramco.webp"
     },
 
     {
-      id: 5,
+      id: 7,
       title: "Aramco VPs PDF viewer",
+      discription:"A PDF viewer using JSpdf specifically designed for Aramco's Vice Presidents, ensuring a smooth and secure document viewing experience.",
       href: "https://bader10alyami.000webhostapp.com/Aramco%20Pages/PDF%20Viewer/pdf.html",
-      image: "https://github.com/Bader975/README/assets/80196102/96447707-6c66-4735-9cc9-34951155ad51"
+      image: "/aramco-pdf-viewer.webp"
     }
   ]
 
