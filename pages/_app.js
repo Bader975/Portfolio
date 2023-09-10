@@ -18,13 +18,14 @@ export default function App({ Component, pageProps }) {
           <Layout>
             <Head>
               <meta charSet="UTF-8"/>
-              <title>Portfolio</title>
+              <title>Bader's Portfolio</title>
               <meta name="description" content="This is my portfolio website showcasing my work and skills" />
               <meta name="keywords" content="portfolio, web development, design, next.js,animations" />
               <meta name="viewport" content="width=device-width, initial-scale=1" />
               <meta property="og:url" content="https://www.imdb.com/title/tt0117500/" />
-              <meta property="og:image" content="https://testrigor.com/wp-content/uploads/2023/04/nextjs-logo-square.png" />
+              <meta property="og:image" content="/bm-logo-hd.webp" />
             </Head>
+            {/* added google fonts */}
             <main className={inter.className}>
             <Component {...pageProps} />
             </main>

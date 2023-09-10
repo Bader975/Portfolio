@@ -6,11 +6,11 @@ export default function Home({ projects }) {
   return (
     <>
       <Head>
-        <title>Portfolio</title>
+        <title>Bader's Portfolio</title>
         <meta name="description" content="This is my portfolio website showcasing my work and skills." />
         <meta name="keywords" content="portfolio, web development, design, projects" />
         <meta name="author" content="Bader Alyami" />
-        <link rel="icon" href="/space-ship.webp" />
+        <link rel="icon" href="/bm-logo-hd.webp" />
       </Head>
 
       <HomePage projects={projects} />
@@ -54,7 +54,7 @@ export async function getStaticProps() {
     {
       id: 5,
       title: "Aramco Direct Hires Dashboard",
-      discription:"A comprehensive dashboard by (HTML - Bootstrp - Jquery - chart.js) that streamlines the direct hiring process at Aramco, enhancing the need for employees by displaying charts and improving communication between candidates and recruiters",
+      discription:"Dashboard by (HTML-Bootstrp-Jquery-chart.js) that streamlines the direct hiring process at Aramco, enhancing and improving communication between candidates and recruiters",
       href: "https://bader10alyami.000webhostapp.com/Aramco%20Pages/Dashboard/index.html",
       image: "/dashboard-aramco.webp"
     }, 
@@ -73,6 +73,13 @@ export async function getStaticProps() {
       discription:"A PDF viewer using JSpdf specifically designed for Aramco's Vice Presidents, ensuring a smooth and secure document viewing experience.",
       href: "https://bader10alyami.000webhostapp.com/Aramco%20Pages/PDF%20Viewer/pdf.html",
       image: "/aramco-pdf-viewer.webp"
+    },
+    {
+      id: 8,
+      title: "RATEME.com",
+      discription:"Our site offers a rating of local restaurants and hotels in order to search for the best with ease.",
+      href: "https://bader10alyami.000webhostapp.com/Ratings/restaurantsHome.html",
+      image: "/rateme.webp"
     }
   ]
 

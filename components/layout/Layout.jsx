@@ -7,14 +7,13 @@ export default function Layout({ children }) {
     const isHome = pathName === "/"
     const [isLoading, setIsLoading] = useState(isHome)
 
+
+    
     useEffect(() => {
         if (isLoading) return;
     }, [isLoading])
 
     
- 
-  
-     
     return (
         <>
             {/* {isLoading && isHome ? <div ><SplashScreen endLoading={() => setIsLoading(false)} /></div>  : <> */}

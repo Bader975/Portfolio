@@ -2,9 +2,12 @@ import React from 'react'
 import TypeWriter from '../animation/TypeWriter'
 import Content from './Content'
 import ButtonContainer from './ButtonContainer'
-import Skill from '../skills/Skill'
+import Projects from '../projects/Projects'
 import ContactMe from '../ui/ContactMe';
-import { SimpleGrid, Image, Box } from '@chakra-ui/react';
+import {  Image, Box } from '@chakra-ui/react';
+import About from '../about/About'
+import Skills from '../skills/Skills'
+
 
 
 export default function HomePage({projects}) {
@@ -19,10 +22,11 @@ export default function HomePage({projects}) {
                 <TypeWriter />
             </Box>
             {/* ------------------Hero Image-------------------------------------  */}
-    
             <ButtonContainer />
             <Content />
-            <Skill projects={projects}/>
+            <About/>
+            <Skills/>
+            <Projects projects={projects}/>
             <ContactMe />
         </>
     )

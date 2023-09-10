@@ -37,13 +37,13 @@ export default function SplashScreen({ endLoading }) {
             <Head>
                 <title>Portfolio</title>
                 <meta name="description" content="This is my portfolio website showcasing my work and skills."/>
-                <link rel="icon" href="/space-ship.webp" />
+                <link rel="icon" href="/bm-logo-hd.webp" />
                 <meta name="application-name" content="Portfolio" />
                 <meta name="robots" content="noindex, nofollow" />
             </Head>
 
             <div className="splash-screen">
-                <Image id="logo" src='/next.svg' width={100} height={100} alt="NEXT.JS LOGO" />
+                <Image id="logo" src='/bm-logo-hd.webp' width={350} height={300} alt="Bader LOGO" />  
             </div>
         </>
     )

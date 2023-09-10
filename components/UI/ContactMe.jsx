@@ -3,15 +3,15 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
-import { AiOutlineMail} from 'react-icons/ai';
-import Link from 'next/link';
+import { AiOutlineMail } from 'react-icons/ai';
+
 
 export default function ContactMe() {
 
     const [showDiv, setShowDiv] = useState(false);
     const [ref, inView] = useInView({
         triggerOnce: false,
-        rootMargin: "-100px 0px", 
+        rootMargin: "-100px 0px",
         threshold: 0
     });
 
@@ -22,22 +22,22 @@ export default function ContactMe() {
             }, 500); // Adjust the delay duration as needed
             return () => clearTimeout(timeoutId);
         }
-    }, [inView]);
+    }, [inView])
     return (
         <>
 
-            <SimpleGrid w={"full"} h={"full"} columns={1} justifyItems="center" mx={"auto"} p={10} >
-                <Heading color={"#fff"} mx={"auto"} textAlign={"center"} h={"auto"}>
-                    Feel Free to Get in touch
-                </Heading>
+            <SimpleGrid w={"full"} h={"full"} columns={1} justifyItems="center" mx={"auto"} mt={10} p={10} >
+
                 <Box ref={ref} w={["100%", "80%", "30%"]} h={"auto"}>
                     <motion.div
                         initial={{ translateX: "-100%", opacity: 0 }}
                         animate={{ translateX: inView ? "0%" : "-100%", opacity: inView ? 1 : 0 }}
                         transition={{ duration: 1 }}
                     >
+                        <Heading color={"#000"} mx={"auto"} textAlign={"center"} h={"auto"} fontSize={[18, 24]}>
+                            Get to know me better through my Social Media platforms ⬇️
+                        </Heading>
                         <Image rounded={"xl"} loading={"lazy"} w={"100%"} h={"100%"} src="/mobile-marketing.svg" alt="Animated SVG" />
-                        
                     </motion.div>
 
                 </Box>
@@ -68,14 +68,13 @@ export default function ContactMe() {
                             <Button colorScheme="blue"
                                 color="white"
                                 bg="blue.300"
-                                _hover={{ bg:"blue.500" }}
+                                _hover={{ bg: "blue.500" }}
                                 _active={{ bg: "gray.800" }}
                                 _focus={{ boxShadow: "outline" }} leftIcon={<AiOutlineMail />}>
-                               Email Me
+                                Email Me
                             </Button>
                         </ChakraLink>
                     </HStack>
-
                 </Box>
             </SimpleGrid>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button as ChakraButton, Link as ChakraLink } from '@chakra-ui/react';
+import { Button as ChakraButton } from '@chakra-ui/react';
 import Link from 'next/link';
 
 
