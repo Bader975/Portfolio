@@ -6,19 +6,23 @@ export default function About() {
     return (
         <>
 
-            <Box p={8} id="about" pt={[100, 120]} fontSize="lg"  >
-                <Heading as="h1" fontSize="2xl" mb={4} >
+            <Box p={8} id="about" pt={[100, 120]} fontSize="lg" >
+                <Heading as="h1" fontSize="2xl"  >
                     About Me
                 </Heading>
                 <Divider/>
-                <Image src="/me-no-bg.webp" alt="Bader Mohammad" mb={4} shadow={"lg"} h={"100%"} mixBlendMode={"darken"} borderRadius="lg" boxSize={"300px"} />
-                <Box textAlign={"left"} w={["100%", "65%"]}>
+                <Box>
+                {/* maxH={"400px"} */}
+                <Image src="/bader-dressed-saudi.webp" alt="Bader Mohammad" mb={4}  w={"auto"} h={"auto"}  boxSize={["300px","450px"]} />
+
+                </Box>
+                <Box textAlign={"left"} w={["100%", "60%"]}>
 
                     <Text fontSize="xl" fontWeight="bold" mb={1} >
                         Hi, I'm Bader Mohammad!
                     </Text>
                  
-                    <Text textIndent={16}>
+                    <Text>
                         I'm full-stack web developer specializing in  <Text as="span" fontWeight="bold">JavaScript</Text> , <Text as="span" fontWeight="bold">TypeScript</Text>  , I strive to create innovative and high-quality web applications. My focus is on delivering exceptional user experiences through clean code and efficient solutions 💡.
                     </Text>
                     <Text mt={4} >

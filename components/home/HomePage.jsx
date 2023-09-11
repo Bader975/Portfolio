@@ -3,7 +3,7 @@ import TypeWriter from '../animation/TypeWriter'
 import Content from './Content'
 import ButtonContainer from './ButtonContainer'
 import Projects from '../projects/Projects'
-import ContactMe from '../ui/ContactMe';
+import ContactMe from '../animation/ContactMe';
 import {  Image, Box } from '@chakra-ui/react';
 import About from '../about/About'
 import Skills from '../skills/Skills'

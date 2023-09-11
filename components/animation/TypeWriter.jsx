@@ -9,6 +9,7 @@ export default function TypeWriter() {
     return (
 
         <div className={classes.container}>
+           
             <span className={classes.typeWriter}>
                 I'm
                 <Typewriter

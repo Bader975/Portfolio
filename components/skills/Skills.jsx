@@ -15,8 +15,8 @@ export default function Skills() {
     return (
         <>
 
-            <Box p={8} mt={5} fontFamily="Montserrat" pb={0}>
-                <Heading as="h2" size="lg" mb={4}>
+            <Box p={8} fontFamily="Montserrat" pt={[100, 120]} pb={0} id="skills">
+                <Heading as="h1" fontSize="2xl" mb={4}>
                     Skills
                 </Heading>
                 <Divider />

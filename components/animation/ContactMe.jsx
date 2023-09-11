@@ -46,7 +46,7 @@ export default function ContactMe() {
                     <HStack >
                         {/* -------------Linkedin------------------ */}
                         <ChakraLink href={"https://www.linkedin.com/in/bader-mohammad-al/"} isExternal>
-                            <Button colorScheme='linkedin' leftIcon={<FaLinkedin />}>
+                            <Button bg={"#2368A9"} color={"#fff"} leftIcon={<FaLinkedin />}>
                                 Linkedin
                             </Button>
                         </ChakraLink>
@@ -61,13 +61,11 @@ export default function ContactMe() {
                                 Github
                             </Button>
                         </ChakraLink>
+                        
                         {/* ------------Email-------------- */}
-
-
                         <ChakraLink href={"mailto:bader97alyami@hotmail.com"} isExternal >
                             <Button colorScheme="blue"
-                                color="white"
-                                bg="blue.300"
+                                bg={"#0666E5"} color={"#fff"}
                                 _hover={{ bg: "blue.500" }}
                                 _active={{ bg: "gray.800" }}
                                 _focus={{ boxShadow: "outline" }} leftIcon={<AiOutlineMail />}>

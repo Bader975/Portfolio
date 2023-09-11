@@ -15,11 +15,11 @@ export default function Content() {
                     <Spacer />
                     <Text display={"inline"}>
                         I'm so happy that you visited my Portfolio 😍,
-                        My name is Bader Mohammad and I'm </Text><Text display="inline"  fontWeight={"600"} color="yellow.400">
+                        My name is Bader Mohammad and I'm </Text><Text display="inline"  fontWeight={"600"} color="#79672F">
                           {" "} JavaScript  
                     </Text>{" "}
                    {"  "} and {" "}
-                    <Text display="inline" color="blue.200" fontWeight={"600"} mr={1}>
+                    <Text display="inline" color="#5353EA" fontWeight={"600"} mr={1}>
                         TypeScript {" "}
                     </Text>
                     <Text display={"inline"}>
