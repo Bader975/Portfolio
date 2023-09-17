@@ -12,7 +12,7 @@ export default function ImageComp({ image }) {
                 maxH={"50%"}
                 objectFit="contain"
                 transition="transform 0.8s"
-                alt={"Image of One my skills"}
+                alt={"Image of One my Projects"}
             />
         </>
     )

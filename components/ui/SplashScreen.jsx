@@ -29,9 +29,10 @@ export default function SplashScreen({ endLoading }) {
                 complete: () => endLoading(),
 
 
-                // Animation complete, navigate to the main app screen or perform any necessary actions    
+                // Animation complete 
             });
     }, []);
+    
     return (
         <>
             <Head>

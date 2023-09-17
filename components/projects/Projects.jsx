@@ -1,23 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import ImageComp from '../ui/ImageComp';
 import { Box, SimpleGrid, Divider, Text } from '@chakra-ui/react'
-
-
 import Link from 'next/link';
-const bg = "#00000080"
+
+
 
 
 
 
 export default function Skill({ projects }) {
-    const [isDomLoaded, setIsDomLoaded] = useState(false)
-
-
-    useEffect(() => {
-        setIsDomLoaded(true)
-    }, [])
-
-
+   
 
 
     return (

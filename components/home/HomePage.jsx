@@ -19,9 +19,9 @@ export default function HomePage({projects}) {
             {/* ------------------Hero Image-------------------------------------  */}
             <Box w={"100%"}  h={["100%",600]} shadow={"md"} bg={"#00000080"}>
                 <Image w={"100%"} h={"100%"}  objectFit={"cover"} fetchpriority='high' pos={"relative"} zIndex={"-2"}  alt="Banner image"  src="/laptop image.webp" />
+            {/* ------------------Hero Image-------------------------------------  */}
                 <TypeWriter />
             </Box>
-            {/* ------------------Hero Image-------------------------------------  */}
             <ButtonContainer />
             <Content />
             <About/>
