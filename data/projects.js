@@ -1,12 +1,6 @@
 
 export const projectsArray = [
-    {
-        id: 1,
-        title: "Tuwaiq Projects",
-        discription: " Website used (React.TS - Node.js - Express.js) helps Tuwaiq students to get project ideas provided by companies, upload their projects, and display them for any company. They can also modify their projects if they wish.",
-        href: "https://github.com/Bader975/Tuwaiq-Projects",
-        image: "/tuwaiq-projets.webp"
-    },
+   
     {
         id: 2,
         title: "Invest With Us",
@@ -22,12 +16,13 @@ export const projectsArray = [
         image: "/nextjs-meetup.webp"
     },
     {
-        id: 4,
-        title: "NEXT.JS Auth ",
-        discription: "Used NextAuth to implement login and logout operations and sessions",
-        href: "https://github.com/Bader975/NEXT-Auth",
-        image: "/nextjs-auth.webp"
+        id: 1,
+        title: "Tuwaiq Projects",
+        discription: " Website used (React.TS - Node.js - Express.js) helps Tuwaiq students to get project ideas provided by companies, upload their projects, and display them for any company. They can also modify their projects if they wish.",
+        href: "https://github.com/Bader975/Tuwaiq-Projects",
+        image: "/tuwaiq-projets.webp"
     },
+   
     {
         id: 5,
         title: "Aramco Direct Hires Dashboard",
@@ -57,5 +52,13 @@ export const projectsArray = [
         discription: "Our site offers a rating of local restaurants and hotels in order to search for the best with ease.",
         href: "https://bader10alyami.000webhostapp.com/Ratings/restaurantsHome.html",
         image: "/rateme.webp"
-    }
+    },
+    {
+        id: 4,
+        title: "NEXT.JS Auth ",
+        discription: "Used NextAuth to implement login and logout operations and sessions",
+        href: "https://github.com/Bader975/NEXT-Auth",
+        image: "/nextjs-auth.webp"
+    },
+   
 ]

@@ -9,7 +9,7 @@ export default function Content() {
         <>
             <SimpleGrid w={"full"} h={"full"} columns={1} mx={"auto"} pt={10} >
                 {/* bg={bg} */}
-                <Box color={"#000"} fontSize={[18, 20, 25]} textAlign={"center"} mx={"auto"} p={5} pos={"static"} rounded={"xl"} w={["90%", "80%"]} shadow={"xl"} >
+                <Box color={"#000"} fontSize={[18, 20, 25]} textAlign={"center"} mx={"auto"} p={5} pos={"static"} rounded={"xl"} w={["90%", "80%"]} shadow={"md"} >
                     <Text>
                         Hi,👋
                     </Text>
@@ -31,7 +31,7 @@ export default function Content() {
                 </Box >
 
 
-                <Box mx={"auto"} p={[5, 5]} w={["90%", "80%"]} rounded={"xl"} shadow={"xl"} mt={10}>
+                <Box mx={"auto"} p={[5, 5]} w={["90%", "80%"]} rounded={"xl"} shadow={"md"} mt={10}>
                     <Text color="#000" my="auto" fontSize={[18, 20, 25]} opacity={0.9} textAlign="center" >
                         I used for this Project NEXT.js{" "}
                         <Icon as={SiNextdotjs} color="black.500" mr={1} /> Page Router,

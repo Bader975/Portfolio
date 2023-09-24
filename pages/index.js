@@ -1,5 +1,5 @@
-import HomePage from '../components/home/HomePage';
-import { projectsArray } from '../data/projects';
+import HomePage from '@/components/home/HomePage';
+import { projectsArray } from '@/data/projects';
 import Head from 'next/head';
 
 export default function Home({ projects }) {

@@ -27,24 +27,26 @@ export default function SplashScreen({ endLoading }) {
                 delay: 1000,
                 duration: 1000,
                 complete: () => endLoading(),
-
-
                 // Animation complete 
             });
     }, []);
-    
+
     return (
         <>
             <Head>
                 <title>Portfolio</title>
-                <meta name="description" content="This is my portfolio website showcasing my work and skills."/>
+                <meta name="description" content="This is my portfolio website showcasing my work and skills." />
                 <link rel="icon" href="/bm-logo-hd.webp" />
                 <meta name="application-name" content="Portfolio" />
                 <meta name="robots" content="noindex, nofollow" />
             </Head>
 
             <div className="splash-screen">
-                <Image id="logo" src='/bm-logo-hd.webp' width={350} height={300} alt="Bader LOGO" />  
+                {/* <Image id="logo" src='/bm-logo-hd.webp' width={350} height={300} alt="Bader LOGO" />   */}
+                <div id="logo">
+                    <Image id="logo" src='/bm-logo-hd.webp' width={350} height={300} alt="Bader LOGO" />
+                    <p>Bader Moahmmad saleh alyami</p>
+                </div>
             </div>
         </>
     )

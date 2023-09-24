@@ -4,17 +4,18 @@ import classes from './typeWriter.module.css'
 
 
 export default function TypeWriter() {
-    const arrOfStrings = ['Bader Alyami', 'Web Devoleper', 'REACT Devoleper', 'JS/TS Devoleper'];
-   
+
+    // const arrOfStrings = ['Bader Alyami', 'Web Devoleper', 'REACT Devoleper', 'JS/TS Devoleper'];
+
     return (
 
         <div className={classes.container}>
-           
+
             <span className={classes.typeWriter}>
                 I'm
                 <Typewriter
                     options={{
-                        strings: arrOfStrings,
+                        strings: ['Bader Alyami', 'Web Devoleper', 'REACT Devoleper', 'JS/TS Devoleper'],
                         autoStart: true,
                         loop: true,
                     }}

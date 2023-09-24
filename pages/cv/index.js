@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import Cv from '../../components/cv/Cv';
+import Cv from '@/components/cv/Cv';
 
 export default function CvPage() {
   return (

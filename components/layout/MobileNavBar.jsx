@@ -7,11 +7,7 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 export default function MobileNavBar() {
     const { isOpen, onToggle } = useDisclosure();
     const router = useRouter()
-    // Store The Hover Efffects  
-    const HoverEfffects = {
-        color: "#000", opacity: 1, transform: "scale(1.1)", transition:
-            "transform 0.5s"
-    }
+   
 
     return (
         <>
@@ -22,7 +18,7 @@ export default function MobileNavBar() {
                 display={{ base: "block", md: "none" }}
                 onClick={onToggle}
                 border={"none"}
-                ms={{ base: "180", sm: "300", lg: "100" }}
+                ms={{ base: "200", sm: "300", lg: "100" }}
                 zIndex={isOpen ? "99" : "1"}
                 css={`
           background-color: transparent;
@@ -53,12 +49,12 @@ export default function MobileNavBar() {
                 >
                     <Link href={router.pathname !== "/" ? "/" : "/#my-projects"} passHref>
                         <ChakraLink
-                            _hover={HoverEfffects}
+
                             as="p"
                             color="#153243"
                             onClick={() => {
                                 onToggle();
-                                // router.pathname !== "/" ? router.push("/") : router.push(`/#my-projects`)
+                              
                             }}
                             rounded="xl"
                             fontSize={18}
@@ -71,7 +67,7 @@ export default function MobileNavBar() {
 
                     <Link href="/cv" passHref>
                         <ChakraLink
-                            _hover={HoverEfffects}
+
                             rounded="xl"
                             color="#000"
                             opacity={0.9}
@@ -80,7 +76,7 @@ export default function MobileNavBar() {
                             fontSize={18}
                             onClick={() => {
                                 onToggle();
-                                // router.push("/cv");
+                                
                             }}
                         >
                             Take a look at my CV
@@ -88,7 +84,7 @@ export default function MobileNavBar() {
                     </Link>
                     <Link href={router.pathname !== "/" ? "/" : "/#skills"} passHref>
                         <ChakraLink
-                            _hover={HoverEfffects}
+
                             rounded="xl"
                             as="p"
                             color="#000"
@@ -98,7 +94,7 @@ export default function MobileNavBar() {
                             fontSize={18}
                             onClick={() => {
                                 onToggle();
-                                // router.push("/about");
+                              
                             }}
                         >
                             My Skills
@@ -107,7 +103,7 @@ export default function MobileNavBar() {
 
                     <Link href={router.pathname !== "/" ? "/" : "/#about"} passHref>
                         <ChakraLink
-                            _hover={HoverEfffects}
+
                             rounded="xl"
                             as="p"
                             color="#000"

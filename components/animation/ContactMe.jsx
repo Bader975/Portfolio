@@ -61,7 +61,7 @@ export default function ContactMe() {
                                 Github
                             </Button>
                         </ChakraLink>
-                        
+
                         {/* ------------Email-------------- */}
                         <ChakraLink href={"mailto:bader97alyami@hotmail.com"} isExternal >
                             <Button colorScheme="blue"
