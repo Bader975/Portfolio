@@ -4,10 +4,14 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
+
+
+
+
 export default function MobileNavBar() {
     const { isOpen, onToggle } = useDisclosure();
     const router = useRouter()
-   
+
 
     return (
         <>
@@ -41,7 +45,7 @@ export default function MobileNavBar() {
                     w={"50%"}
                     rounded="md"
                     boxShadow="md"
-                    zIndex={isOpen ? "98" : "-1"} // Adjust the z-index value
+                    zIndex={isOpen ? "98" : "-1"} 
                     visibility={isOpen ? "visible" : "hidden"}
                     opacity={isOpen ? 1 : 0}
                     transform={`translateY(${isOpen ? "0" : "-100%"})`}
@@ -54,7 +58,7 @@ export default function MobileNavBar() {
                             color="#153243"
                             onClick={() => {
                                 onToggle();
-                              
+
                             }}
                             rounded="xl"
                             fontSize={18}
@@ -76,7 +80,7 @@ export default function MobileNavBar() {
                             fontSize={18}
                             onClick={() => {
                                 onToggle();
-                                
+
                             }}
                         >
                             Take a look at my CV
@@ -94,7 +98,7 @@ export default function MobileNavBar() {
                             fontSize={18}
                             onClick={() => {
                                 onToggle();
-                              
+
                             }}
                         >
                             My Skills
@@ -113,7 +117,7 @@ export default function MobileNavBar() {
                             fontSize={18}
                             onClick={() => {
                                 onToggle();
-                                // router.push("/about");
+                              
                             }}
                         >
                             About Me
