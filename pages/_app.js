@@ -27,14 +27,14 @@ export default function App({ Component, pageProps }) {
                 <meta property="og:type" content="website"/>
                   <meta property="og:title" content="Bader's Mohammad Portfolio"/>
                     <meta property="og:description" content="This is my portfolio website showcasing my work and skills."/>
-                      <meta property="og:image" content="/social-media-image.webp"/>
+                      <meta property="og:image" content="https://github.com/Bader975/NEXT-Auth/assets/80196102/d019df5c-5d9d-44c7-bf8d-63f95fb5bb83"/>
                         {/* <!-- Twitter Meta Tags --> */}
                         <meta name="twitter:card" content="summary_large_image"/>
                           <meta property="twitter:domain" content="portfolio-bader.online"/>
                             <meta property="twitter:url" content="https://www.portfolio-bader.online/"/>
                               <meta name="twitter:title" content="Bader's Mohammad Portfolio"/>
                                 <meta name="twitter:description" content="This is my portfolio website showcasing my work and skills."/>
-                                  <meta name="twitter:image" content="/social-media-image.webp"/>
+                                  <meta name="twitter:image" content="https://github.com/Bader975/NEXT-Auth/assets/80196102/d019df5c-5d9d-44c7-bf8d-63f95fb5bb83"/>
 
                                 </Head>
 
