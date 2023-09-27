@@ -17,7 +17,7 @@ export default function HomePage({ projects }) {
     return (
         <>
             {/* ------------------Hero Image-------------------------------------  */}
-            <Box w={"100%"} h={["100%", 600]} shadow={"md"} bg={"#00000080"}>
+            <Box  as="section" aria-label="hero-section"w={"100%"} h={["100%", 600]} shadow={"md"} bg={"#00000080"}>
                 <Image w={"100%"} h={"100%"} objectFit={"cover"} fetchpriority='high' pos={"relative"} zIndex={"-2"} alt="Banner image" src="/laptop image.webp" />
                 {/* ------------------Hero Image-------------------------------------  */}
                 <TypeWriter />
@@ -27,6 +27,7 @@ export default function HomePage({ projects }) {
             <About />
             <Skills />
             <Projects projects={projects} />
+            
             <ContactMe />
 
         </>

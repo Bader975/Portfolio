@@ -46,6 +46,7 @@ export const projectsArray = [
         href: "https://bader10alyami.000webhostapp.com/Aramco%20Pages/PDF%20Viewer/pdf.html",
         image: "/aramco-pdf-viewer.webp"
     },
+    
     {
         id: 8,
         title: "RATEME.com",
@@ -53,6 +54,7 @@ export const projectsArray = [
         href: "https://bader10alyami.000webhostapp.com/Ratings/restaurantsHome.html",
         image: "/rateme.webp"
     },
+
     {
         id: 4,
         title: "NEXT.JS Auth ",

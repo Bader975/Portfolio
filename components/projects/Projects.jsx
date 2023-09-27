@@ -19,7 +19,7 @@ export default function Skill({ projects }) {
             <Text color={"#000"} textAlign={"left"} rounded={"xl"} pt={[100, 120]} ml={10} fontWeight={"bold"} fontSize={[20, 22]} id={"my-projects"}> My Projects 💼: </Text>
             <Divider />
             {/* ---------------------------Grid---------------*/}
-            <SimpleGrid w={"100%"} h={"100%"} columns={[1, 1, 2, 2, 3]} rounded={"xl"} mx={"auto"} p={[5, 10]} mb={[100, 200]} spacingX={5} spacingY={10} >
+            <SimpleGrid  as="section" aria-label="projects-section" w={"100%"} h={"100%"} columns={[1, 1, 2, 2, 3]} rounded={"xl"} mx={"auto"} p={[5, 10]} mb={[100, 200]} spacingX={5} spacingY={10} >
 
                 {/* the List of Projecs  */}
                 {projects.map((project) => (
