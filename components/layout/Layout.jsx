@@ -14,19 +14,21 @@ export default function Layout({ children }) {
     const [isLoading, setIsLoading] = useState(isHome)
 
 
-    
+
     useEffect(() => {
         if (isLoading) return;
     }, [isLoading])
 
-    
+
     return (
         <>
             {/* {isLoading && isHome ? <div ><SplashScreen endLoading={() => setIsLoading(false)} /></div>  : <> */}
-                <NavBar />
-                <main>{children}</main>
+           
+            <NavBar />
+           
+            <>{children}</>
             {/* </>} */}
-          
+
         </>
     )
 }

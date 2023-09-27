@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.portfolio-bader.online
+
+# Sitemaps
+Sitemap: https://www.portfolio-bader.online/sitemap.xml

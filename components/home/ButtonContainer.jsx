@@ -13,7 +13,7 @@ export default function ButtonContainer() {
     return (
         <>
 
-            <SimpleGrid w={"full"} h={"full"} columns={1} mt={8} zIndex={2} pos={"relative"} spacing={10} px={5}>
+            <SimpleGrid w={"full"} h={"full"} columns={1} mt={8} zIndex={2} pos={"relative"} spacing={5} px={2}>
 
                 <Stack mx={"auto"} direction={['column', 'row']} spacing={5} alignSelf={"center"} >
                     <ButtonComp _hover={{

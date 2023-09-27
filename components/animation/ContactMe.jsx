@@ -26,7 +26,7 @@ export default function ContactMe() {
     return (
         <>
 
-            <SimpleGrid w={"full"} h={"full"} columns={1} justifyItems="center" mx={"auto"} mt={10} p={10} >
+            <SimpleGrid as="section" aria-label="contactMe-section"  w={"full"} h={"full"} columns={1} justifyItems="center" mx={"auto"} mt={10} p={10} >
 
                 <Box ref={ref} w={["100%", "80%", "30%"]} h={"auto"}>
                     <motion.div
@@ -42,7 +42,7 @@ export default function ContactMe() {
 
                 </Box>
                 {/* -------------Social Buttons------------------- */}
-                <Box>
+                <Box as='footer'>
                     <HStack >
                         {/* -------------Linkedin------------------ */}
                         <ChakraLink href={"https://www.linkedin.com/in/bader-mohammad-al/"} isExternal>
