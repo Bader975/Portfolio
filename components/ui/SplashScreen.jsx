@@ -36,9 +36,8 @@ export default function SplashScreen({ endLoading }) {
             <Head>
                 <title>Bader's Mohammad Portfolio</title>
                 <meta name="description" content="This is my portfolio website showcasing my work and skills." />
-                <link rel="icon" href="/bm-logo-hd.webp" />
+                {/* <link rel="icon" href="/bm-logo-hd.webp" /> */}
                 <meta name="application-name" content="Portfolio" />
-                <meta name="robots" content="noindex, nofollow" />
             </Head>
 
             <section aria-label="splash-screen-section" className="splash-screen">

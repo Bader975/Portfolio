@@ -1,26 +1,52 @@
-import React from 'react'
-import { Flex, IconButton, Slide, useDisclosure, Link as ChakraLink } from "@chakra-ui/react";
+import React, { useRef } from 'react';
+import { Flex, IconButton, Slide, useDisclosure, Link as ChakraLink, useOutsideClick } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { HamburgerIcon } from "@chakra-ui/icons";
 
-
-
-
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
 export default function MobileNavBar() {
-    const { isOpen, onToggle } = useDisclosure();
-    const router = useRouter()
+    const { isOpen, onToggle, onClose } = useDisclosure();
+    const router = useRouter();
+    const menuRef = useRef();
+
+
+
+    function closeMenu() {
+        if (isOpen) {
+            onToggle();
+        }
+
+    };
+
+    const handleMenuIconClick = () => {
+        onToggle();
+
+    };
+
+
+    useOutsideClick({
+        ref: menuRef,
+        handler: closeMenu
+    });
+
+
+
+
 
 
     return (
         <>
+
+            {/* {console.log(isOpen)} */}
+
             <IconButton
-                icon={<HamburgerIcon boxSize={6} />}
+                icon={isOpen ? <CloseIcon boxSize={4} /> : <HamburgerIcon boxSize={6} />}
                 aria-label="Mobile Menu"
+                ref={isOpen ? menuRef : null}
                 variant={"outline"}
                 display={{ base: "block", md: "none" }}
-                onClick={onToggle}
+                onClick={handleMenuIconClick}
                 border={"none"}
                 ms={{ base: "200", sm: "300", lg: "100" }}
                 zIndex={isOpen ? "99" : "1"}
@@ -35,31 +61,30 @@ export default function MobileNavBar() {
         `}
             />
 
+            {/* {isOpen && ( */}
+
             <Slide direction="top" in={isOpen}>
                 <Flex
+                    // ref={menuRef}
                     direction="column"
-                    mt={10}
+                    mt={14}
                     bg="white"
                     p={4}
                     ms={"auto"}
                     w={"50%"}
                     rounded="md"
                     boxShadow="md"
-                    zIndex={isOpen ? "98" : "-1"} 
-                    visibility={isOpen ? "visible" : "hidden"}
+                    zIndex={isOpen ? "99" : "1"}
                     opacity={isOpen ? 1 : 0}
-                    transform={`translateY(${isOpen ? "0" : "-100%"})`}
-                    transition="transform 0.5s ease-in-out, opacity 0.3s ease-in-out"
+
+
+
                 >
                     <Link href={router.pathname !== "/" ? "/" : "/#my-projects"} passHref>
                         <ChakraLink
-
                             as="p"
-                            color="#153243"
-                            onClick={() => {
-                                onToggle();
-
-                            }}
+                            color="#000"
+                            onClick={closeMenu}
                             rounded="xl"
                             fontSize={18}
                             opacity={0.9}
@@ -71,24 +96,20 @@ export default function MobileNavBar() {
 
                     <Link href="/cv" passHref>
                         <ChakraLink
-
                             rounded="xl"
                             color="#000"
                             opacity={0.9}
                             as="p"
                             p={2}
                             fontSize={18}
-                            onClick={() => {
-                                onToggle();
-
-                            }}
+                            onClick={closeMenu}
                         >
                             Take a look at my CV
                         </ChakraLink>
                     </Link>
+
                     <Link href={router.pathname !== "/" ? "/" : "/#skills"} passHref>
                         <ChakraLink
-
                             rounded="xl"
                             as="p"
                             color="#000"
@@ -96,10 +117,7 @@ export default function MobileNavBar() {
                             link="/"
                             p={2}
                             fontSize={18}
-                            onClick={() => {
-                                onToggle();
-
-                            }}
+                            onClick={closeMenu}
                         >
                             My Skills
                         </ChakraLink>
@@ -107,7 +125,6 @@ export default function MobileNavBar() {
 
                     <Link href={router.pathname !== "/" ? "/" : "/#about"} passHref>
                         <ChakraLink
-
                             rounded="xl"
                             as="p"
                             color="#000"
@@ -115,17 +132,16 @@ export default function MobileNavBar() {
                             link="/"
                             p={2}
                             fontSize={18}
-                            onClick={() => {
-                                onToggle();
-                              
-                            }}
+                            onClick={closeMenu}
                         >
                             About Me
                         </ChakraLink>
                     </Link>
-
                 </Flex>
             </Slide>
+
+
+
         </>
     )
 }

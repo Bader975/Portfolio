@@ -35,7 +35,7 @@ export default function Content() {
                     <Text color="#000" my="auto" fontSize={[18, 20, 25]} opacity={0.9} textAlign="center" >
                         I used for this Project NEXT.js{" "}
                         <Icon as={SiNextdotjs} color="black.500" mr={1} />,
-                        NEXT.js is so powerful because of Server-side Rendering (SSR) and Search engine optimization (SEO){" "}
+                        it's so powerful because of Server-side Rendering (SSR) and Search engine optimization (SEO){" "}
                         <Icon as={PiEngineFill} color="black.500" mr={1} />
 
                     </Text>

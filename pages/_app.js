@@ -4,11 +4,13 @@ import { ChakraProvider } from '@chakra-ui/react';
 import Head from 'next/head';
 import { Inter } from 'next/font/google'
 
+
 const inter = Inter({
   subsets: ['latin'],
-  display: 'optional',
+  display: 'swap',
 
 });
+
 
 export default function App({ Component, pageProps }) {
   return (
@@ -31,9 +33,9 @@ export default function App({ Component, pageProps }) {
             <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
             <meta name="theme-color" content="#ffffff" />
             {/* The FavIcon */}
-            
 
 
+          
             {/*  <!-- GOOGLE SEO Meta Tags --> */}
             <meta name="google-site-verification" content="OQtDBl4loczi5G1TaxIPG9iKNkDrpy0cfg16wleS3Qc" />
 
