@@ -5,12 +5,12 @@ import React, { useState, useEffect, useContext } from 'react';
 import { usePathname } from 'next/navigation';
 import SplashScreen from '../components/ui/SplashScreen';
 import { SplashScreenContext } from '../context/SplashScreenContext';
-import Navbar from '../components/layout/NavBar';
+
 
 export default function Home({ projects }) {
 
   const { splashScreenShown, updateSplashScreenShown } = useContext(SplashScreenContext);
-  
+
   const pathName = usePathname();
   const isHome = pathName === '/';
   const [isLoading, setIsLoading] = useState(isHome);
@@ -43,7 +43,7 @@ export default function Home({ projects }) {
         </div>
         : (
           <>
-          <Navbar/>
+          
             <HomePage projects={projects} />
           </>
 
