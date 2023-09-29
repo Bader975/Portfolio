@@ -8,37 +8,44 @@ import { Text } from "@chakra-ui/react";
 export default function SplashScreen({ endLoading }) {
 
 
+  // useEffect(() => {
+
+  //   // Animation logic using anime.js
+  //   const animation = anime.timeline({
+  //     easing: 'easeOutExpo', // Easing function for smoother animation
+
+  //   });
+  //   animation
+  //     .add({
+  //       targets: '#logo',
+  //       translateY: ['-100%', '0%'],
+  //       opacity: [0, 1],
+  //       duration: 1500,
+  //     })
+  //     .add({
+  //       targets: '#text',
+  //       translateY: ['-50%', '5%'],
+  //       opacity: [0, 1],
+  //       duration: 1000,
+
+  //     })
+  //     .add({
+  //       targets: '#logo',
+  //       scale: ["1", "1.8"],
+  //       opacity: [1, 0],
+  //       delay: 1000,
+  //       duration: 1000,
+  //       complete: () => endLoading(),
+  //       // Animation complete
+  //     });
+  // }, []);
+
   useEffect(() => {
-
-    // Animation logic using anime.js
-    const animation = anime.timeline({
-      easing: 'easeOutExpo', // Easing function for smoother animation
-
-    });
-    animation
-      .add({
-        targets: '#logo',
-        translateY: ['-100%', '0%'],
-        opacity: [0, 1],
-        duration: 1500,
-      })
-      .add({
-        targets: '#text',
-        translateY: ['-50%', '5%'],
-        opacity: [0, 1],
-        duration: 1000,
-
-      })
-      .add({
-        targets: '#logo',
-        scale: ["1", "1.8"],
-        opacity: [1, 0],
-        delay: 1000,
-        duration: 1000,
-        complete: () => endLoading(),
-        // Animation complete
-      });
-  }, []);
+    setTimeout(() => {
+      endLoading()
+    }, 1000
+    )
+  }, [])
 
   return (
     <>

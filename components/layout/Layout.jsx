@@ -13,8 +13,8 @@ const DynamicSplashScreen = dynamic(
 export default function Layout({ children }) {
   const pathName = usePathname();
   const isHome = pathName === '/';
-//   const [isLoading, setIsLoading] = useState(isHome);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(isHome);
+//   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (isLoading) return;
@@ -24,7 +24,7 @@ export default function Layout({ children }) {
     <>
       {isLoading && isHome ? 
         <div>
-            {/* <DynamicSplashScreen endLoading={() => setIsLoading(false)} /> */}
+            <DynamicSplashScreen endLoading={() => setIsLoading(false)} />
         </div>
        : (
         <>
