@@ -1,19 +1,19 @@
-import React, { useEffect} from 'react';
+import React, { useEffect } from 'react';
 import anime from 'animejs';
 import Image from 'next/image';
 import Head from 'next/head';
-import { Text} from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 
 
 export default function SplashScreen({ endLoading }) {
-   
+
 
   useEffect(() => {
-    
+
     // Animation logic using anime.js
     const animation = anime.timeline({
       easing: 'easeOutExpo', // Easing function for smoother animation
-     
+
     });
     animation
       .add({
@@ -27,7 +27,7 @@ export default function SplashScreen({ endLoading }) {
         translateY: ['-50%', '5%'],
         opacity: [0, 1],
         duration: 1000,
-       
+
       })
       .add({
         targets: '#logo',
@@ -58,10 +58,10 @@ export default function SplashScreen({ endLoading }) {
             alt="Bader LOGO"
             width={350}
             height={300}
-            priority={true} 
+            priority={true}
             style={{ width: '100%', height: 'auto' }}
           />
-         
+
           <Text id="text" >Welcome</Text>
         </div>
       </section>

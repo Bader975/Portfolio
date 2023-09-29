@@ -23,7 +23,7 @@ export default function Layout({ children }) {
     <>
       {isLoading && isHome ? 
         <div>
-            <DynamicSplashScreen endLoading={() => setIsLoading(false)} />
+            {/* <DynamicSplashScreen endLoading={() => setIsLoading(false)} /> */}
         </div>
        : (
         <>
