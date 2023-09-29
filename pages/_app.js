@@ -69,11 +69,6 @@ export default function App({ Component, pageProps }) {
                   "alternateName": ["BM", "BADER", "Bader's Portfolio"],
                   "url": "https://www.portfolio-bader.online",
                   "image": "https://www.portfolio-bader.online/bm-logo-remove-bg.png",
-                  "jobTitle": "Full Stack Web Developer",
-                  "worksFor": {
-                    "@type": "Organization",
-                    "name": "Freelancer"
-                  }
                 }
               `,
             }}
