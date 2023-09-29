@@ -12,17 +12,8 @@ export default function Layout({ children }) {
     const pathName = usePathname();
     const isHome = pathName === "/";
     const [isLoading, setIsLoading] = useState(isHome);
-    const [showApp, setShowApp] = useState(false);
 
-    //   useEffect(() => {
-    //     if (!isLoading) {
-    //       const delay = setTimeout(() => {
-    //         setShowApp(true);
-    //       }, 1000);
 
-    //       return () => clearTimeout(delay);
-    //     }
-    //   }, [isLoading]);
     useEffect(() => {
         if (isLoading) return;
     }, [isLoading])
@@ -35,7 +26,9 @@ export default function Layout({ children }) {
     return (
         <>
             <NavBar />
-            {showApp && <>{children}</>}
+          <>
+          {children}
+          </>
         </>
     );
 }
