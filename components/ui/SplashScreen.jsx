@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect} from 'react';
 import anime from 'animejs';
 import Image from 'next/image';
 import Head from 'next/head';
