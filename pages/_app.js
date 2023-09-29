@@ -68,7 +68,7 @@ export default function App({ Component, pageProps }) {
                   "name": "Bader Mohammad Portfolio",
                   "alternateName": ["BM", "BADER", "Bader's Portfolio"],
                   "url": "https://www.portfolio-bader.online",
-                  "image": "https://www.portfolio-bader.online/bm-logo-remove-bg.png",
+                  "image": "https://www.portfolio-bader.online/bm-logo-remove-bg.png"
                 }
               `,
             }}
