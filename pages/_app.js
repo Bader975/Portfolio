@@ -4,7 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import Head from 'next/head';
 import { Inter } from 'next/font/google'
 import Script from "next/script";
-import { SplashScreenProvider } from '../context/SplashScreenContext';
+import { SplashScreenProvider } from '../context-api/SplashScreenContext';
 
 const inter = Inter({
   subsets: ['latin'],
