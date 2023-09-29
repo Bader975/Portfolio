@@ -20,18 +20,9 @@ export default function Layout({ children }) {
 
 
 
-    const [showApp, setShowApp] = useState(false);
-
-  useEffect(() => {
-    if (!isLoading) {
-
-      const delay = setTimeout(() => {
-        setShowApp(true);
-      }, 200); 
-
-      return () => clearTimeout(delay);
-    }
-  }, [isLoading]);
+    useEffect(() => {
+        if (isLoading) return;
+    }, [isLoading])
 
 
     return (
@@ -40,7 +31,7 @@ export default function Layout({ children }) {
            
             <NavBar />
            
-         {showApp && <>{children}</>}
+            <>{children}</>
 
             </>
             }
