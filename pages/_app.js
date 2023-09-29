@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import { ChakraProvider } from '@chakra-ui/react';
 import Head from 'next/head';
 import { Inter } from 'next/font/google'
+import Script from "next/script";
 
 
 const inter = Inter({
@@ -23,6 +24,40 @@ export default function App({ Component, pageProps }) {
             <meta name="description" content="This is my portfolio website showcasing my work and skills" />
             <meta name="keywords" content="portfolio, web development, design, next.js,animations" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
+            {/* <!-- Google Tag Manager --> */}
+            {/* <Script>{(function (w, d, s, l, i) {
+              w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                  new Date().getTime(), event: 'gtm.js'
+              }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                  'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })
+            // if(typeof window== "object"){
+              typeof window== "object" (window, document, 'script', 'dataLayer', 'GTM-KVW4KMWP')
+            }
+           */}
+            {/* </Script> */}
+            {/* <!-- End Google Tag Manager --> */}
+            {/* Schema Markup  (JSON-LD)  */}
+            <Script type="application/ld+json">
+              {{
+                "@context": "https://schema.org/",
+                "@type": "CreativeWork",
+                "name": "Bader Mohammad Portfolio ",
+                "url": "https://www.portfolio-bader.onlin",
+                "image": "https://www.portfolio-bader.online/bm-logo-remove-bg.png",
+                "jobTitle": "Full Satck Web Developer",
+                "worksFor": {
+                  "@type": "Organization",
+                  "name": "Freelancer"
+                }
+              }
+              }
+            </Script>
+          
+            {/* Schema Markup  (JSON-LD)  */}
+
             {/* The FavIcon */}
             <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
             <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -35,7 +70,7 @@ export default function App({ Component, pageProps }) {
             {/* The FavIcon */}
 
 
-          
+
             {/*  <!-- GOOGLE SEO Meta Tags --> */}
             <meta name="google-site-verification" content="OQtDBl4loczi5G1TaxIPG9iKNkDrpy0cfg16wleS3Qc" />
 
