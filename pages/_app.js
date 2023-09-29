@@ -40,12 +40,13 @@ export default function App({ Component, pageProps }) {
             {/* </Script> */}
             {/* <!-- End Google Tag Manager --> */}
             {/* Schema Markup  (JSON-LD)  */}
-            <Script type="application/ld+json">
+            {/* <Script type="application/ld+json">
               {{
                 "@context": "https://schema.org/",
                 "@type": "CreativeWork",
                 "name": "Bader Mohammad Portfolio ",
-                "url": "https://www.portfolio-bader.onlin",
+                "alternateName": ["BM", "BADER", "Bader's Portfolio"],
+                "url": "https://www.portfolio-bader.online",
                 "image": "https://www.portfolio-bader.online/bm-logo-remove-bg.png",
                 "jobTitle": "Full Satck Web Developer",
                 "worksFor": {
@@ -54,9 +55,30 @@ export default function App({ Component, pageProps }) {
                 }
               }
               }
-            </Script>
-          
-            {/* Schema Markup  (JSON-LD)  */}
+            </Script> */}
+
+            {/* Schema Markup  (JSON-LD)  GOOGLE */}
+            <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: `
+                {
+                  "@context": "https://schema.org/",
+                  "@type": "CreativeWork",
+                  "name": "Bader Mohammad Portfolio",
+                  "alternateName": ["BM", "BADER", "Bader's Portfolio"],
+                  "url": "https://www.portfolio-bader.online",
+                  "image": "https://www.portfolio-bader.online/bm-logo-remove-bg.png",
+                  "jobTitle": "Full Stack Web Developer",
+                  "worksFor": {
+                    "@type": "Organization",
+                    "name": "Freelancer"
+                  }
+                }
+              `,
+            }}
+          />
+            {/* Schema Markup  (JSON-LD) GOOGLE */}
 
             {/* The FavIcon */}
             <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
