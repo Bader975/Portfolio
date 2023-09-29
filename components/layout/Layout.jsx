@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from './NavBar';
-import SplashScreen from '../ui/SplashScreen';
+// import SplashScreen from '../ui/SplashScreen';
 import { usePathname } from 'next/navigation';
 
+import dynamic from 'next/dynamic';
 
+const SplashScreen = dynamic(
+  () => import('../ui/SplashScreen'),
+  { ssr: false } // Set ssr to false to render only on the client-side
+);
 
 
 export default function Layout({ children }) {
@@ -15,9 +20,18 @@ export default function Layout({ children }) {
 
 
 
-    useEffect(() => {
-        if (isLoading) return;
-    }, [isLoading])
+    const [showApp, setShowApp] = useState(false);
+
+  useEffect(() => {
+    if (!isLoading) {
+
+      const delay = setTimeout(() => {
+        setShowApp(true);
+      }, 200); 
+
+      return () => clearTimeout(delay);
+    }
+  }, [isLoading]);
 
 
     return (
@@ -26,8 +40,10 @@ export default function Layout({ children }) {
            
             <NavBar />
            
-            <>{children}</>
-            </>}
+         {showApp && <>{children}</>}
+
+            </>
+            }
 
         </>
     )

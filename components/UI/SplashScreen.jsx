@@ -48,7 +48,6 @@ export default function SplashScreen({ endLoading }) {
           name="description"
           content="This is my portfolio website showcasing my work and skills."
         />
-        {/* <link rel="icon" href="/bm-logo-hd.webp" /> */}
         <meta name="application-name" content="Portfolio" />
       </Head>
 
