@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useEffect } from 'react';
 import anime from 'animejs';
 import Image from 'next/image';
@@ -62,7 +64,7 @@ export default function SplashScreen({ endLoading }) {
             style={{ width: '100%', height: 'auto' }}
           />
 
-          <Text id="text" >Welcome</Text>
+          <Text id="text" as={"p"}>Welcome</Text>
         </div>
       </section>
     </>

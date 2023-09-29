@@ -33,12 +33,12 @@ export default function Home({ projects }) {
 
       </Head>
       {isLoading && isHome && !splashScreenShown ?
-        <div>
+        <>
           <SplashScreen endLoading={() => {
             setIsLoading(false);
           updateSplashScreenShown();
           }} />
-        </div>
+        </>
         : (
           <>
           <Navbar/>
