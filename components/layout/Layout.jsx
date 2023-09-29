@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from './NavBar';
 import { usePathname } from 'next/navigation';
-import SplashScreen from '../ui/SplashScreen';
+import dynamic from 'next/dynamic';
+
+
+
+const DynamicSplashScreen = dynamic(
+  () => import('../ui/SplashScreen').then((module) => module.default),
+  { ssr: false }
+);
 
 export default function Layout({ children }) {
   const pathName = usePathname();
@@ -16,7 +23,7 @@ export default function Layout({ children }) {
     <>
       {isLoading && isHome ? 
         <div>
-            <SplashScreen endLoading={() => setIsLoading(false)} />
+            <DynamicSplashScreen endLoading={() => setIsLoading(false)} />
         </div>
        : (
         <>
