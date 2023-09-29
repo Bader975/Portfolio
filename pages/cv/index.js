@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Cv from '@/components/cv/Cv';
+import Navbar from '../../components/layout/NavBar';
 
 export default function CvPage() {
   return (
@@ -17,6 +18,7 @@ export default function CvPage() {
         <meta property="og:description" content="Check out my PDF CV" />
 
       </Head>
+      <Navbar/>
       {/* my cv Component */}
       <Cv />
 

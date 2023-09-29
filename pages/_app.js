@@ -4,7 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import Head from 'next/head';
 import { Inter } from 'next/font/google'
 import Script from "next/script";
-
+import { SplashScreenProvider } from '../context/SplashScreenContext';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -16,6 +16,7 @@ const inter = Inter({
 export default function App({ Component, pageProps }) {
   return (
     <>
+        <SplashScreenProvider>
       <ChakraProvider>
         <Layout>
           <Head>
@@ -81,6 +82,7 @@ export default function App({ Component, pageProps }) {
           </main>
         </Layout>
       </ChakraProvider>
+      </SplashScreenProvider>
     </>
   )
 }
