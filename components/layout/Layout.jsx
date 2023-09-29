@@ -1,41 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from './NavBar';
-// import SplashScreen from '../ui/SplashScreen';
 import { usePathname } from 'next/navigation';
-
 import dynamic from 'next/dynamic';
 
 const SplashScreen = dynamic(
-  () => import('../ui/SplashScreen'),
-  { ssr: false } // Set ssr to false to render only on the client-side
+  () => import('../ui/SplashScreen').then((module) => module.default),
+  { ssr: false }
 );
 
-
 export default function Layout({ children }) {
+  const pathName = usePathname();
+  const isHome = pathName === "/";
+  const [isLoading, setIsLoading] = useState(isHome);
+  const [showApp, setShowApp] = useState(false);
 
+  useEffect(() => {
+    if (!isLoading) {
+      const delay = setTimeout(() => {
+        setShowApp(true);
+      }, 1000);
 
-    const pathName = usePathname()
-    const isHome = pathName === "/"
-    const [isLoading, setIsLoading] = useState(isHome)
+      return () => clearTimeout(delay);
+    }
+  }, [isLoading]);
 
+  // Render the SplashScreen component on the server-side
+  if (isLoading && isHome) {
+    return <SplashScreen endLoading={() => setIsLoading(false)} />;
+  }
 
-
-    useEffect(() => {
-        if (isLoading) return;
-    }, [isLoading])
-
-
-    return (
-        <>
-            {/* {isLoading && isHome ? <div ><SplashScreen endLoading={() => setIsLoading(false)} /></div>  : <> */}
-           
-            <NavBar />
-           
-            <>{children}</>
-
-            {/* </>  } */}
-          
-
-        </>
-    )
+  return (
+    <>
+      <NavBar />
+      {showApp && <>{children}</>}
+    </>
+  );
 }

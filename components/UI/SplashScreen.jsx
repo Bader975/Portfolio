@@ -58,6 +58,8 @@ export default function SplashScreen({ endLoading }) {
             alt="Bader LOGO"
             width={350}
             height={300}
+            priority={true} 
+            style={{ width: '100%', height: 'auto' }}
           />
          
           <Text id="text" >Welcome</Text>

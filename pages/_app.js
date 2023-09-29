@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }) {
             <meta name="viewport" content="width=device-width, initial-scale=1" />
 
             {/* Schema Markup  (JSON-LD)  GOOGLE */}
-            {/* <Script
+            <Script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
               __html: `
@@ -40,7 +40,7 @@ export default function App({ Component, pageProps }) {
                 }
               `,
             }}
-          /> */}
+          />
             {/* Schema Markup  (JSON-LD) GOOGLE */}
 
             {/* The FavIcon */}
