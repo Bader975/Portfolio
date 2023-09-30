@@ -1,17 +1,17 @@
-// import Layout from "../components/layout/Layout";
+import Layout from "../components/layout/Layout";
 import "@/styles/globals.css";
 import { ChakraProvider } from '@chakra-ui/react';
 import Head from 'next/head';
 import { Inter } from 'next/font/google'
 import Script from "next/script";
 import { SplashScreenProvider } from '../context-api/SplashScreenContext';
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 
 // just for tesing only 
-const Layout = dynamic(
-    () => import('../components/layout/Layout'),
-    { ssr: false }
-);
+// const Layout = dynamic(
+//     () => import('../components/layout/Layout'),
+//     { ssr: true }
+// );
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',

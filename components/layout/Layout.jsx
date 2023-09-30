@@ -1,26 +1,26 @@
 import React, { useState, useEffect,useContext } from 'react';
 import NavBar from './NavBar';
-import { usePathname } from 'next/navigation';
-import SplashScreen from '../ui/SplashScreen';
-import { SplashScreenContext } from '../../context-api/SplashScreenContext';
 
+// import { usePathname } from 'next/navigation';
+// import SplashScreen from '../ui/SplashScreen';
+// import { SplashScreenContext } from '../../context-api/SplashScreenContext';
 
 export default function Layout({ children }) {
 
-  const { splashScreenShown, updateSplashScreenShown } = useContext(SplashScreenContext);
-  const pathName = usePathname();
-  const isHome = pathName === '/';
-  const [isLoading, setIsLoading] = useState(isHome);
+  // const { splashScreenShown, updateSplashScreenShown } = useContext(SplashScreenContext);
+  // const pathName = usePathname();
+  // const isHome = pathName === '/';
+  // const [isLoading, setIsLoading] = useState(isHome);
 
-  useEffect(() => {
-    if (isLoading ) return;
+  // useEffect(() => {
+  //   if (isLoading ) return;
 
-  }, [isLoading]);
+  // }, [isLoading]);
 
   return (
     <>
     
-      { isLoading && isHome && !splashScreenShown ?
+      {/* { isLoading && isHome && !splashScreenShown ?
         <div>
 
           <SplashScreen endLoading={() => {
@@ -30,7 +30,7 @@ export default function Layout({ children }) {
           
         </div>
 
-        : (
+        : ( */}
           
           <>
             <NavBar />
@@ -39,7 +39,7 @@ export default function Layout({ children }) {
             </>
           </>
 
-        )}
+        {/* )} */}
     </>
   )
 }
