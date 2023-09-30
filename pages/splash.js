@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect, useContext } from 'react';
 import { usePathname } from 'next/navigation';
 import SplashScreen from '../components/ui/SplashScreen';
 import { SplashScreenContext } from '../context-api/SplashScreenContext';
