@@ -31,7 +31,7 @@ export default function SplashScreen({ endLoading }) {
       })
       .add({
         targets: '#logo',
-        scale: ["1", "1.8"],
+        scale: ["1", "2"],
         opacity: [1, 0],
         delay: 1000,
         duration: 1000,
@@ -51,8 +51,8 @@ export default function SplashScreen({ endLoading }) {
         <meta name="application-name" content="Portfolio" />
       </Head>
 
-      <section aria-label="splash-screen-section" id="logo" className="splash-screen">
-        {/* <div  className="logo-container"> */}
+      <section aria-label="splash-screen-section"  id="logo" className="splash-screen">
+        <div className="logo-container">
           <Image
             src="/bm-logo-hd.webp"
             alt="Bader LOGO"
@@ -63,7 +63,7 @@ export default function SplashScreen({ endLoading }) {
           />
 
           <Text id="text" as={"p"}>Welcome</Text>
-        {/* </div> */}
+        </div>
       </section>
     </>
   );

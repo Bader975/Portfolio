@@ -6,9 +6,10 @@ import Link from "next/link";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
 export default function MobileNavBar() {
-    const { isOpen, onToggle, onClose } = useDisclosure();
+    const { isOpen, onToggle } = useDisclosure();
     const router = useRouter();
     const menuRef = useRef();
+
 
 
 
@@ -18,10 +19,11 @@ export default function MobileNavBar() {
         }
 
     };
+    
 
     const handleMenuIconClick = () => {
-        onToggle();
-
+            onToggle();
+       
     };
 
 
@@ -38,12 +40,12 @@ export default function MobileNavBar() {
     return (
         <>
 
-            {/* {console.log(isOpen)} */}
+
 
             <IconButton
                 icon={isOpen ? <CloseIcon boxSize={4} /> : <HamburgerIcon boxSize={6} />}
                 aria-label="Mobile Menu"
-                ref={isOpen ? menuRef : null}
+                 ref={menuRef}
                 variant={"outline"}
                 display={{ base: "block", md: "none" }}
                 onClick={handleMenuIconClick}
@@ -70,12 +72,13 @@ export default function MobileNavBar() {
                     mt={14}
                     bg="white"
                     p={4}
+                    gap={5}
                     ms={"auto"}
                     w={"50%"}
                     rounded="md"
                     boxShadow="md"
                     zIndex={isOpen ? "99" : "1"}
-                    opacity={isOpen ? 1 : 0}
+                    
 
 
 
@@ -86,7 +89,7 @@ export default function MobileNavBar() {
                             color="#000"
                             onClick={closeMenu}
                             rounded="xl"
-                            fontSize={18}
+                            fontSize={20}
                             opacity={0.9}
                             p={2}
                         >
@@ -101,7 +104,7 @@ export default function MobileNavBar() {
                             opacity={0.9}
                             as="p"
                             p={2}
-                            fontSize={18}
+                            fontSize={20}
                             onClick={closeMenu}
                         >
                             Take a look at my CV
@@ -116,7 +119,7 @@ export default function MobileNavBar() {
                             opacity={0.9}
                             link="/"
                             p={2}
-                            fontSize={18}
+                            fontSize={20}
                             onClick={closeMenu}
                         >
                             My Skills
@@ -131,7 +134,7 @@ export default function MobileNavBar() {
                             opacity={0.9}
                             link="/"
                             p={2}
-                            fontSize={18}
+                            fontSize={20}
                             onClick={closeMenu}
                         >
                             About Me

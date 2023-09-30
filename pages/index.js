@@ -1,25 +1,11 @@
 import HomePage from '@/components/home/HomePage';
 import { projectsArray } from '@/data/projects';
 import Head from 'next/head';
-import React, { useState, useEffect, useContext } from 'react';
-import { usePathname } from 'next/navigation';
-import SplashScreen from '../components/ui/SplashScreen';
-import { SplashScreenContext } from '../context-api/SplashScreenContext';
-import Navbar from '../components/layout/NavBar';
+import React from 'react';
+
+
 
 export default function Home({ projects }) {
-  const { splashScreenShown, updateSplashScreenShown } = useContext(SplashScreenContext);
-  const pathName = usePathname();
-  const isHome = pathName === '/';
-  const [isLoading, setIsLoading] = useState(isHome);
-
-
-
-  useEffect(() => {
-    if (isLoading ) return;
-
-  }, [isLoading]);
-
 
   return (
     <>
@@ -32,20 +18,13 @@ export default function Home({ projects }) {
 
 
       </Head>
-      {isLoading && isHome && !splashScreenShown ?
-        <>
-          {/* <SplashScreen endLoading={() => {
-            setIsLoading(false);
-          updateSplashScreenShown();
-          }} /> */}
-        </>
-        : (
+      
           <>
-          <Navbar/>
+      
             <HomePage projects={projects} />
           </>
 
-        )}
+     
 
     </>
   )
