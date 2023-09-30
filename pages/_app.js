@@ -7,9 +7,10 @@ import Script from "next/script";
 import { SplashScreenProvider } from '../context-api/SplashScreenContext';
 import dynamic from 'next/dynamic';
 
+// just for tesing only 
 const Layout = dynamic(
-    () => import('../components/layout/Layout').then((module) => module.default),
-    { ssr: false }
+    () => import('../components/layout/Layout'),
+    { ssr: true }
 );
 const inter = Inter({
   subsets: ['latin'],
