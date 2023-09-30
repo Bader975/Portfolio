@@ -10,7 +10,7 @@ import dynamic from 'next/dynamic';
 // just for tesing only 
 const Layout = dynamic(
     () => import('../components/layout/Layout'),
-    { ssr: true }
+    { ssr: false }
 );
 const inter = Inter({
   subsets: ['latin'],
