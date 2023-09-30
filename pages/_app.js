@@ -1,11 +1,16 @@
-import Layout from "../components/layout/Layout";
+// import Layout from "../components/layout/Layout";
 import "@/styles/globals.css";
 import { ChakraProvider } from '@chakra-ui/react';
 import Head from 'next/head';
 import { Inter } from 'next/font/google'
 import Script from "next/script";
 import { SplashScreenProvider } from '../context-api/SplashScreenContext';
+import dynamic from 'next/dynamic';
 
+const Layout = dynamic(
+    () => import('../components/layout/Layout').then((module) => module.default),
+    { ssr: false }
+);
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
@@ -54,8 +59,6 @@ export default function App({ Component, pageProps }) {
             <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
             <meta name="theme-color" content="#ffffff" />
             {/* The FavIcon */}
-
-
 
             {/*  <!-- GOOGLE SEO Meta Tags --> */}
             <meta name="google-site-verification" content="OQtDBl4loczi5G1TaxIPG9iKNkDrpy0cfg16wleS3Qc" />
