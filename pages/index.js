@@ -34,10 +34,10 @@ export default function Home({ projects }) {
       </Head>
       {isLoading && isHome && !splashScreenShown ?
         <>
-          <SplashScreen endLoading={() => {
+          {/* <SplashScreen endLoading={() => {
             setIsLoading(false);
           updateSplashScreenShown();
-          }} />
+          }} /> */}
         </>
         : (
           <>

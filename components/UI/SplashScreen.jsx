@@ -1,5 +1,3 @@
-"use client"
-
 import React, { useEffect } from 'react';
 import anime from 'animejs';
 import Image from 'next/image';
@@ -53,8 +51,8 @@ export default function SplashScreen({ endLoading }) {
         <meta name="application-name" content="Portfolio" />
       </Head>
 
-      <section aria-label="splash-screen-section" className="splash-screen">
-        <div id="logo" className="logo-container">
+      <section aria-label="splash-screen-section" id="logo" className="splash-screen">
+        {/* <div  className="logo-container"> */}
           <Image
             src="/bm-logo-hd.webp"
             alt="Bader LOGO"
@@ -65,7 +63,7 @@ export default function SplashScreen({ endLoading }) {
           />
 
           <Text id="text" as={"p"}>Welcome</Text>
-        </div>
+        {/* </div> */}
       </section>
     </>
   );
