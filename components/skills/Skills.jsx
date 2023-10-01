@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Heading, Text, VStack, Divider, SimpleGrid, useBreakpointValue } from "@chakra-ui/react";
 import { FaHtml5, FaCss3, FaBootstrap, FaReact, FaNodeJs, FaDatabase, FaNpm, FaGit, FaChartBar } from "react-icons/fa";
-import { SiChakraui, SiJavascript, SiTypescript, SiNextdotjs, SiMysql, SiJquery, SiPrisma, SiExpress, SiRedux } from "react-icons/si";
+import { SiChakraui, SiJavascript, SiTypescript, SiNextdotjs, SiJquery, SiPrisma, SiExpress, SiRedux } from "react-icons/si";
 
 
 
@@ -13,7 +13,7 @@ export default function Skills() {
     return (
 
 
-        <Box as="section" aria-label="skills-section" p={5} fontFamily="Montserrat" pt={[100, 120]} pb={0} id="skills">
+        <Box as="section" aria-label="skills-section" p={5}  pt={[100, 120]} pb={0} id="skills">
             <Heading as="h1" fontSize="2xl" mb={4}>
                 Skills
             </Heading>

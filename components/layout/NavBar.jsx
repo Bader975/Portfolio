@@ -49,7 +49,7 @@ export default function Navbar() {
       <Box as="header" pos={"sticky"}
         boxShadow={"lg"} top={0} zIndex={5}>
 
-        <Box as={"nav"} py={4} pb={5} bg={"transparent"} backdropFilter="blur(10px)"
+        <Box as={"nav"} py={4} pb={5} id={"navbar"} bg={"transparent"} backdropFilter="blur(10px)"
           _backdropfilter="blur(5px)">
 
           <Flex>

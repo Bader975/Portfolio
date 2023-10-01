@@ -51,14 +51,16 @@ export default function SplashScreen({ endLoading }) {
         <meta name="application-name" content="Portfolio" />
       </Head>
 
-      <section aria-label="splash-screen-section"  id="logo" className="splash-screen">
-        <div className="logo-container">
+      <section aria-label="splash-screen-section" className="splash-screen">
+        <div className="logo-container" id="logo">
           <Image
+          id='bader-logo'
             src="/bm-logo-hd.webp"
             alt="Bader LOGO"
             width={350}
             height={300}
             priority={true}
+            
             style={{ width: '100%', height: 'auto' }}
           />
 

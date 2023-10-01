@@ -30,7 +30,7 @@ export default function Skill({ projects }) {
                         </Link>
                         <Text color={"#000"} textAlign={"center"} rounded={"xl"} pt={2} fontWeight={"bold"} fontSize={[20, 22]}>{project.title}</Text>
                         <Divider />
-                        <Text color={"#000"} opacity={0.75} textAlign={["left", "center"]} pt={2} fontSize={[16, 16]}>{project.discription}</Text>
+                        <Text color={"#000"} opacity={0.75} textAlign={["left", "center"]} pt={2} fontSize={[16, 18]}>{project.discription}</Text>
                     </Box>
 
                 ))}

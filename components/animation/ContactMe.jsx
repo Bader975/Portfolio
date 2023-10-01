@@ -34,7 +34,7 @@ export default function ContactMe() {
                         animate={{ translateX: inView ? "0%" : "-100%", opacity: inView ? 1 : 0 }}
                         transition={{ duration: 1 }}
                     >
-                        <Heading color={"#000"} mx={"auto"} textAlign={"center"} h={"auto"} fontSize={[18, 24]}>
+                        <Heading as={"h1"} color={"#000"} mx={"auto"} textAlign={"center"} h={"auto"} fontWeight={"800"} fontSize={[20, 24]}>
                             Get to know me better through my Social Media platforms ⬇️
                         </Heading>
                         <Image rounded={"xl"} loading={"lazy"} w={"100%"} h={"100%"} src="/mobile-marketing.svg" alt="Animated SVG" />

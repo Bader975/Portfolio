@@ -6,33 +6,38 @@ import Link from "next/link";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
 export default function MobileNavBar() {
-    const { isOpen, onToggle } = useDisclosure();
+    const { isOpen, onToggle,onClose } = useDisclosure();
     const router = useRouter();
     const menuRef = useRef();
+    const HamburgerIconRef = useRef();
 
 
 
 
     function closeMenu() {
+
         if (isOpen) {
             onToggle();
         }
-
-    };
-    
-
-    const handleMenuIconClick = () => {
-            onToggle();
        
     };
 
 
+    const handleMenuIconClick = () => {
+          onToggle();
+      };
+
+
+    // useOutsideClick({
+    //     ref: menuRef,
+    //     handler: closeMenu
+    // });
+
+
     useOutsideClick({
-        ref: menuRef,
+        ref: HamburgerIconRef,
         handler: closeMenu
     });
-
-
 
 
 
@@ -45,7 +50,7 @@ export default function MobileNavBar() {
             <IconButton
                 icon={isOpen ? <CloseIcon boxSize={4} /> : <HamburgerIcon boxSize={6} />}
                 aria-label="Mobile Menu"
-                 ref={menuRef}
+                ref={HamburgerIconRef}
                 variant={"outline"}
                 display={{ base: "block", md: "none" }}
                 onClick={handleMenuIconClick}
@@ -74,11 +79,14 @@ export default function MobileNavBar() {
                     p={4}
                     gap={5}
                     ms={"auto"}
+                    mr={2}
                     w={"50%"}
                     rounded="md"
                     boxShadow="md"
-                    zIndex={isOpen ? "99" : "1"}
-                    
+                    pos={"relative"}
+                    zIndex={"99"}
+                display={{base: "block", md : "none"}}
+
 
 
 

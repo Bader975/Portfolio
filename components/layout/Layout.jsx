@@ -1,48 +1,81 @@
-import React, { useState, useEffect,useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import NavBar from './NavBar';
-
-// import { usePathname } from 'next/navigation';
-// import SplashScreen from '../ui/SplashScreen';
-// import { SplashScreenContext } from '../../context-api/SplashScreenContext';
+import { usePathname } from 'next/navigation';
+import LoadingState from './LoadingState';
+import { SplashScreenContext } from '../../context-api/SplashScreenContext'
 
 export default function Layout({ children }) {
 
-  // const { splashScreenShown, updateSplashScreenShown } = useContext(SplashScreenContext);
-  // const pathName = usePathname();
-  // const isHome = pathName === '/';
-  // const [isLoading, setIsLoading] = useState(isHome);
+  const { splashScreenShown, updateSplashScreenShown } = useContext(SplashScreenContext);
+  const pathName = usePathname();
+  const isHome = pathName === '/';
+  const [isLoading, setIsLoading] = useState(isHome);
+  const [doneLoading, setDoneLoading] = useState(false);
 
   // useEffect(() => {
-  //   if (isLoading ) return;
+  //   if (isLoading) return;
 
   // }, [isLoading]);
 
+  useEffect(() => {
+    // if (!(isLoading && isHome && !splashScreenShown)) {
+    setTimeout(() => {
+      setDoneLoading(true);
+    }, 4000)
+
+    // }
+
+
+  }, [isLoading, doneLoading]);
+
   return (
     <>
-    
-      {/* { isLoading && isHome && !splashScreenShown ?
-        <div>
 
-          <SplashScreen endLoading={() => {
+      {(!doneLoading && isLoading && isHome && !splashScreenShown) &&
+        <div>
+          <LoadingState endLoading={() => {
             setIsLoading(false);
             updateSplashScreenShown();
           }} />
-          
         </div>
 
-        : ( */}
-          
-          <>
-            <NavBar />
-            <>
-              {children}
-            </>
-          </>
+      }
+      {/* {(isLoading && isHome) &&  */}
+      <>
+        <NavBar />
 
-        {/* )} */}
+        <>
+          {children}
+        </>
+
+      </>
+      {/* } */}
+
+
     </>
   )
 }
 
 
 
+
+
+// {isLoading && isHome && !splashScreenShown ?
+//   <div>
+//     <LoadingState endLoading={() => {
+//       setIsLoading(false);
+//       updateSplashScreenShown();
+//     }} />
+//   </div>
+
+//   : (
+//     <>
+//       <NavBar />
+
+//       <>
+//         {children}
+//       </>
+
+//     </>
+
+//   )}
