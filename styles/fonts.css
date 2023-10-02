@@ -27,7 +27,7 @@ p {
   /* Large screens */
   @media (min-width: 1025px) {
     #about article {
-      font-size: 1.463rem;
+      font-size: 1.3rem;
       /* = to 25px */
     }
   p{

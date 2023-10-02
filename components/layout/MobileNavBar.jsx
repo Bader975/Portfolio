@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Flex, IconButton, Slide, Divider, useDisclosure, Link as ChakraLink, useOutsideClick } from "@chakra-ui/react";
+import { Flex, IconButton,Box, Slide, Divider, useDisclosure, Link as ChakraLink, useOutsideClick } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
@@ -11,18 +11,6 @@ export default function MobileNavBar() {
     const menuRef = useRef();
     const HamburgerIconRef = useRef();
 
-
-    const slieStyles = {
-        width: '100%',
-        textAlign: 'center',
-        height: '50%',
-        /* background: 'rgba(255, 255, 255, 0.86)', */
-        boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-        backdropFilter: 'blur(3px)',
-        webkitBackdropFilter: 'blur(3px)',
-        /* border: '1px solid rgba(255, 255, 255, 0.27)', */
-        border: '1px solid #0000',
-    };
 
     function closeMenu() {
 
@@ -79,8 +67,10 @@ export default function MobileNavBar() {
             />
 
             {/* {isOpen && ( */}
-            {/* style={`${isOpen ? ...slieStyles : null}`} */}
-            <Slide direction="top" in={isOpen} backdropFilter="blur(10px)"  >
+           
+
+            
+            <Slide direction="top" in={isOpen} >
                 <Flex
                     // ref={menuRef}
                     direction="column"
@@ -164,7 +154,7 @@ export default function MobileNavBar() {
                     <Divider colorScheme="black" />
                 </Flex>
             </Slide>
-
+           
 
 
         </>
