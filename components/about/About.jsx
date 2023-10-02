@@ -6,30 +6,31 @@ export default function About() {
 
     return (
         <>
-            <Box as="section" p={8} aria-label="about-section" id="about" pt={[100, 120]} fontSize={[18, 20]} >
-                <Heading as="h1" fontSize="2xl" mb={3}  >
+            <Box as="section" p={2} aria-label="about-section" id="about" pt={[100, 120]} fontSize={[18, 20]} >
+                <Text as="h1" pl={3} fontWeight={"bold"} fontSize={[24,30]} mb={3}  >
                     About Me
-                </Heading>
+                </Text>
                 <Divider />
                 <SimpleGrid w={"full"} h={"full"} columns={[1, 1, 2]} mt={5}>
-                    <Box ml={[0, 5]}>
+                    <Box marginInline={8} >
                         <Imagechakra
-                            src="/me2-saudi-dressed.webp"
+                            src="/me-removebg.webp"
                             alt="Bader Mohammad"
                             mb={4}
-                            // w={"50%"}
+                            w={"50%"}
                             h={"full"}
+                            
                             bg={"transparent"}
                             // bg={"#fff"}
-                            // clipPath={"circle(50%)"}
-                            borderRadius={"25px"}
-                            mixBlendMode={"multiply"}
-                            boxSize={["300px", "300px"]}
+                            clipPath={"circle(50%)"}
+                            // borderRadius={"5px"}
+                          
+                            boxSize={["300px", "350px"]}
                             objectFit="cover"
                         />
 
                     </Box>
-                    <Box textAlign={["center", "justify"]} w={["90dvw", "90%"]} lineHeight={"1.8"} p={5}>
+                    <Box textAlign={["left", "justify"]} w={["90dvw", "90%"]} lineHeight={"1.9"} paddingInline={5}>
 
                         <Text fontSize="xl" fontWeight="bold" mb={1} >
                             Hi, I'm Bader Mohammad!
@@ -41,8 +42,7 @@ export default function About() {
                             through clean code and efficient solutions 💡.
                         </Text>
                         <Text mt={4} as={"article"}>
-                            With expertise in front-end development
-                            using modern frameworks like <Text as="span" fontWeight="bold" m>React</Text>  and {" "}
+                            With expertise in front-end development using modern frameworks like <Text as="span" fontWeight="bold" m>React</Text>  and {" "}
                             <Text as="span" fontWeight="bold" >Next.js</Text>, I excel at crafting intuitive
                             and responsive user interfaces. On the back-end, I specialize in building robust
                             APIs and server-side applications using <Text as="span" fontWeight="bold" >Node.js</Text>
@@ -51,7 +51,7 @@ export default function About() {
                         <Text mt={4} as={"article"}>
                             If you have a project that you'd like to discuss or if you're interested in
                             collaborating, feel free to reach out to me. Let's work together to 🚀
-                            bring your ideas to life!
+                            bring your ideas to life! .
                         </Text>
                     </Box>
                 </SimpleGrid>

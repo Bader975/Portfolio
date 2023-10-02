@@ -1,15 +1,16 @@
-import Layout from "../components/layout/Layout";
 import "@/styles/globals.css";
-import { ChakraProvider } from '@chakra-ui/react';
+import "@/styles/fonts.css";
+import Script from "next/script";
 import Head from 'next/head';
 import { Lusitana } from 'next/font/google'
-import Script from "next/script";
-import { SplashScreenProvider } from '../context-api/SplashScreenContext';
+import { ChakraProvider } from '@chakra-ui/react';
+import Layout from "../components/layout/Layout";
+
 
 const lusitana = Lusitana({
   subsets: ['latin'],
   weight: ['400', '700'],
-  display: 'swap',
+  display: 'optional',
 
 });
 
@@ -18,7 +19,7 @@ const lusitana = Lusitana({
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <SplashScreenProvider>
+   
         <ChakraProvider>
           <Layout>
             <Head>
@@ -83,7 +84,7 @@ export default function App({ Component, pageProps }) {
             </main>
           </Layout>
         </ChakraProvider>
-      </SplashScreenProvider>
+     
     </>
   )
 }

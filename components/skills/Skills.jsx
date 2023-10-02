@@ -14,9 +14,9 @@ export default function Skills() {
 
 
         <Box as="section" aria-label="skills-section" p={5}  pt={[100, 120]} pb={0} id="skills">
-            <Heading as="h1" fontSize="2xl" mb={4}>
+            <Text as="h1" fontWeight={"bold"} fontSize={[24,30]} mb={4}>
                 Skills
-            </Heading>
+            </Text>
             <Divider />
             <Text fontSize={[18, 20]} mt={1}>
                 Here are some of the key technologies and tools I work with:
@@ -85,12 +85,12 @@ export default function Skills() {
                 <VStack
                     spacing={2} minH={"150px"}
                     boxShadow="0 2px 4px rgba(0, 0, 0, 0.1)"
-                    rounded="md"
+                    rounded={"md"}
                     p={boxSize}
                 >
                     <SiRedux size={iconSize} color="#764abc" />
                     <Divider />
-                    <Text>Redux Toolkit</Text>
+                    <Text as="span">Redux Toolkit</Text>
                 </VStack>
 
 

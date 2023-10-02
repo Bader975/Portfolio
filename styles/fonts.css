@@ -1,0 +1,38 @@
+p {
+    font-size: 1.125rem;
+    /* = to 18px  */
+  }
+  
+  h1 {
+    font-size: 2rem;
+    /* = to 32px (2 * 16 = 32) */
+  }
+  
+  /* Small screens */
+  @media (max-width: 600px) {
+    p {
+      font-size: 1.125rem;
+      /* = to 16px */
+    }
+  }
+  
+  /* Medium screens */
+  @media (min-width: 600px) and (max-width: 1024px) {
+    p {
+      font-size: 1.2rem;
+      /* = to 18px */
+    }
+  }
+  
+  /* Large screens */
+  @media (min-width: 1025px) {
+    p {
+      font-size: 1.563rem;
+      /* = to 25px */
+    }
+  
+    #navbar p {
+      font-size: 1.30rem;
+      /* = to 20px */
+    }
+  }

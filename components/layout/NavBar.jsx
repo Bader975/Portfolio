@@ -63,7 +63,7 @@ export default function Navbar() {
                 onClick={() => { router.pathname !== "/" && router.push("/") }}
               >
                 {/* bg={!navBarTextColor ? "#fff" : null} */}
-                <Image src={"/bm-logo-remove-bg.png"} objectFit={"contain"} rounded={"xl"} w={120} h={100} mb={1} pt={1} bg={{ base: null, md: navBarTextColor ? "#F5F5F5" : null }} />
+                <Image src={"/bm-logo-remove-bg.webp"} objectFit={"contain"} rounded={"xl"} w={120} h={100} mb={1} pt={1} bg={{ base: null, md: navBarTextColor ? "#F5F5F5" : null }} />
               </IconButton>
             </Box>
 
