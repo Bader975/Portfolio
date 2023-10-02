@@ -26,11 +26,16 @@ p {
   
   /* Large screens */
   @media (min-width: 1025px) {
-    p {
-      font-size: 1.563rem;
+    #about article {
+      font-size: 1.463rem;
       /* = to 25px */
     }
-  
+  p{
+    font-size: 1.463rem;
+  }
+  button{
+    font-size: 1.30rem !important;
+  }
     #navbar p {
       font-size: 1.30rem;
       /* = to 20px */
