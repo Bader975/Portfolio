@@ -4,7 +4,6 @@ import { PiEngineFill } from 'react-icons/pi'
 import { SiNextdotjs } from "react-icons/si";
 
 export default function Content() {
-    const jsTextColor = useColorModeValue('yellow.500', 'yellow.200');
     const tsTextColor = useColorModeValue('#3178C6', 'gray.800');
     return (
         <>
@@ -17,11 +16,11 @@ export default function Content() {
                     <Spacer />
                     <Text display={"inline"}>
                         I'm so happy that you visited my Portfolio 😍,
-                        My name is Bader Mohammad and I'm </Text><Text display="inline" fontWeight={"600"} color={jsTextColor}>
+                        My name is Bader Mohammad and I'm </Text><Text display="inline" fontWeight={"bold"} >
                         {" "} JavaScript
                     </Text>{" "}
                     {"  "} and {" "}
-                    <Text display="inline" color={tsTextColor} fontWeight={"600"} mr={1}>
+                    <Text display="inline" color={tsTextColor} fontWeight={"bold"} mr={1}>
                         TypeScript {" "}
                     </Text>
                     <Text display={"inline"}>
