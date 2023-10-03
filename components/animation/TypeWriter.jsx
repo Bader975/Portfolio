@@ -1,6 +1,7 @@
 import React from 'react'
 import Typewriter from 'typewriter-effect';
 import classes from './typeWriter.module.css'
+import { BsWordpress } from 'react-icons/bs';
 
 
 export default function TypeWriter() {
@@ -12,10 +13,10 @@ export default function TypeWriter() {
         <div className={classes.container}>
 
             <span className={classes.typeWriter}>
-                I'm{" "}
+                <span style={{display:"inline"}}>I'm </span>
                 <Typewriter
                     options={{
-                        strings: ['Bader Alyami', 'Web Devoleper', 'REACT Devoleper', 'JS/TS Devoleper'],
+                        strings: ['Bader Mohammad', 'Web Devoleper', 'REACT Devoleper', 'JS/TS Devoleper'],
                         autoStart: true,
                         loop: true,
                     }}

@@ -1,4 +1,4 @@
-import { Image, SimpleGrid, Box, HStack, Link as ChakraLink, Button, Heading } from '@chakra-ui/react';
+import { Image,Text, SimpleGrid, Box, HStack, Link as ChakraLink, Button, Heading } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
@@ -34,19 +34,19 @@ export default function ContactMe() {
                         animate={{ translateX: inView ? "0%" : "-100%", opacity: inView ? 1 : 0 }}
                         transition={{ duration: 1 }}
                     >
-                        <Heading as={"h1"} color={"#000"} mx={"auto"} textAlign={"center"} h={"auto"} fontWeight={"800"} fontSize={[20, 24]}>
+                        <Text as={"h1"} color={"#000"} mx={"auto"} textAlign={"center"} h={"auto"} fontWeight={"800"} fontSize={[20, 26]}>
                             Get to know me better through my Social Media platforms ⬇️
-                        </Heading>
+                        </Text>
                         <Image rounded={"xl"} loading={"lazy"} w={"100%"} h={"100%"} src="/mobile-marketing.svg" alt="Animated SVG" />
                     </motion.div>
 
                 </Box>
                 {/* -------------Social Buttons------------------- */}
                 <Box as='footer'>
-                    <HStack >
+                    <HStack>
                         {/* -------------Linkedin------------------ */}
                         <ChakraLink href={"https://www.linkedin.com/in/bader-mohammad-al/"} isExternal>
-                            <Button bg={"#2368A9"} color={"#fff"} leftIcon={<FaLinkedin />}>
+                            <Button bg={"#2368A9"} _hover={{opacity:0.75}} color={"#fff"} leftIcon={<FaLinkedin />}>
                                 Linkedin
                             </Button>
                         </ChakraLink>

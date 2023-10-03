@@ -1,10 +1,11 @@
-import { Box, SimpleGrid, Text, Spacer, Divider, Icon } from '@chakra-ui/react'
+import { Box, SimpleGrid, Text, Spacer, Divider,useColorModeValue, Icon } from '@chakra-ui/react'
 import React from 'react'
 import { PiEngineFill } from 'react-icons/pi'
 import { SiNextdotjs } from "react-icons/si";
 
 export default function Content() {
-
+    const jsTextColor = useColorModeValue('yellow.500', 'yellow.200');
+    const tsTextColor = useColorModeValue('#3178C6', 'gray.800');
     return (
         <>
             <SimpleGrid as="section" aria-label="description-section" w={"full"} h={"full"} columns={1} mx={"auto"} pt={10} >
@@ -16,11 +17,11 @@ export default function Content() {
                     <Spacer />
                     <Text display={"inline"}>
                         I'm so happy that you visited my Portfolio 😍,
-                        My name is Bader Mohammad and I'm </Text><Text display="inline" fontWeight={"600"} color="#79672F">
+                        My name is Bader Mohammad and I'm </Text><Text display="inline" fontWeight={"600"} color={jsTextColor}>
                         {" "} JavaScript
                     </Text>{" "}
                     {"  "} and {" "}
-                    <Text display="inline" color="#5353EA" fontWeight={"600"} mr={1}>
+                    <Text display="inline" color={tsTextColor} fontWeight={"600"} mr={1}>
                         TypeScript {" "}
                     </Text>
                     <Text display={"inline"}>

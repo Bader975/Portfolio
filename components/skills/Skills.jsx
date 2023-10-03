@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Heading, Text, VStack, Divider, SimpleGrid, useBreakpointValue } from "@chakra-ui/react";
+import { Box,Text, VStack, Divider, SimpleGrid, useBreakpointValue } from "@chakra-ui/react";
 import { FaHtml5, FaCss3, FaBootstrap, FaReact, FaNodeJs, FaDatabase, FaNpm, FaGit, FaChartBar } from "react-icons/fa";
 import { SiChakraui, SiJavascript, SiTypescript, SiNextdotjs, SiJquery, SiPrisma, SiExpress, SiRedux } from "react-icons/si";
 

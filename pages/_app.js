@@ -10,7 +10,7 @@ import Layout from "../components/layout/Layout";
 const lusitana = Lusitana({
   subsets: ['latin'],
   weight: ['400', '700'],
-  display: 'optional',
+  display: 'swap',
 
 });
 

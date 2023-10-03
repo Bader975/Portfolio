@@ -14,12 +14,15 @@ p {
       font-size: 1.125rem;
       /* = to 16px */
     }
+    button{
+      font-size: 0.9rem !important;
+    }
   }
   
   /* Medium screens */
   @media (min-width: 600px) and (max-width: 1024px) {
     p {
-      font-size: 1.2rem;
+      font-size: 1.125rem;
       /* = to 18px */
     }
   }
@@ -34,7 +37,7 @@ p {
     font-size: 1.463rem;
   }
   button{
-    font-size: 1.30rem !important;
+    font-size: 1.20rem !important;
   }
     #navbar p {
       font-size: 1.30rem;

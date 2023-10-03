@@ -4,10 +4,10 @@ import Content from './Content'
 import ButtonContainer from './ButtonContainer'
 import Projects from '../projects/Projects'
 import ContactMe from '../animation/ContactMe';
-import { Image, Box } from '@chakra-ui/react';
+import { Image as ChakraImage, Box } from '@chakra-ui/react';
 import About from '../about/About'
 import Skills from '../skills/Skills'
-
+import Image from 'next/image';
 
 
 
@@ -16,9 +16,29 @@ export default function HomePage({ projects }) {
 
     return (
         <>
-            {/* ------------------Hero Image-------------------------------------  */}
-            <Box  as="section" aria-label="hero-section"w={"100%"} h={["100%", 600]} shadow={"md"} bg={"#00000080"}>
-                <Image w={"100%"} h={"100%"} objectFit={"cover"} fetchpriority='high' pos={"relative"} zIndex={"-2"} alt="Banner image" src="/laptop image.webp" />
+            <Box as="section" aria-label="hero-section" w={"100%"} h={["100%", 600]} shadow={"md"} bg={"#00000080"}>
+
+                {/* ------------------Hero Image-------------------------------------  */}
+                {/* <ChakraImage w={"100%"} h={"100%"} objectFit={"cover"} fetchpriority='high' pos={"relative"} zIndex={"-2"} alt="Banner image" src="/laptop image.webp" /> */}
+               
+
+                <Image
+                    src="/hero-image.jpg"
+                    alt="Banner image"
+                    width={680}
+                    height={680} 
+                    priority={true}
+                    id='laptop-hero-image'
+                    style={{
+                        position: 'relative',
+                        zIndex: -2,
+                        width: "100%",
+                        height: "100%",
+                        objectFit: 'cover'
+                    }}
+
+                />
+                
                 {/* ------------------Hero Image-------------------------------------  */}
                 <TypeWriter />
             </Box>
@@ -27,7 +47,6 @@ export default function HomePage({ projects }) {
             <About />
             <Skills />
             <Projects projects={projects} />
-            
             <ContactMe />
 
         </>

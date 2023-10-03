@@ -22,10 +22,9 @@ export default function About() {
                             
                             bg={"transparent"}
                             // bg={"#fff"}
-                            clipPath={"circle(50%)"}
-                            // borderRadius={"5px"}
-                          
-                            boxSize={["300px", "350px"]}
+                            clipPath={"circle(60%)"}
+                            // borderRadius={"5px}
+                            boxSize={["280px", "350px"]}
                             objectFit="cover"
                         />
 

@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
-import { Flex, IconButton,Box, Slide, Divider, useDisclosure, Link as ChakraLink, useOutsideClick } from "@chakra-ui/react";
+import { Flex, IconButton, Box, Slide, Divider, useDisclosure, Link as ChakraLink, useOutsideClick } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
 export default function MobileNavBar() {
-    const { isOpen, onToggle, onClose } = useDisclosure();
+    const { isOpen, onToggle } = useDisclosure();
     const router = useRouter();
     const menuRef = useRef();
     const HamburgerIconRef = useRef();
@@ -67,25 +67,22 @@ export default function MobileNavBar() {
             />
 
             {/* {isOpen && ( */}
-           
 
-            
+
+
             <Slide direction="top" in={isOpen} >
                 <Flex
                     // ref={menuRef}
                     direction="column"
                     mt={14}
-                    bg="white"
-                    // id={"menu-slide"}
-                    p={4}
-                    gap={5}
+                    bg="#fff"
+                    p={6}
+                    gap={8}
                     ms={"auto"}
-                    h={isOpen ? "90%" : "auto"}
-                    mr={2}
-                    // w={"50%"}
-                    rounded="md"
-
-                    // boxShadow="md"
+                    h={isOpen ? "100%" : "auto"}
+                    w={"50%"}
+                    rounded={"md"}
+                    boxShadow={isOpen && "2xl"}
                     pos={"relative"}
                     zIndex={"99"}
                     display={isOpen && { base: "block", md: "none" }}
@@ -107,7 +104,7 @@ export default function MobileNavBar() {
                             {router.pathname !== "/" ? "Home" : "My Projects "}
                         </ChakraLink>
                     </Link>
-                    <Divider colorScheme="black" />
+                    {/* <Divider colorScheme="black" /> */}
                     <Link href="/cv" passHref>
                         <ChakraLink
                             rounded="xl"
@@ -121,7 +118,7 @@ export default function MobileNavBar() {
                             Take a look at my CV
                         </ChakraLink>
                     </Link>
-                    <Divider colorScheme="black" />
+                    {/* <Divider colorScheme="black" /> */}
                     <Link href={router.pathname !== "/" ? "/" : "/#skills"} passHref>
                         <ChakraLink
                             rounded="xl"
@@ -136,7 +133,7 @@ export default function MobileNavBar() {
                             My Skills
                         </ChakraLink>
                     </Link>
-                    <Divider colorScheme="black" />
+                    {/* <Divider colorScheme="black" /> */}
                     <Link href={router.pathname !== "/" ? "/" : "/#about"} passHref>
                         <ChakraLink
                             rounded="xl"
@@ -151,10 +148,10 @@ export default function MobileNavBar() {
                             About Me
                         </ChakraLink>
                     </Link>
-                    <Divider colorScheme="black" />
+                    {/* <Divider colorScheme="black" /> */}
                 </Flex>
             </Slide>
-           
+
 
 
         </>

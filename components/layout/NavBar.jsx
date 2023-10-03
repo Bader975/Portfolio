@@ -58,7 +58,6 @@ export default function Navbar() {
                 aria-label="Menu"
                 variant="black"
                 color="white"
-
                 size="lg"
                 onClick={() => { router.pathname !== "/" && router.push("/") }}
               >
@@ -87,11 +86,10 @@ export default function Navbar() {
                       _hover={activeLink !== 0 && HoverEfffects}
                       as="p"
                       rounded="xl"
-
                       opacity={0.9}
                       p={3}
                       bg={activeLink === 0 ? "#153243" : "none"}
-                      color={activeLink === 0 ? "#fff" : "none"}
+                      color={activeLink === 0 && "#fff"}
                       onClick={() => handleLinkClick(0)}
 
                     >
@@ -107,9 +105,8 @@ export default function Navbar() {
                       rounded="xl"
                       opacity={0.9}
                       p={3}
-
                       bg={activeLink === 1 ? "#153243" : "none"}
-                      color={activeLink === 1 ? "#fff" : "none"}
+                      color={activeLink === 0 && "#fff"}
                       onClick={() => handleLinkClick(1)}
 
                     >
@@ -127,7 +124,7 @@ export default function Navbar() {
 
 
                       bg={activeLink === 2 ? "#153243" : "none"}
-                      color={activeLink === 2 ? "#fff" : "none"}
+                      color={activeLink === 0 && "#fff"}
                       onClick={() => handleLinkClick(2)}
                     >
                       My Skills
@@ -143,7 +140,7 @@ export default function Navbar() {
                       p={3}
 
                       bg={activeLink === 3 ? "#153243" : "none"}
-                      color={activeLink === 3 ? "#fff" : "none"}
+                      color={activeLink === 0 && "#fff"}
                       onClick={() => handleLinkClick(3)}
                     >
                       About Me

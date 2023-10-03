@@ -10,22 +10,21 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^2.1.0",
+    "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/next-js": "^2.1.5",
-    "@chakra-ui/react": "^2.8.0",
+    "@chakra-ui/react": "^2.8.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@react-pdf-viewer/core": "^3.12.0",
     "@react-pdf-viewer/default-layout": "^3.12.0",
-    "animejs": "^3.2.1",
-    "framer-motion": "^10.15.2",
-    "next": "13.4.19",
+    "framer-motion": "^10.16.4",
+    "next": "13.5.4",
     "next-sitemap": "^4.2.3",
-    "pdfjs-dist": "^3.4.120",
+    "pdfjs-dist": "^3.11.174",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.10.1",
+    "react-icons": "^4.11.0",
     "react-intersection-observer": "^9.5.2",
-    "typewriter-effect": "^2.20.1"
+    "typewriter-effect": "^2.21.0"
   }
 }
