@@ -13,10 +13,10 @@ export default function TypeWriter() {
         <div className={classes.container}>
 
             <span className={classes.typeWriter}>
-                <span style={{display:"inline"}}>I'm </span>
+                <span>I'm </span>
                 <Typewriter
                     options={{
-                        strings: ['Bader Mohammad', 'Web Devoleper', 'REACT Devoleper', 'JS/TS Devoleper'],
+                        strings: ['Bader Mohammad', 'Web Devoleper', 'React Devoleper', 'JS,TS Devoleper'],
                         autoStart: true,
                         loop: true,
                     }}

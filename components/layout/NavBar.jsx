@@ -106,7 +106,7 @@ export default function Navbar() {
                       opacity={0.9}
                       p={3}
                       bg={activeLink === 1 ? "#153243" : "none"}
-                      color={activeLink === 0 && "#fff"}
+                      color={activeLink === 1 && "#fff"}
                       onClick={() => handleLinkClick(1)}
 
                     >
@@ -124,7 +124,7 @@ export default function Navbar() {
 
 
                       bg={activeLink === 2 ? "#153243" : "none"}
-                      color={activeLink === 0 && "#fff"}
+                      color={activeLink === 2 && "#fff"}
                       onClick={() => handleLinkClick(2)}
                     >
                       My Skills
@@ -140,7 +140,7 @@ export default function Navbar() {
                       p={3}
 
                       bg={activeLink === 3 ? "#153243" : "none"}
-                      color={activeLink === 0 && "#fff"}
+                      color={activeLink === 3 && "#fff"}
                       onClick={() => handleLinkClick(3)}
                     >
                       About Me
