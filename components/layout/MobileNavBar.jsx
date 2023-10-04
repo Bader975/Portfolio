@@ -26,16 +26,16 @@ export default function MobileNavBar() {
     };
 
 
-    // useOutsideClick({
-    //     ref: menuRef,
-    //     handler: closeMenu
-    // });
-
-
     useOutsideClick({
-        ref: HamburgerIconRef,
+        ref: menuRef,
         handler: closeMenu
     });
+
+
+    // useOutsideClick({
+    //     ref: HamburgerIconRef,
+    //     handler: closeMenu
+    // });
 
 
 
@@ -72,7 +72,7 @@ export default function MobileNavBar() {
 
             <Slide direction="top" in={isOpen} >
                 <Flex
-                    // ref={menuRef}
+                    ref={menuRef}
                     direction="column"
                     mt={14}
                     bg="#fff"
@@ -109,7 +109,6 @@ export default function MobileNavBar() {
                         <ChakraLink
                             rounded="xl"
                             color="#000"
-
                             as="p"
                             p={2}
                             fontSize={20}
@@ -124,8 +123,6 @@ export default function MobileNavBar() {
                             rounded="xl"
                             as="p"
                             color="#000"
-
-                            link="/"
                             p={2}
                             fontSize={20}
                             onClick={closeMenu}
@@ -139,8 +136,6 @@ export default function MobileNavBar() {
                             rounded="xl"
                             as="p"
                             color="#000"
-
-                            link="/"
                             p={2}
                             fontSize={20}
                             onClick={closeMenu}
