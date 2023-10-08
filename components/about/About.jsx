@@ -6,7 +6,7 @@ export default function About() {
 
     return (
         <>
-            <Box as="section" p={2} aria-label="about-section" id="about" pt={[100, 120]} fontSize={[18, 20]} >
+            <Box as="section" p={2} aria-label="about-section" id="about" pt={[70, 100]} fontSize={[18, 20]} >
                 <Text as="h1" pl={3} fontWeight={"bold"} fontSize={[24,30]} mb={3}  >
                     About Me
                 </Text>

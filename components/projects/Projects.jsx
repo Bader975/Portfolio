@@ -18,7 +18,7 @@ export default function Skill({ projects }) {
         <>
 
 
-            <Text as="h1" fontSize={[24, 30]} textAlign={"left"} pt={[100, 120]} pl={5} fontWeight={"bold"} id={"my-projects"}> My Projects 💼: </Text>
+            <Text as="h1" fontSize={[24, 30]} textAlign={"left"} pt={[70, 120]} pl={5} fontWeight={"bold"} id={"my-projects"} mt={20}> My Projects 💼: </Text>
             <Divider />
             {/* ---------------------------Grid---------------*/}
             <SimpleGrid as="section" aria-label="projects-section" w={"100%"} h={"100%"} columns={[1, 1, 2, 2, 3]} rounded={"xl"} mx={"auto"} p={[5, 5]} mb={[100, 200]} spacingX={5} spacingY={10} >

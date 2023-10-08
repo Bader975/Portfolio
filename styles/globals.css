@@ -3,6 +3,10 @@
 
 }
 
+html {
+  scroll-padding-top: var(--scroll-padding, 80px)
+}
+
 ::-webkit-scrollbar {
   width: 15px;
 }
@@ -45,7 +49,7 @@ span .Typewriter__wrapper {
   font-style: italic;
   text-align: center;
   margin-left: 5px;
-  
+
 }
 
 span .Typewriter__cursor {
@@ -55,7 +59,7 @@ span .Typewriter__cursor {
   left: 0;
   right: 0;
   margin-left: -2px;
-  
+
 }
 
 #laptop-hero-image {

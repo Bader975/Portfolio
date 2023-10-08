@@ -1,8 +1,10 @@
-import React from 'react'
-import { Box,Text, VStack, Divider, SimpleGrid, useBreakpointValue } from "@chakra-ui/react";
+import React, { useState } from 'react'
+import { Box, Text, VStack, Divider, SimpleGrid, useBreakpointValue } from "@chakra-ui/react";
 import { FaHtml5, FaCss3, FaBootstrap, FaReact, FaNodeJs, FaDatabase, FaNpm, FaGit, FaChartBar } from "react-icons/fa";
 import { SiChakraui, SiJavascript, SiTypescript, SiNextdotjs, SiJquery, SiPrisma, SiExpress, SiRedux } from "react-icons/si";
 
+// import { motion } from 'framer-motion';
+// import { useInView } from "react-intersection-observer";
 
 
 export default function Skills() {
@@ -10,18 +12,39 @@ export default function Skills() {
     const iconSize = useBreakpointValue({ base: 30, md: 40 });
     const boxSize = useBreakpointValue({ base: 4, md: 5 });
 
+
+    // const [ref, inView] = useInView({
+    //     triggerOnce: false,
+    //     rootMargin: "-100px 0px",
+    //     threshold: 0
+    // });
+
+// old padding 
+    // pt={[100, 120]}
     return (
 
+       
 
-        <Box as="section" aria-label="skills-section" p={5}  pt={[100, 120]} pb={0} id="skills">
-            <Text as="h1" fontWeight={"bold"} fontSize={[24,30]} mb={4}>
+        <Box as="section" aria-label="skills-section" p={5} pt={[70, 100]} pb={0} id="skills">
+            <Text as="h1" fontWeight={"bold"} fontSize={[24, 30]} mb={4}>
                 Skills
             </Text>
             <Divider />
             <Text fontSize={[18, 20]} mt={1}>
                 Here are some of the key technologies and tools I work with:
             </Text>
-            <SimpleGrid w={"full"} h={"full"}  textAlign={"center"} fontSize={24} columns={[2, 2, 3, 4, 5]} mt={10} spacing={10} px={[5, 50, 100]}>
+            {/* <div ref={ref}>
+                <h2>{`Header inside viewport ${inView}.`}</h2>
+            </div> */}
+            {/* <Box ref={ref} h={"auto"}>
+                <motion.div
+                    initial={{ translateY: "0%", opacity: 0 }}
+                    animate={{ translateY: inView ? "0%" : "-50%", opacity: inView ? 1 : 0 }}
+                    transition={{ duration: 1 }}
+
+                > */}
+            <SimpleGrid w={"full"} h={"full"} textAlign={"center"} fontSize={24} columns={[2, 2, 3, 4, 5]} mt={10} spacing={10} px={[5, 50, 100]}>
+
 
                 <VStack spacing={2} minH={"150px"} boxShadow="0 2px 4px rgba(0, 0, 0, 0.1)" rounded={"md"} p={boxSize} >
                     <FaHtml5 color="#E34F26" size={iconSize} />
@@ -141,9 +164,11 @@ export default function Skills() {
                 </VStack>
 
 
-
-
             </SimpleGrid>
+            {/* </motion.div> */}
+            {/* </Box> */}
+
+
         </Box >
 
     )

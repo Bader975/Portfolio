@@ -8,6 +8,10 @@ p {
     /* = to 32px (2 * 16 = 32) */
   }
   
+  #navbar p {
+    font-size: 1.01rem;
+    /* = to 18px */
+  }
   /* Small screens */
   @media (max-width: 600px) {
     p {
@@ -39,8 +43,5 @@ p {
   button{
     font-size: 1.20rem !important;
   }
-    #navbar p {
-      font-size: 1.30rem;
-      /* = to 20px */
-    }
+   
   }

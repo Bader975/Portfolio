@@ -14,7 +14,10 @@ export default function Navbar() {
 
 
   if (typeof window == "object") {
-
+    // added the padding for scrollin 
+    const navbarHeight = document.querySelector('#navbar')?.offsetHeight;
+    document.documentElement.style.setProperty('--scroll-padding', navbarHeight + "px");
+    
     window.addEventListener("scroll", () => {
 
       const scrollY = window.scrollY;
@@ -43,6 +46,7 @@ export default function Navbar() {
     setActiveLink(index);
   };
 
+
   return (
     <>
 
@@ -69,7 +73,7 @@ export default function Navbar() {
 
             <Box w={"auto"}>
               {/* The Color Of the Text Changing Dependenig on the ScrollY */}
-              <Flex direction="row" spacing={5} justifyContent="center"  fontSize={20} fontFamily="Inter" color={navBarTextColor ? "#fff" : "#000"} bg={"transparent"}>
+              <Flex direction="row" spacing={5} justifyContent="center" fontSize={20} fontFamily="Inter" color={navBarTextColor ? "#fff" : "#000"} bg={"transparent"}>
                 {/* Mobile Menu */}
                 <MobileNavBar />
                 {/* Mobile Links */}
