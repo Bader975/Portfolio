@@ -17,7 +17,7 @@ export default function Cv() {
             <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.js">
                 <Box w={"100vw"} h={"100vh"}>
                     <Viewer
-                        fileUrl="/cv.pdf"
+                        fileUrl="/Bader_Mohammad_CV.pdf"
                         plugins={[
                             defaultLayoutPluginInstance,
                         ]}
