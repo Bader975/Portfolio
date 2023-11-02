@@ -1,4 +1,4 @@
-import { Box, SimpleGrid, Text, Spacer, Divider,useColorModeValue, Icon } from '@chakra-ui/react'
+import { Box, SimpleGrid, Text, Spacer,useColorModeValue, Icon } from '@chakra-ui/react'
 import React from 'react'
 import { PiEngineFill } from 'react-icons/pi'
 import { SiNextdotjs } from "react-icons/si";

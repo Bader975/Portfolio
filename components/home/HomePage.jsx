@@ -4,7 +4,7 @@ import Content from './Content'
 import ButtonContainer from './ButtonContainer'
 import Projects from '../projects/Projects'
 import ContactMe from '../animation/ContactMe';
-import { Image as ChakraImage, Box } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import About from '../about/About'
 import Skills from '../skills/Skills'
 import Image from 'next/image';

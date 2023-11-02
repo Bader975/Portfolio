@@ -9,27 +9,31 @@ export default function Navbar() {
 
   const [navBarTextColor, setNavBarTextColor] = useState(false);
   const [activeLink, setActiveLink] = useState(null);
+
   const router = useRouter()
 
-
-
   if (typeof window == "object") {
+    
     // added the padding for scrollin 
     const navbarHeight = document.querySelector('#navbar')?.offsetHeight;
     document.documentElement.style.setProperty('--scroll-padding', navbarHeight + "px");
-    
+
+    // Scroll handler
     window.addEventListener("scroll", () => {
-
       const scrollY = window.scrollY;
+      // add delay to the scroll
+      // setTimeout(()=>{
 
+      
       if (scrollY >= 50 && scrollY <= 650) {
+
         setNavBarTextColor(true);
-
-      } else {
+      } 
+      else 
+      {
         setNavBarTextColor(false);
-
       }
-
+      // },1000)
     })
 
   }
