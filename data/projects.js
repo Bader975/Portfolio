@@ -1,6 +1,6 @@
 
 export const projectsArray = [
-   
+
     {
         id: 2,
         title: "Invest With Us",
@@ -22,7 +22,7 @@ export const projectsArray = [
         href: "https://github.com/Bader975/Tuwaiq-Projects",
         image: "/projecs-images/tuwaiq-projets.webp"
     },
-   
+
     {
         id: 5,
         title: "Aramco Direct Hires Dashboard",
@@ -46,7 +46,7 @@ export const projectsArray = [
         href: "https://bader10alyami.000webhostapp.com/Aramco%20Pages/PDF%20Viewer/pdf.html",
         image: "/projecs-images/aramco-pdf-viewer.webp"
     },
-    
+
     {
         id: 8,
         title: "RATEME.com",
@@ -62,5 +62,11 @@ export const projectsArray = [
         href: "https://github.com/Bader975/NEXT-Auth",
         image: "/projecs-images/nextjs-auth.webp"
     },
-   
+    {
+        id: 9,
+        title: "NEXT.JS Auth ",
+        discription: "Used NextAuth to implement login and logout operations and sessions",
+        href: "https://github.com/Bader975/NEXT-Auth",
+        image: "/projecs-images/nextjs-auth.webp"
+    },
 ]

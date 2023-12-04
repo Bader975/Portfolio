@@ -11,7 +11,7 @@ import { Box } from '@chakra-ui/react'
 
 
 export default function Cv() {
-    const defaultLayoutPluginInstance = defaultLayoutPlugin();
+    const defaultLayoutPluginInstance =defaultLayoutPlugin();
     return (
         <>
             <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.js">
