@@ -62,11 +62,5 @@ export const projectsArray = [
         href: "https://github.com/Bader975/NEXT-Auth",
         image: "/projecs-images/nextjs-auth.webp"
     },
-    {
-        id: 9,
-        title: "NEXT.JS Auth ",
-        discription: "Used NextAuth to implement login and logout operations and sessions",
-        href: "https://github.com/Bader975/NEXT-Auth",
-        image: "/projecs-images/nextjs-auth.webp"
-    },
+  
 ]
