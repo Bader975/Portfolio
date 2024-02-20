@@ -26,7 +26,8 @@ html {
 *::after,
 *::before {
   box-sizing: border-box;
-  /* font-family: 'Playfair Display', serif !important; */
+  /* font-family: "Cairo", sans-serif !important;  */
+  /* font-style: italic; */
   /* font-family: 'Inter', sans-serif; */
 }
 

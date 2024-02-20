@@ -77,15 +77,14 @@ export default function Navbar() {
 
             <Box w={"auto"}>
               {/* The Color Of the Text Changing Dependenig on the ScrollY */}
-              <Flex direction="row" spacing={5} justifyContent="center" fontSize={20} fontFamily="Inter" color={navBarTextColor ? "#fff" : "#000"} bg={"transparent"}>
+              <Flex spacing={5} fontSize={20} fontFamily="Inter" color={navBarTextColor ? "#fff" : "#000"} bg={"transparent"}>
                 {/* Mobile Menu */}
                 <MobileNavBar />
                 {/* Mobile Links */}
                 {/* Desktop Menu */}
                 <Flex
                   direction="row"
-                  spacing={5}
-                  alignItems="center"
+                  gap={8}
                   display={{ base: "none", md: "flex" }}
                 >
 
