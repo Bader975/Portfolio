@@ -14,10 +14,11 @@ export default function Cv() {
     const defaultLayoutPluginInstance =defaultLayoutPlugin();
     return (
         <>
+        
             <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.js">
                 <Box w={"100vw"} h={"100vh"}>
                     <Viewer
-                        fileUrl="/Bader_Mohammad_CV.pdf"
+                        fileUrl="/Bader-Alyami-CV.pdf"
                         plugins={[
                             defaultLayoutPluginInstance,
                         ]}
