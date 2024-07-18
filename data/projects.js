@@ -2,6 +2,16 @@
 export const projectsArray = [
 
     {
+        id: 1,
+        title: "Wajeeh Bot ",
+        discription: "المساعد الافتراضي الأول في عالم التعليم بالتكامل مع مسارات التعلم المرن",
+        href: "https://wajeeh-snowy.vercel.app/",
+        image: "/projecs-images/wajeeh.jpeg"
+       
+    },
+
+
+    {
         id: 2,
         title: "Invest With Us",
         discription: "An investment platform for informed decision-making and linking between the invester and thecompany ",
