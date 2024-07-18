@@ -1,5 +1,5 @@
 import React from 'react';
-import ButtonComp from '../ui/ButtonComp';
+import ButtonComp from '../UI/ButtonComp';
 import { SimpleGrid, Stack } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { BsFiletypePdf } from 'react-icons/bs';
