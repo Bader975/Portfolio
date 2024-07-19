@@ -25,7 +25,7 @@ export default function About() {
         <SimpleGrid w={"full"} h={"full"} columns={[1, 1, 2]} mt={5}>
           <Box marginInline={8}>
             <Imagechakra
-              src="/me-removebg.webp"
+              src="/bader-img.png"
               alt="Bader Mohammad"
               mb={4}
               w={"50%"}
