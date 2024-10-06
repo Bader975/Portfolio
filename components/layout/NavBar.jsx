@@ -4,6 +4,14 @@ import Link from "next/link";
 import React, { useState } from 'react';
 import MobileNavBar from "./MobileNavBar";
 
+ // add delay to the scroll
+function debounce(func, timeout = 300){
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => { func.apply(this, args); }, timeout);
+  };
+}
 
 export default function Navbar() {
 
@@ -19,27 +27,19 @@ export default function Navbar() {
     document.documentElement.style.setProperty('--scroll-padding', navbarHeight + "px");
 
     // Scroll handler
-    window.addEventListener("scroll", () => {
+    window.addEventListener("scroll", debounce(() => {
       const scrollY = window.scrollY;
       // add delay to the scroll
-      // setTimeout(()=>{
-
-      
       if (scrollY >= 50 && scrollY <= 650) {
-
         setNavBarTextColor(true);
-      } 
-      else 
-      {
+      } else {
+        
         setNavBarTextColor(false);
       }
-      // },1000)
-    })
-
+    }),500);
   }
 
-  // Store The Hover Efffects  
-  // color: navBarTextColor ? "#fff" : "#000"
+  // Store The Hover Efffects
   const HoverEfffects = {
     color: "#fff", opacity: 1, transform: "scale(1.0)", transition:
       "transform 0.5s", backgroundColor: "#637681"
