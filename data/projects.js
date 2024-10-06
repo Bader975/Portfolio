@@ -26,7 +26,7 @@ export const projectsArray = [
         image: "/projecs-images/nextjs-meetup.webp"
     },
     {
-        id: 1,
+        id: 4,
         title: "Tuwaiq Projects",
         discription: " Website used (React.TS - Node.js - Express.js) helps Tuwaiq students to get project ideas provided by companies, upload their projects, and display them for any company. They can also modify their projects if they wish.",
         href: "https://github.com/Bader975/Tuwaiq-Projects",
@@ -66,7 +66,7 @@ export const projectsArray = [
     },
 
     {
-        id: 4,
+        id: 9,
         title: "NEXT.JS Auth ",
         discription: "Used NextAuth to implement login and logout operations and sessions",
         href: "https://github.com/Bader975/NEXT-Auth",
