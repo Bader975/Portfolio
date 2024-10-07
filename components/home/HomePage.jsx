@@ -7,7 +7,6 @@ import ContactMe from '../animation/ContactMe';
 import { Box } from '@chakra-ui/react';
 import About from '../about/About'
 import Skills from '../skills/Skills'
-import Image from 'next/image';
 
 
 
@@ -22,12 +21,12 @@ export default function HomePage({ projects }) {
                 {/* <ChakraImage w={"100%"} h={"100%"} objectFit={"cover"} fetchpriority='high' pos={"relative"} zIndex={"-2"} alt="Banner image" src="/laptop image.webp" /> */}
                
 
-                <Image
+                <img
                     src="/hero-image.jpg"
                     alt="Banner image"
                     width={680}
-                    height={680} 
-                    priority={true}
+                    height={900} 
+                    priority="true"
                     id='laptop-hero-image'
                     style={{
                         position: 'relative',
