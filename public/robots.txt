@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.portfolio-bader.online
+Host: https://www.bader-alyami.com
 
 # Sitemaps
-Sitemap: https://www.portfolio-bader.online/sitemap.xml
+Sitemap: https://www.bader-alyami.com/sitemap.xml

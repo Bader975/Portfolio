@@ -41,8 +41,8 @@ export default function App({ Component, pageProps }) {
                   "@type": "CreativeWork",
                   "name": "Bader Mohammad Portfolio",
                   "alternateName": ["BM", "BADER", "Bader's Portfolio"],
-                  "url": "https://www.portfolio-bader.online",
-                  "image": "https://www.portfolio-bader.online/bm-logo-remove-bg.png"
+                  "url": "https://www.bader-alyami.com",
+                  "image": "https://www.bader-alyami.com/bm-logo-remove-bg.png"
                 }
               `,
                 }}
@@ -64,7 +64,7 @@ export default function App({ Component, pageProps }) {
               <meta name="google-site-verification" content="OQtDBl4loczi5G1TaxIPG9iKNkDrpy0cfg16wleS3Qc" />
 
               {/* <!-- Facebook Meta Tags --> */}
-              <meta property="og:url" content="https://www.portfolio-bader.online/" />
+              <meta property="og:url" content="https://www.bader-alyami.com/" />
               <meta property="og:type" content="website" />
               <meta property="og:title" content="Bader's Mohammad Portfolio" />
               <meta property="og:description" content="This is my portfolio website showcasing my work and skills." />
@@ -72,7 +72,7 @@ export default function App({ Component, pageProps }) {
               {/* <!-- Twitter Meta Tags --> */}
               <meta name="twitter:card" content="summary_large_image" />
               <meta property="twitter:domain" content="portfolio-bader.online" />
-              <meta property="twitter:url" content="https://www.portfolio-bader.online/" />
+              <meta property="twitter:url" content="https://www.bader-alyami.com/" />
               <meta name="twitter:title" content="Bader's Mohammad Portfolio" />
               <meta name="twitter:description" content="This is my portfolio website showcasing my work and skills." />
               <meta name="twitter:image" content="https://github.com/Bader975/NEXT-Auth/assets/80196102/d019df5c-5d9d-44c7-bf8d-63f95fb5bb83" />
