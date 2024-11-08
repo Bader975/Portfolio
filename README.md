@@ -1,38 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Bader Mohammad's Portfolio
 
-## Getting Started
+Welcome to my portfolio! This project showcases my work, skills, and personal projects. It is built with [Next.js](https://nextjs.org/), styled with [Chakra UI](https://chakra-ui.com/), and enhanced with animations and custom fonts to create a unique and engaging user experience.
+<img width="1498" alt="image" src="https://github.com/user-attachments/assets/65082f83-3019-49bd-9e40-7463f768c0db">
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- **Project Showcase**: Highlights my key projects with descriptions and links.
+- **Responsive Design**: Optimized for both mobile and desktop devices.
+- **SEO Optimized**: Includes meta tags, Open Graph, and Twitter Cards for improved discoverability.
+- **PWA-Ready**: Can be installed as a Progressive Web App (PWA).
+- **Smooth Animations**: Leveraging Next.js and CSS animations for an interactive feel.
+- **Custom Fonts**: Uses the Lusitana font to align with my personal brand style.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Project Structure
+This project follows the Next.js Pages Router structure:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- **/pages:** Contains the main pages, such as index.js for the homepage.
+- **/components:** Reusable UI components, such as the project cards, layout, and navbar.
+- **/public:** Static assets like images, icons, and the manifest.json file.
+- **/styles:** Global styles and custom fonts.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Deployment
+This portfolio is optimized for deployment on **Vercel**, the recommended platform for Next.js applications:
 
-To learn more about Next.js, take a look at the following resources:
+Push your code to a GitHub repository.
+Connect the repository to Vercel and follow the deployment steps.
+Once deployed, your portfolio will be live on your custom domain or Vercel URL.
+For more details on deployment, refer to the Next.js deployment documentation.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
