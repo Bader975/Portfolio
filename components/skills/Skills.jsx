@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Box, Text, VStack, Divider, SimpleGrid, useBreakpointValue } from "@chakra-ui/react";
-import { FaHtml5, FaCss3, FaBootstrap, FaReact, FaNodeJs, FaDatabase, FaNpm, FaGit, FaChartBar } from "react-icons/fa";
-import { SiChakraui, SiJavascript, SiTypescript, SiNextdotjs, SiJquery, SiPrisma, SiExpress, SiRedux } from "react-icons/si";
+import { FaHtml5, FaCss3, FaBootstrap, FaReact, FaNodeJs, FaDatabase, FaNpm, FaGit, FaChartBar,FaAngular,FaTailwind } from "react-icons/fa";
+import { SiChakraui, SiJavascript, SiTypescript, SiNextdotjs, SiJquery, SiPrisma, SiExpress, SiRedux,SiTailwindcss } from "react-icons/si";
 
 // import { motion } from 'framer-motion';
 // import { useInView } from "react-intersection-observer";
@@ -9,7 +9,7 @@ import { SiChakraui, SiJavascript, SiTypescript, SiNextdotjs, SiJquery, SiPrisma
 
 export default function Skills() {
 
-    const iconSize = useBreakpointValue({ base: 30, md: 40 });
+    const iconSize = useBreakpointValue({ base: 30, md: 50 });
     const boxSize = useBreakpointValue({ base: 4, md: 5 });
 
 
@@ -59,6 +59,11 @@ export default function Skills() {
                     <Text as="span">CSS</Text>
                 </VStack>
 
+                <VStack spacing={2} minH={"150px"} boxShadow="0 2px 4px rgba(0, 0, 0, 0.1)" rounded={"md"} p={boxSize}>
+                    <SiTailwindcss color="#38bdf9" size={iconSize} />
+                    <Divider />
+                    <Text as="span">Tailwind CSS</Text>
+                </VStack>
 
                 <VStack spacing={2} minH={"150px"} boxShadow="0 2px 4px rgba(0, 0, 0, 0.1)" rounded={"md"} p={boxSize}>
                     <FaBootstrap color="#7952B3" size={iconSize} />
@@ -86,25 +91,23 @@ export default function Skills() {
                 </VStack>
 
 
-                <VStack spacing={2} minH={"150px"} boxShadow="0 2px 4px rgba(0, 0, 0, 0.1)" rounded={"md"} p={boxSize}>
-                    <SiJavascript color="#F7DF1E" size={iconSize} />
-                    <Divider />
-                    <Text as="span">JavaScript</Text>
-                </VStack>
-
-
-                <VStack spacing={2} minH={"150px"} boxShadow="0 2px 4px rgba(0, 0, 0, 0.1)" rounded={"md"} p={boxSize}>
-                    <SiTypescript color="#3178C6" size={iconSize} />
-                    <Divider />
-                    <Text as="span">TypeScript</Text>
-                </VStack>
-
 
                 <VStack spacing={2} minH={"150px"} boxShadow="0 2px 4px rgba(0, 0, 0, 0.1)" rounded={"md"} p={boxSize}>
                     <FaReact color="#61DAFB" size={iconSize} />
                     <Divider />
                     <Text as="span">React.js</Text>
                 </VStack>
+                <VStack
+                    spacing={2} minH={"150px"}
+                    boxShadow="0 2px 4px rgba(0, 0, 0, 0.1)"
+                    rounded={"md"}
+                    p={boxSize}
+                >
+                    <FaAngular size={iconSize + 10} color="#c42d52" />
+                    <Divider />
+                    <Text as="span">Angular</Text>
+                </VStack>
+
                 <VStack
                     spacing={2} minH={"150px"}
                     boxShadow="0 2px 4px rgba(0, 0, 0, 0.1)"
@@ -123,6 +126,19 @@ export default function Skills() {
                     <Text as="span">Next.js</Text>
                 </VStack>
 
+
+                <VStack spacing={2} minH={"150px"} boxShadow="0 2px 4px rgba(0, 0, 0, 0.1)" rounded={"md"} p={boxSize}>
+                    <SiJavascript color="#F7DF1E" size={iconSize} />
+                    <Divider />
+                    <Text as="span">JavaScript</Text>
+                </VStack>
+
+
+                <VStack spacing={2} minH={"150px"} boxShadow="0 2px 4px rgba(0, 0, 0, 0.1)" rounded={"md"} p={boxSize}>
+                    <SiTypescript color="#3178C6" size={iconSize} />
+                    <Divider />
+                    <Text as="span">TypeScript</Text>
+                </VStack>
 
                 <VStack spacing={2} minH={"150px"} boxShadow="0 2px 4px rgba(0, 0, 0, 0.1)" rounded={"md"} p={boxSize}>
                     <FaNodeJs color="#339933" size={iconSize} />
