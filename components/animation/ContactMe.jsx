@@ -6,7 +6,6 @@ import {
   HStack,
   Link as ChakraLink,
   Button,
-  Heading,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";

@@ -9,21 +9,19 @@ export const projectsArray = [
         image: "/projecs-images/wajeeh.jpeg"
        
     },
-
-
+    {
+        id: 10,
+        title: "common voice Arabic Version (الجداريــة الصوتيـة)",
+        discription: " Arabic voice data controller, which participates in recording Arabic voice calls and interacts with a distinctive mark.",
+        href: "https://falak.ksaa.gov.sa/voicewall/ar",
+        image: "/projecs-images/common-voice-ar.png"
+    },
     {
         id: 2,
         title: "Invest With Us",
         discription: "An investment platform for informed decision-making and linking between the invester and thecompany ",
-        href: "https://invest-with-us.vercel.app/",
+        href: "https://react-app-b699b.firebaseapp.com/",
         image: "/projecs-images/invest-with-us.webp"
-    },
-    {
-        id: 3,
-        title: "NEXT.JS App MeetUp",
-        discription: "Web app that uses NEXT.JS and Mongodb to add and manage your meetups and put the important in favorites meetup",
-        href: "https://github.com/Bader975/nextjs-meetup/tree/main",
-        image: "/projecs-images/nextjs-meetup.webp"
     },
     {
         id: 4,
@@ -64,7 +62,13 @@ export const projectsArray = [
         href: "https://bader10alyami.000webhostapp.com/Ratings/restaurantsHome.html",
         image: "/projecs-images/rateme.webp"
     },
-
+    {
+        id: 3,
+        title: "NEXT.JS App MeetUp",
+        discription: "Web app that uses NEXT.JS and Mongodb to add and manage your meetups and put the important in favorites meetup",
+        href: "https://github.com/Bader975/nextjs-meetup/tree/main",
+        image: "/projecs-images/nextjs-meetup.webp"
+    },
     {
         id: 9,
         title: "NEXT.JS Auth ",

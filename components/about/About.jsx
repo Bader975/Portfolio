@@ -68,6 +68,10 @@ export default function About() {
               </Text>{" "}
               and{" "}
               <Text as="span" fontWeight="bold">
+               Angular
+              </Text>{" "}
+              and{" "}
+              <Text as="span" fontWeight="bold">
                 Next.js
               </Text>
               , I excel at crafting intuitive and responsive user interfaces. On
