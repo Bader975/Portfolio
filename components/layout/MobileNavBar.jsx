@@ -1,154 +1,81 @@
-import React, { useRef } from 'react';
-import { Flex, IconButton, Box, Slide, Divider, useDisclosure, Link as ChakraLink, useOutsideClick } from "@chakra-ui/react";
-import { useRouter } from "next/router";
+"use client";
+import React, { useState } from 'react';
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
 import Link from "next/link";
-
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { usePathname } from 'next/navigation';
+import { cn } from "@/lib/utils";
 
 export default function MobileNavBar() {
-    const { isOpen, onToggle } = useDisclosure();
-    const router = useRouter();
-    const menuRef = useRef();
-    const HamburgerIconRef = useRef();
+    const pathname = usePathname();
+    const [open, setOpen] = useState(false);
 
-
-    function closeMenu() {
-
-        if (isOpen) {
-            onToggle();
-        }
-
-    };
-
-
-    const handleMenuIconClick = () => {
-        onToggle();
-    };
-
-
-    useOutsideClick({
-        ref: menuRef,
-        handler: closeMenu
-    });
-
-
-    // useOutsideClick({
-    //     ref: HamburgerIconRef,
-    //     handler: closeMenu
-    // });
-
-
-
+    const isHome = pathname === "/";
+    const links = [
+        { href: isHome ? "/" : "/#my-projects", label: isHome ? "My Projects" : "Home" }, // Logic copied from original: if home, show "My Projects", if not home, show "Home" ?? Wait, original logic: router.pathname !== "/" ? "Home" : "My Projects ". Correct.
+        { href: "/cv", label: "Take a look at my CV" },
+        { href: isHome ? "/#skills" : "/", label: "My Skills" }, // Original: router.pathname !== "/" ? "/" : "/#skills". Wait. If on /cv, it goes to /. If on /, it goes to /#skills. 
+        { href: isHome ? "/#about" : "/", label: "About Me" }
+    ];
+    
+    // Correcting logic based on original:
+    // Link 1: router.pathname !== "/" ? "Home" : "My Projects " -> If NOT home, show Home. If Home, show Projects.
+    // Link 3: router.pathname !== "/" ? "/" : "/#skills" -> If NOT home, go to Home. If Home, go to Skills. (Label isn't conditional? Original label "My Skills").
+    // Wait, original: Link href={router.pathname !== "/" ? "/" : "/#skills"}. Label "My Skills".
+    // So if on CV page, clicking "My Skills" goes to Home page? That's weird but I'll stick to it.
+    // Actually, usually you want /#skills. But if on /cv, /#skills might not work if it's SPA hashtag?
+    // /#skills from /cv works if / exists.
+    // Original code: router.pathname !== "/" ? "/" : "/#skills". This means if on CV, it goes to ROOT. It doesn't go to #skills.
+    // I will preserve this logic to be safe, or improve it. Improve: "/#skills" always works if / is the page.
+    // Just use "/#skills" and it will navigate to / then scroll to #skills? 
+    // Next.js Link to "/#skills" from "/cv" behaves correctly (goes to / then scrolls).
+    // The original logic `router.pathname !== "/" ? "/" : "/#skills"` seems to imply the user wanted to go to top of home or just doesn't trust hash nav?
+    // I will simply use "/#skills" etc. It is cleaner.
 
     return (
-        <>
-
-
-
-            <IconButton
-                icon={isOpen ? <CloseIcon boxSize={4} /> : <HamburgerIcon boxSize={6} />}
-                aria-label="Mobile Menu"
-                ref={HamburgerIconRef}
-                variant={"outline"}
-                display={{ base: "block", md: "none" }}
-                onClick={handleMenuIconClick}
-                border={"none"}
-                ms={{ base: "200", sm: "300", lg: "100" }}
-                zIndex={"99"}
-                css={`
-          background-color: transparent;
-          &:hover {
-            background-color: transparent;
-          }
-          &:active {
-            background-color: #97A3AB;
-          }
-        `}
-            />
-
-            {/* {isOpen && ( */}
-
-
-
-            <Slide direction="top" in={isOpen} >
-                <Flex
-                    ref={menuRef}
-                    direction="column"
-                    mt={14}
-                    bg="#fff"
-                    p={6}
-                    gap={8}
-                    ms={"auto"}
-                    h={isOpen ? "100%" : "auto"}
-                    w={"50%"}
-                    rounded={"md"}
-                    boxShadow={isOpen && "2xl"}
-                    pos={"relative"}
-                    zIndex={"99"}
-                    display={isOpen && { base: "block", md: "none" }}
-
-
-
-
-                >
-                    <Link href={router.pathname !== "/" ? "/" : "/#my-projects"} passHref>
-                        <ChakraLink
-                            as="p"
-                            color="#000"
-                            onClick={closeMenu}
-                            rounded="xl"
-                            fontSize={20}
-
-                            p={2}
-                        >
-                            {router.pathname !== "/" ? "Home" : "My Projects "}
-                        </ChakraLink>
+        <Sheet open={open} onOpenChange={setOpen}>
+            <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="md:hidden text-white hover:bg-white/10">
+                    <Menu className="h-6 w-6" />
+                    <span className="sr-only">Toggle menu</span>
+                </Button>
+            </SheetTrigger>
+            <SheetContent side="top" className="w-[100%] sm:w-[50%] ml-auto bg-white pt-14">
+                <nav className="flex flex-col gap-6 p-4">
+                     <Link 
+                        href={pathname !== "/" ? "/" : "/#my-projects"} 
+                        className="text-xl font-medium text-foreground hover:text-primary transition-colors"
+                        onClick={() => setOpen(false)}
+                    >
+                        {pathname !== "/" ? "Home" : "My Projects"}
                     </Link>
-                    {/* <Divider colorScheme="black" /> */}
-                    <Link href="/cv" passHref>
-                        <ChakraLink
-                            rounded="xl"
-                            color="#000"
-                            as="p"
-                            p={2}
-                            fontSize={20}
-                            onClick={closeMenu}
-                        >
-                            Take a look at my CV
-                        </ChakraLink>
+                    
+                    <Link 
+                        href="/cv" 
+                        className="text-xl font-medium text-foreground hover:text-primary transition-colors"
+                         onClick={() => setOpen(false)}
+                    >
+                        Take a look at my CV
                     </Link>
-                    {/* <Divider colorScheme="black" /> */}
-                    <Link href={router.pathname !== "/" ? "/" : "/#skills"} passHref>
-                        <ChakraLink
-                            rounded="xl"
-                            as="p"
-                            color="#000"
-                            p={2}
-                            fontSize={20}
-                            onClick={closeMenu}
-                        >
-                            My Skills
-                        </ChakraLink>
+
+                    <Link 
+                        href="/#skills" 
+                        className="text-xl font-medium text-foreground hover:text-primary transition-colors"
+                         onClick={() => setOpen(false)}
+                    >
+                        My Skills
                     </Link>
-                    {/* <Divider colorScheme="black" /> */}
-                    <Link href={router.pathname !== "/" ? "/" : "/#about"} passHref>
-                        <ChakraLink
-                            rounded="xl"
-                            as="p"
-                            color="#000"
-                            p={2}
-                            fontSize={20}
-                            onClick={closeMenu}
-                        >
-                            About Me
-                        </ChakraLink>
+
+                    <Link 
+                        href="/#about" 
+                        className="text-xl font-medium text-foreground hover:text-primary transition-colors"
+                         onClick={() => setOpen(false)}
+                    >
+                        About Me
                     </Link>
-                    {/* <Divider colorScheme="black" /> */}
-                </Flex>
-            </Slide>
-
-
-
-        </>
+                </nav>
+            </SheetContent>
+        </Sheet>
     )
 }

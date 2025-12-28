@@ -1,188 +1,141 @@
-import { Box, Flex, IconButton, Image, Link as ChakraLink } from "@chakra-ui/react";
-import { useRouter } from "next/router";
+"use client";
 import Link from "next/link";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import MobileNavBar from "./MobileNavBar";
-
- // add delay to the scroll
-function debounce(func, timeout = 300){
-  let timer;
-  return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => { func.apply(this, args); }, timeout);
-  };
-}
+import { usePathname } from 'next/navigation';
+import { cn } from "@/lib/utils";
 
 export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeHash, setActiveHash] = useState("");
+  const pathname = usePathname();
 
-  const [navBarTextColor, setNavBarTextColor] = useState(false);
-  const [activeLink, setActiveLink] = useState(null);
-
-  const router = useRouter()
-
-  if (typeof window == "object") {
-    
-    // added the padding for scrollin 
-    const navbarHeight = document.querySelector('#navbar')?.offsetHeight;
-    document.documentElement.style.setProperty('--scroll-padding', navbarHeight + "px");
-
-    // Scroll handler
-    window.addEventListener("scroll", debounce(() => {
-      const scrollY = window.scrollY;
-      // add delay to the scroll
-      if (scrollY >= 50 && scrollY <= 650) {
-        setNavBarTextColor(true);
+  useEffect(() => {
+    const handleScroll = () => {
+       if (window.scrollY >= 50) {
+        setIsScrolled(true);
       } else {
-        
-        setNavBarTextColor(false);
+        setIsScrolled(false);
       }
-    }),500);
-  }
 
-  // Store The Hover Efffects
-  const HoverEfffects = {
-    color: "#fff", opacity: 1, transform: "scale(1.0)", transition:
-      "transform 0.5s", backgroundColor: "#637681"
-  }
+      // Active state logic (Simple ScrollSpy)
+      const sections = ["my-projects", "skills", "about"];
+      let current = "";
+      
+      // Check if we are at top
+      if (window.scrollY < 100) {
+          current = ""; // Home
+      } else {
+          for (const section of sections) {
+            const element = document.getElementById(section);
+            if (element) {
+                const rect = element.getBoundingClientRect();
+                // If top of section is within viewport (with some offset)
+                if (rect.top <= 150 && rect.bottom >= 150) {
+                    current = section;
+                }
+            }
+          }
+      }
+      setActiveHash(current);
+    };
 
-  // Function to know which link is active
-  const handleLinkClick = (index) => {
-    setActiveLink(index);
-  };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
+  // Use pathname to set initial active hash if hard navigated (e.g. /#skills)
+  useEffect(() => {
+      const hash = window.location.hash.replace("#", "");
+      if (hash) setActiveHash(hash);
+  }, [pathname]);
+
+
+  // Logic: 
+  // Home Page: Transparent at top (white text), Glass/White on scroll (black text).
+  // Other Pages (CV): Always Glass/White (black text) because there is no dark hero.
+  const isHome = pathname === "/";
+  const shouldShowGlass = isScrolled || !isHome;
+
+  const navBgClass = shouldShowGlass 
+      ? "bg-white/80 backdrop-blur-lg shadow-md border-b border-gray-100 dark:bg-black/80 dark:border-gray-800" 
+      : "bg-transparent";
+
+  // Text color: 
+  const textColorClass = shouldShowGlass ? "text-foreground" : "text-white";
+
+  const navLinks = [
+      { href: pathname !== "/" ? "/" : "/#my-projects", label: pathname !== "/" ? "Home" : "My Projects", id: "my-projects", isHomeLink: true },
+      { href: "/cv", label: "Take a look at my CV", id: "cv" },
+      { href: "/#skills", label: "My Skills", id: "skills" },
+      { href: "/#about", label: "About Me", id: "about" }
+  ];
 
   return (
-    <>
+    <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out", navBgClass, textColorClass)}>
+      <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
+            {/* Logo */}
+            <Link href="/" className="relative w-28 h-20 block transition-transform hover:scale-105">
+                 <img 
+                    src="/bm-logo-remove-bg.webp" 
+                    alt="Logo" 
+                    className="w-full h-full object-contain"
+                />
+            </Link>
 
-      <Box as="header" pos={"sticky"}
-        boxShadow={"lg"} top={0} zIndex={5}>
+            {/* Mobile Menu */}
+            <div className="md:hidden">
+              <MobileNavBar />
+            </div>
 
-        <Box as={"nav"} py={4} pb={5} id={"navbar"} bg={"transparent"} backdropFilter="blur(10px)"
-          _backdropfilter="blur(5px)">
-
-          <Flex>
-            <Box>
-              <IconButton
-                aria-label="Menu"
-                variant="black"
-                color="white"
-                size="lg"
-                onClick={() => { router.pathname !== "/" && router.push("/") }}
-              >
-                {/* bg={!navBarTextColor ? "#fff" : null} */}
-                <Image src={"/bm-logo-remove-bg.webp"} objectFit={"contain"} rounded={"xl"} w={120} h={100} mb={1} pt={1} bg={{ base: null, md: navBarTextColor ? "#F5F5F5" : null }} />
-              </IconButton>
-            </Box>
-
-
-            <Box w={"auto"}>
-              {/* The Color Of the Text Changing Dependenig on the ScrollY */}
-              <Flex spacing={5} fontSize={20} fontFamily="Inter" color={navBarTextColor ? "#fff" : "#000"} bg={"transparent"}>
-                {/* Mobile Menu */}
-                <MobileNavBar />
-                {/* Mobile Links */}
-                {/* Desktop Menu */}
-                <Flex
-                  direction="row"
-                  gap={8}
-                  display={{ base: "none", md: "flex" }}
-                >
-
-                  <Link href={router.pathname !== "/" ? "/" : "/#my-projects"} passHref>
-                    <ChakraLink
-                      _hover={activeLink !== 0 && HoverEfffects}
-                      as="p"
-                      rounded="xl"
-                      opacity={0.9}
-                      p={3}
-                      bg={activeLink === 0 ? "#153243" : "none"}
-                      color={activeLink === 0 && "#fff"}
-                      onClick={() => handleLinkClick(0)}
-
-                    >
-                      {router.pathname !== "/" ? "Home" : "My Projects "}
-
-                    </ChakraLink>
-                  </Link>
-
-                  <Link href="/cv" passHref>
-                    <ChakraLink
-                      _hover={activeLink !== 1 && HoverEfffects}
-                      as="p"
-                      rounded="xl"
-                      opacity={0.9}
-                      p={3}
-                      bg={activeLink === 1 ? "#153243" : "none"}
-                      color={activeLink === 1 && "#fff"}
-                      onClick={() => handleLinkClick(1)}
-
-                    >
-                      Take a look at my CV
-                    </ChakraLink>
-                  </Link>
-
-                  <Link href={router.pathname !== "/" ? "/" : "/#skills"} passHref>
-                    <ChakraLink
-                      _hover={activeLink !== 2 && HoverEfffects}
-                      rounded="xl"
-                      as="p"
-                      opacity={0.9}
-                      p={3}
+            {/* Desktop Menu */}
+            <div className="hidden md:flex flex-row gap-6 items-center">
+                {navLinks.map((link, idx) => {
+                    // Active check
+                    let isActive = false;
+                    if (link.id === "cv") {
+                        isActive = pathname === "/cv";
+                    } else if (link.isHomeLink && pathname === "/" && activeHash === "") {
+                        // Home link active when at top of home
+                         // Actually "Home" label (My Projects) logic is complex. 
+                         // Original: "My Projects" linked to #my-projects. 
+                         // "Home" linked to /.
+                         // If we assume "My Projects" is just a section, it should light up when on that section.
+                         // But the label changes active state?
+                         // Let's stick to: if hash matches, its active.
+                         if (link.label === "Home") isActive = false; // "Home" maps to / only.
+                         else isActive = activeHash === "my-projects"; // "My Projects" maps to #my-projects
+                    } else if (pathname === "/") {
+                        isActive = activeHash === link.id;
+                    }
+                    
+                    // Special case: "Home" link when label is "Home" (not on home page)
+                    if (link.label === "Home" && pathname !== "/") {
+                         // Being on unrelated page doesn't make Home active usually, unless explicitly desired.
+                         isActive = false;
+                    }
+                    
+                    // Specific fix: "My Projects" is the first link on Home. 
+                    if (link.label === "My Projects" && activeHash === "my-projects") isActive = true;
 
 
-                      bg={activeLink === 2 ? "#153243" : "none"}
-                      color={activeLink === 2 && "#fff"}
-                      onClick={() => handleLinkClick(2)}
-                    >
-                      My Skills
-                    </ChakraLink>
-                  </Link>
-
-                  <Link href={router.pathname !== "/" ? "/" : "/#about"} passHref>
-                    <ChakraLink
-                      _hover={activeLink !== 3 && HoverEfffects}
-                      rounded="xl"
-                      as="p"
-                      opacity={0.9}
-                      p={3}
-
-                      bg={activeLink === 3 ? "#153243" : "none"}
-                      color={activeLink === 3 && "#fff"}
-                      onClick={() => handleLinkClick(3)}
-                    >
-                      About Me
-                    </ChakraLink>
-                  </Link>
-                </Flex>
-              </Flex>
-            </Box>
-          </Flex >
-        </Box >
-      </Box>
-    </>
+                    return (
+                        <Link 
+                            key={idx}
+                            href={link.href}
+                            className={cn(
+                                "px-5 py-2.5 rounded-2xl text-lg font-medium transition-all duration-300",
+                                isActive 
+                                    ? "bg-[#153243] text-white shadow-lg scale-105" 
+                                    : "hover:bg-[#153243] hover:text-white hover:shadow-lg hover:-translate-y-0.5"
+                            )}
+                        >
+                            {link.label}
+                        </Link>
+                    );
+                })}
+            </div>
+      </nav>
+    </header>
   );
 }
-
-
-
-
-
-{/* The HOME PAGE */ }
-{/* {router.pathname !== "/" && <Box color="balck" mx={"auto"}>
-                <Button
-                  aria-label="Menu"
-                  variant="balck"
-                  color="black"
-                  fontSize={[16, 20]}
-                  border={"1px"}
-                  p={2}
-                  shadow={"sm"}
-                  rounded={"xl"}
-                  onClick={() => { router.pathname !== "/" && router.push("/") }}
-                >
-                  HOME PAGE
-                </Button>
-
-              </Box>
-              } */}
-

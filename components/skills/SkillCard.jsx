@@ -1,25 +1,23 @@
-import { VStack, Divider, Text } from "@chakra-ui/react";
 import React from "react";
+import { cn } from "@/lib/utils";
 
- const SkillCard= ({ icon, label, size, boxSize }) => {
+const SkillCard = ({ icon, label, boxSize }) => {
   return (
-    <VStack
-      spacing={2}
-      minH={"150px"}
-      boxShadow="0 2px 4px rgba(0, 0, 0, 0.1)"
-      rounded={"md"}
-      p={boxSize}
-      transition="all 0.2s ease-in-out"
-      cursor="pointer"
-      _hover={{
-        transform: "scale(1.05)",
-        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
-      }}
+    <div
+      className={cn(
+        "flex flex-col items-center justify-center gap-2",
+        "min-h-[150px] shadow-md rounded-2xl p-6",
+        "transition-all duration-200 ease-in-out cursor-pointer",
+        "hover:scale-105 hover:shadow-xl bg-white dark:bg-card text-black dark:text-white border border-gray-100 dark:border-gray-800"
+      )}
     >
-      {React.cloneElement(icon, { size })}
-      <Divider />
-      <Text as="span">{label}</Text>
-    </VStack>
+        {/* We wrap the icon to control size with Tailwind classes */}
+      <span className="text-[30px] md:text-[50px]">
+        {icon}
+      </span>
+      <hr className="w-full my-2 border-gray-200 dark:border-gray-700" />
+      <span>{label}</span>
+    </div>
   );
 };
 

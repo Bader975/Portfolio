@@ -1,56 +1,45 @@
 import React from 'react'
-import ImageComp from '../ui/ImageComp';
 import classes from './projects.module.css'
-import { Box, SimpleGrid, Divider, Text } from '@chakra-ui/react'
 import Link from 'next/link';
 import Image from 'next/image';
+import { cn } from "@/lib/utils";
 
-
-
-
-
-
-export default function Skill({ projects }) {
-
-
-
+export default function Projects({ projects }) {
     return (
-        <>
-
-
-            <Text as="h1" fontSize={[24, 30]} textAlign={"left"} pt={[70, 120]} pl={5} fontWeight={"bold"} id={"my-projects"} mt={20}> My Projects 💼: </Text>
-            <Divider />
+        <section aria-label="projects-section" className="w-full h-full px-5 py-10 md:py-20 mb-[100px] md:mb-[200px]">
+             
+            <h1 className="text-2xl md:text-3xl text-left pl-5 font-bold mt-20 text-black dark:text-white" id="my-projects"> 
+                My Projects 💼: 
+            </h1>
+            <hr className="my-4 border-gray-200 dark:border-gray-700" />
+            
             {/* ---------------------------Grid---------------*/}
-            <SimpleGrid as="section" aria-label="projects-section" w={"100%"} h={"100%"} columns={[1, 1, 2, 2, 3]} rounded={"xl"} mx={"auto"} p={[5, 5]} mb={[100, 200]} spacingX={5} spacingY={10} >
-
-                {/* the List of Projecs  */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 gap-y-10 w-full max-w-7xl mx-auto p-5">
+                {/* the List of Projects  */}
                 {projects.map((project) => (
-
-                    <Box key={project.id} rounded={"lg"} mt={10} p={[5, 10]}  boxShadow={"lg"} h={"full"}>
-                        <Link href={`${project.href}`} rounded={"lg"} target='_blank' >
-                            {/* <ImageComp image={project.image} /> */}
-                            <Image src={project.image} className={classes.project_image} width={300} height={300} alt={"Image of One my Projects"} />
+                    <div key={project.id} className="bg-white dark:bg-card rounded-2xl mt-10 p-5 md:p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300 h-full flex flex-col border border-gray-100 dark:border-gray-800">
+                        <Link href={`${project.href}`} target='_blank' className="block rounded-lg overflow-hidden hover:opacity-90 transition-opacity">
+                             <Image 
+                                src={project.image} 
+                                className={cn(classes.project_image, "w-full h-auto object-cover aspect-square")} 
+                                width={300} 
+                                height={300} 
+                                alt={"Image of " + project.title} 
+                            />
                         </Link>
-                        <Text color={"#000"} textAlign={"center"}  mt={3} fontWeight={"bold"} fontSize={[18, 22]}>{project.title}</Text>
-                        <Divider />
-                        <Text color={"#000"} opacity={0.75} textAlign={["left", "center"]} pt={2} fontSize={[18, 18]}>{project.discription}</Text>
-                    </Box>
-
+                        
+                        <div className="mt-3">
+                            <p className="text-black dark:text-white text-center font-bold text-lg md:text-xl md:text-[22px]">
+                                {project.title}
+                            </p>
+                            <hr className="my-2 border-gray-200 dark:border-gray-700" />
+                            <p className="text-black dark:text-white/80 opacity-75 text-left md:text-center pt-2 text-lg">
+                                {project.discription}
+                            </p>
+                        </div>
+                    </div>
                 ))}
-                {/* the List of Projecs  */}
-
-            </SimpleGrid>
-
-
-        </>
+            </div>
+        </section>
     )
 }
-
-
-
-
-
-
-
-
-

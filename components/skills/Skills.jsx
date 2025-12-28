@@ -1,12 +1,5 @@
 import React from "react";
 import {
-  Box,
-  Text,
-  Divider,
-  SimpleGrid,
-  useBreakpointValue,
-} from "@chakra-ui/react";
-import {
   FaHtml5,
   FaCss3,
   FaBootstrap,
@@ -30,16 +23,12 @@ import {
 import SkillCard from "./SkillCard";
 
 export default function Skills() {
-  const iconSize = useBreakpointValue({ base: 30, md: 50 });
-  const boxSize = useBreakpointValue({ base: 4, md: 5 });
-
-
   const skills = [
     { icon: <FaHtml5 color="#E34F26" />, label: "HTML" },
     { icon: <FaCss3 color="#2965F1" />, label: "CSS" },
     { icon: <SiTailwindcss color="#38bdf9" />, label: "Tailwind CSS" },
     { icon: <FaBootstrap color="#7952B3" />, label: "Bootstrap" },
-    { icon: <SiChakraui color="#319795" />, label: "Chakra UI" },
+    { icon: <SiChakraui color="#319795" />, label: "Chakra UI" }, // Keeping the icon even if we removed the library usage :D
     { icon: <FaAngular />, label: "Angular Material" },
     { icon: <FaChartBar color="#FF6384" />, label: "Chart.js" },
     { icon: <SiJquery color="#0868AC" />, label: "jQuery" },
@@ -56,41 +45,29 @@ export default function Skills() {
   ];
 
   return (
-    <Box
-      as="section"
+    <section
       aria-label="skills-section"
-      p={5}
-      pt={[70, 100]}
-      pb={0}
       id="skills"
+      className="p-5 pt-[70px] md:pt-[100px] pb-0 bg-white dark:bg-card"
     >
-      <Text as="h1" fontWeight={"bold"} fontSize={[24, 30]} mb={4}>
+      <h1 className="text-2xl md:text-3xl font-bold mb-4 text-black dark:text-white">
         Skills
-      </Text>
-      <Divider />
-      <Text fontSize={[18, 20]} mt={1}>
+      </h1>
+      <hr className="my-4 border-gray-200 dark:border-gray-700" />
+      <p className="text-lg md:text-xl mt-1 text-black dark:text-white">
         Here are some of the key technologies and tools I work with:
-      </Text>
-      <SimpleGrid
-        w={"full"}
-        h={"full"}
-        textAlign={"center"}
-        fontSize={24}
-        columns={[2, 2, 3, 4, 5]}
-        mt={10}
-        spacing={10}
-        px={[5, 50, 100]}
-      >
+      </p>
+      
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 mt-10 px-5 md:px-[50px] lg:px-[100px] w-full text-center text-2xl">
         {skills.map((skill, idx) => (
           <SkillCard
             key={idx}
             icon={skill.icon}
             label={skill.label}
-            size={iconSize}
-            boxSize={boxSize}
+            // size removed, handled in CSS
           />
         ))}
-      </SimpleGrid>
-    </Box>
+      </div>
+    </section>
   );
 }
