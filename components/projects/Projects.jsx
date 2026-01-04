@@ -6,18 +6,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 
-
-
-
-
 export default function Skill({ projects }) {
-
-
-
     return (
         <>
-
-
             <Text as="h1" fontSize={[24, 30]} textAlign={"left"} pt={[70, 120]} pl={5} fontWeight={"bold"} id={"my-projects"} mt={20}> My Projects 💼: </Text>
             <Divider />
             {/* ---------------------------Grid---------------*/}
@@ -38,9 +29,7 @@ export default function Skill({ projects }) {
 
                 ))}
                 {/* the List of Projecs  */}
-
             </SimpleGrid>
-
 
         </>
     )

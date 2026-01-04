@@ -5,13 +5,11 @@ export default function Document() {
   return (
     <Html lang="en" suppressHydrationWarning>
       <Head>
-
         <meta charSet="UTF-8" />
         <meta name="description" content="This is my portfolio website showcasing my work and skills."/>
         <meta name="keywords" content="portfolio, web development, design, projects"/>
         <link rel="canonical" href="https://www.bader-alyami.com" />
         <meta name="author" content="Bader Alyami"/>
-      
       </Head>
       <body>
         <Main />

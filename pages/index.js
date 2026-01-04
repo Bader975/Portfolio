@@ -15,22 +15,18 @@ export default function Home({ projects }) {
         <meta name="keywords" content="portfolio, web development, design, projects" />
         <meta name="author" content="Bader Alyami" />
       </Head>
-      
-            <HomePage projects={projects} />
+      <HomePage projects={projects} />
     </>
   )
 }
 
 export async function getStaticProps() {
-
   return {
     props: {
       projects: projectsArray
 
     },
     revalidate: 60,
-
-
   }
 }
 

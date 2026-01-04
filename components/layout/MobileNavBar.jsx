@@ -32,14 +32,6 @@ export default function MobileNavBar() {
     });
 
 
-    // useOutsideClick({
-    //     ref: HamburgerIconRef,
-    //     handler: closeMenu
-    // });
-
-
-
-
     return (
         <>
 
@@ -66,10 +58,6 @@ export default function MobileNavBar() {
         `}
             />
 
-            {/* {isOpen && ( */}
-
-
-
             <Slide direction="top" in={isOpen} >
                 <Flex
                     ref={menuRef}
@@ -86,10 +74,6 @@ export default function MobileNavBar() {
                     pos={"relative"}
                     zIndex={"99"}
                     display={isOpen && { base: "block", md: "none" }}
-
-
-
-
                 >
                     <Link href={router.pathname !== "/" ? "/" : "/#my-projects"} passHref>
                         <ChakraLink
@@ -104,7 +88,6 @@ export default function MobileNavBar() {
                             {router.pathname !== "/" ? "Home" : "My Projects "}
                         </ChakraLink>
                     </Link>
-                    {/* <Divider colorScheme="black" /> */}
                     <Link href="/cv" passHref>
                         <ChakraLink
                             rounded="xl"
@@ -117,7 +100,6 @@ export default function MobileNavBar() {
                             Take a look at my CV
                         </ChakraLink>
                     </Link>
-                    {/* <Divider colorScheme="black" /> */}
                     <Link href={router.pathname !== "/" ? "/" : "/#skills"} passHref>
                         <ChakraLink
                             rounded="xl"
@@ -130,7 +112,6 @@ export default function MobileNavBar() {
                             My Skills
                         </ChakraLink>
                     </Link>
-                    {/* <Divider colorScheme="black" /> */}
                     <Link href={router.pathname !== "/" ? "/" : "/#about"} passHref>
                         <ChakraLink
                             rounded="xl"
@@ -143,7 +124,6 @@ export default function MobileNavBar() {
                             About Me
                         </ChakraLink>
                     </Link>
-                    {/* <Divider colorScheme="black" /> */}
                 </Flex>
             </Slide>
 
