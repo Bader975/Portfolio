@@ -1,187 +1,144 @@
-import { Box, Flex, IconButton, Image, Link as ChakraLink } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  IconButton,
+  Image,
+  Link as ChakraLink,
+} from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import MobileNavBar from "./MobileNavBar";
+import { NAV_LINKS, getLinkHref, getLinkLabel } from "./navLinks";
 
- // add delay to the scroll
-function debounce(func, timeout = 300){
-  let timer;
-  return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => { func.apply(this, args); }, timeout);
-  };
-}
+// --- Constants ---
+const SCROLL_THRESHOLD_MIN = 50;
+const SCROLL_THRESHOLD_MAX = 650;
+const DEBOUNCE_MS = 300;
+const ACTIVE_BG = "#153243";
+const HOVER_STYLES = {
+  color: "#fff",
+  opacity: 1,
+  transform: "scale(1.0)",
+  transition: "transform 0.5s",
+  backgroundColor: "#637681",
+};
 
 export default function Navbar() {
-
   const [navBarTextColor, setNavBarTextColor] = useState(false);
   const [activeLink, setActiveLink] = useState(null);
+  const navRef = useRef(null);
+  const router = useRouter();
 
-  const router = useRouter()
+  // Set scroll-padding CSS variable based on navbar height
+  useEffect(() => {
+    if (!navRef.current) return;
+    const navbarHeight = navRef.current.offsetHeight;
+    document.documentElement.style.setProperty(
+      "--scroll-padding",
+      `${navbarHeight}px`,
+    );
+  }, []);
 
-  if (typeof window == "object") {
-    
-    // added the padding for scrollin 
-    const navbarHeight = document.querySelector('#navbar')?.offsetHeight;
-    document.documentElement.style.setProperty('--scroll-padding', navbarHeight + "px");
+  // Debounced scroll listener to toggle text color
+  useEffect(() => {
+    let timer;
+    const handleScroll = () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        const scrollY = window.scrollY;
+        setNavBarTextColor(
+          scrollY >= SCROLL_THRESHOLD_MIN && scrollY <= SCROLL_THRESHOLD_MAX,
+        );
+      }, DEBOUNCE_MS);
+    };
 
-    // Scroll handler
-    window.addEventListener("scroll", debounce(() => {
-      const scrollY = window.scrollY;
-      // add delay to the scroll
-      if (scrollY >= 50 && scrollY <= 650) {
-        setNavBarTextColor(true);
-      } else {
-        
-        setNavBarTextColor(false);
-      }
-    }),500);
-  }
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
-  // Store The Hover Efffects
-  const HoverEfffects = {
-    color: "#fff", opacity: 1, transform: "scale(1.0)", transition:
-      "transform 0.5s", backgroundColor: "#637681"
-  }
-
-  // Function to know which link is active
-  const handleLinkClick = (index) => {
+  const handleLinkClick = useCallback((index) => {
     setActiveLink(index);
-  };
-
+  }, []);
 
   return (
-    <>
+    <Box as="header" pos="sticky" boxShadow="lg" top={0} zIndex={5}>
+      <Box
+        as="nav"
+        py={4}
+        pb={5}
+        ref={navRef}
+        id="navbar"
+        bg="transparent"
+        backdropFilter="blur(10px)"
+      >
+        <Flex>
+          {/* Logo / Home button */}
+          <Box>
+            <IconButton
+              aria-label="Menu"
+              variant="black"
+              color="white"
+              size="lg"
+              onClick={() => router.pathname !== "/" && router.push("/")}
+            >
+              <Image
+                src="/bm-logo-remove-bg.webp"
+                objectFit="contain"
+                rounded="xl"
+                w={120}
+                h={100}
+                mb={1}
+                pt={1}
+                bg={{ base: null, md: navBarTextColor ? "#F5F5F5" : null }}
+              />
+            </IconButton>
+          </Box>
 
-      <Box as="header" pos={"sticky"}
-        boxShadow={"lg"} top={0} zIndex={5}>
+          {/* Navigation links */}
+          <Box w="auto">
+            <Flex
+              spacing={5}
+              fontSize={20}
+              fontFamily="Inter"
+              color={navBarTextColor ? "#fff" : "#000"}
+              bg="transparent"
+            >
+              <MobileNavBar />
 
-        <Box as={"nav"} py={4} pb={5} id={"navbar"} bg={"transparent"} backdropFilter="blur(10px)"
-          _backdropfilter="blur(5px)">
-
-          <Flex>
-            <Box>
-              <IconButton
-                aria-label="Menu"
-                variant="black"
-                color="white"
-                size="lg"
-                onClick={() => { router.pathname !== "/" && router.push("/") }}
+              <Flex
+                direction="row"
+                gap={8}
+                display={{ base: "none", md: "flex" }}
               >
-                <Image src={"/bm-logo-remove-bg.webp"} objectFit={"contain"} rounded={"xl"} w={120} h={100} mb={1} pt={1} bg={{ base: null, md: navBarTextColor ? "#F5F5F5" : null }} />
-              </IconButton>
-            </Box>
-
-
-            <Box w={"auto"}>
-              {/* The Color Of the Text Changing Dependenig on the ScrollY */}
-              <Flex spacing={5} fontSize={20} fontFamily="Inter" color={navBarTextColor ? "#fff" : "#000"} bg={"transparent"}>
-                {/* Mobile Menu */}
-                <MobileNavBar />
-                {/* Mobile Links */}
-                {/* Desktop Menu */}
-                <Flex
-                  direction="row"
-                  gap={8}
-                  display={{ base: "none", md: "flex" }}
-                >
-
-                  <Link href={router.pathname !== "/" ? "/" : "/#my-projects"} passHref>
+                {NAV_LINKS.map((link, index) => (
+                  <Link
+                    key={link.label}
+                    href={getLinkHref(link, router.pathname)}
+                    passHref
+                  >
                     <ChakraLink
-                      _hover={activeLink !== 0 && HoverEfffects}
+                      _hover={activeLink !== index && HOVER_STYLES}
                       as="p"
                       rounded="xl"
                       opacity={0.9}
                       p={3}
-                      bg={activeLink === 0 ? "#153243" : "none"}
-                      color={activeLink === 0 && "#fff"}
-                      onClick={() => handleLinkClick(0)}
-
+                      bg={activeLink === index ? ACTIVE_BG : "none"}
+                      color={activeLink === index && "#fff"}
+                      onClick={() => handleLinkClick(index)}
                     >
-                      {router.pathname !== "/" ? "Home" : "My Projects "}
-
+                      {getLinkLabel(link, router.pathname)}
                     </ChakraLink>
                   </Link>
-
-                  <Link href="/cv" passHref>
-                    <ChakraLink
-                      _hover={activeLink !== 1 && HoverEfffects}
-                      as="p"
-                      rounded="xl"
-                      opacity={0.9}
-                      p={3}
-                      bg={activeLink === 1 ? "#153243" : "none"}
-                      color={activeLink === 1 && "#fff"}
-                      onClick={() => handleLinkClick(1)}
-
-                    >
-                      Take a look at my CV
-                    </ChakraLink>
-                  </Link>
-
-                  <Link href={router.pathname !== "/" ? "/" : "/#skills"} passHref>
-                    <ChakraLink
-                      _hover={activeLink !== 2 && HoverEfffects}
-                      rounded="xl"
-                      as="p"
-                      opacity={0.9}
-                      p={3}
-
-
-                      bg={activeLink === 2 ? "#153243" : "none"}
-                      color={activeLink === 2 && "#fff"}
-                      onClick={() => handleLinkClick(2)}
-                    >
-                      My Skills
-                    </ChakraLink>
-                  </Link>
-
-                  <Link href={router.pathname !== "/" ? "/" : "/#about"} passHref>
-                    <ChakraLink
-                      _hover={activeLink !== 3 && HoverEfffects}
-                      rounded="xl"
-                      as="p"
-                      opacity={0.9}
-                      p={3}
-
-                      bg={activeLink === 3 ? "#153243" : "none"}
-                      color={activeLink === 3 && "#fff"}
-                      onClick={() => handleLinkClick(3)}
-                    >
-                      About Me
-                    </ChakraLink>
-                  </Link>
-                </Flex>
+                ))}
               </Flex>
-            </Box>
-          </Flex >
-        </Box >
+            </Flex>
+          </Box>
+        </Flex>
       </Box>
-    </>
+    </Box>
   );
 }
-
-
-
-
-
-{/* The HOME PAGE */ }
-{/* {router.pathname !== "/" && <Box color="balck" mx={"auto"}>
-                <Button
-                  aria-label="Menu"
-                  variant="balck"
-                  color="black"
-                  fontSize={[16, 20]}
-                  border={"1px"}
-                  p={2}
-                  shadow={"sm"}
-                  rounded={"xl"}
-                  onClick={() => { router.pathname !== "/" && router.push("/") }}
-                >
-                  HOME PAGE
-                </Button>
-
-              </Box>
-              } */}
-
