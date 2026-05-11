@@ -11,7 +11,7 @@ import {
   signal,
 } from '@angular/core';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
-import { throttleTime, filter, fromEvent, map, startWith , tap } from 'rxjs';
+import { throttleTime, filter, fromEvent, map, startWith , tap, debounceTime } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { IconComponent } from '../shared/icons/icon.component';
@@ -19,7 +19,7 @@ import { NAV_LINKS, NavLink } from './nav-links';
 
 const SCROLL_THRESHOLD_MIN = 50;
 const SCROLL_THRESHOLD_MAX = 650;
-const DEBOUNCE_MS = 500;
+const DEBOUNCE_MS = 200;
 
 @Component({
   selector: 'app-nav-bar',
@@ -119,7 +119,7 @@ export class NavBarComponent implements AfterViewInit {
     fromEvent(globalThis.window, 'scroll', { passive: true })
       .pipe(
         startWith(null),
-        throttleTime(DEBOUNCE_MS),
+        debounceTime(DEBOUNCE_MS),
         map(() => globalThis.window.scrollY),
         tap(console.log),
         takeUntilDestroyed(this.destroyRef),
