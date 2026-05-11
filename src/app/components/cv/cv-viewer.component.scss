@@ -1,0 +1,62 @@
+.cv-page {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 96px);
+  background: #f3f5f6;
+}
+
+.cv-page__loading,
+.cv-page__error {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  min-height: calc(100vh - 96px);
+  place-items: center;
+  align-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  color: var(--color-ink);
+  background: rgba(243, 245, 246, 0.92);
+  text-align: center;
+}
+
+.cv-page__spinner {
+  width: 48px;
+  aspect-ratio: 1;
+  border: 4px solid rgba(21, 50, 67, 0.18);
+  border-top-color: var(--color-brand);
+  border-radius: 50%;
+  animation: cv-loading-spin 800ms linear infinite;
+}
+
+.cv-page__loading span,
+.cv-page__error p {
+  margin: 0;
+  font-weight: 700;
+}
+
+.cv-page__error a {
+  color: var(--color-brand);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.cv-page__fallback {
+  display: grid;
+  min-height: calc(100vh - 96px);
+  place-items: center;
+  padding: 2rem;
+}
+
+.cv-page__fallback a {
+  color: var(--color-brand);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+@keyframes cv-loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

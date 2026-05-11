@@ -1,0 +1,71 @@
+.contact-section {
+  display: grid;
+  justify-items: center;
+  width: 100%;
+  margin-top: 2.5rem;
+  padding: 2.5rem 1rem;
+}
+
+.contact-visual {
+  width: min(100%, 420px);
+  transform: translateX(-100%);
+  opacity: 0;
+  transition:
+    opacity 800ms ease,
+    transform 800ms ease;
+}
+
+.contact-visual--visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.contact-visual h1 {
+  width: 100%;
+  margin: 0 auto 0.8rem;
+  color: #000000;
+  font-size: clamp(1.1rem, 3vw, 1.45rem);
+  font-weight: 800;
+  text-align: center;
+}
+
+.contact-visual img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.social-link {
+  color: #ffffff;
+}
+
+.social-link--linkedin {
+  background: #2368a9;
+}
+
+.social-link--github {
+  background: #111827;
+}
+
+.social-link--email {
+  background: #0666e5;
+}
+
+.social-link:hover {
+  opacity: 0.82;
+}
+
+@media (max-width: 600px) {
+  .social-links {
+    width: min(100%, 340px);
+    flex-direction: column;
+  }
+}

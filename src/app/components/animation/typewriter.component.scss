@@ -1,0 +1,43 @@
+.typewriter-shell {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  min-height: 100px;
+  justify-content: center;
+  padding-top: 100px;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+.typewriter {
+  position: relative;
+  width: 90%;
+  color: #ffffff;
+  font-size: 3.125rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.typewriter__cursor {
+  display: inline-block;
+  width: 2px;
+  height: 0.95em;
+  margin-left: 4px;
+  vertical-align: -0.1em;
+  background: currentColor;
+  animation: blink 700ms steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .typewriter {
+    font-size: 1.875rem;
+  }
+}

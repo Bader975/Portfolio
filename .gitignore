@@ -17,6 +17,10 @@
 
 # production
 /build
+/dist
+
+# generated PDF viewer runtime assets
+/public/assets
 
 # misc
 .DS_Store

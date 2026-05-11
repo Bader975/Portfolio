@@ -1,0 +1,40 @@
+.button-section {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: 100%;
+  padding: 2rem 0.75rem 0;
+}
+
+.button-stack {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0 auto;
+}
+
+.action-button {
+  box-shadow: var(--shadow-sm);
+}
+
+.action-button:hover {
+  color: #ffffff;
+  background: #6b7280;
+}
+
+.action-button--secondary {
+  color: var(--color-brand);
+  background: transparent;
+  border: 1px solid var(--color-border);
+}
+
+.action-button--primary {
+  color: #ffffff;
+  background: var(--color-brand);
+}
+
+@media (max-width: 600px) {
+  .button-stack {
+    width: min(100%, 340px);
+    flex-direction: column;
+  }
+}

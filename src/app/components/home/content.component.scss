@@ -1,0 +1,37 @@
+.content-section {
+  display: grid;
+  width: 100%;
+  gap: 2rem;
+  padding-top: 2.5rem;
+}
+
+.intro-card {
+  width: min(90%, 1120px);
+  margin: 0 auto;
+  border-radius: 8px;
+  padding: 1.4rem;
+  color: #000000;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.intro-card--compact {
+  margin-top: 0.4rem;
+}
+
+.intro-card p {
+  margin: 0.3rem 0;
+  opacity: 0.95;
+}
+
+.intro-card app-icon {
+  display: inline-block;
+  width: 1.1em;
+  height: 1.1em;
+  margin-inline: 0.15rem;
+  vertical-align: -0.15em;
+}
+
+.typescript {
+  color: #3178c6;
+}

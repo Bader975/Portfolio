@@ -1,34 +1,56 @@
 # Bader Mohammad's Portfolio
 
-Welcome to my portfolio! This project showcases my work, skills, and personal projects. It is built with [Next.js](https://nextjs.org/), styled with [Chakra UI](https://chakra-ui.com/), and enhanced with animations and custom fonts to create a unique and engaging user experience.
-<img width="1498" alt="image" src="https://github.com/user-attachments/assets/65082f83-3019-49bd-9e40-7463f768c0db">
+Personal portfolio rebuilt with AnalogJS and Angular.
 
-## Features
+## Stack
 
-- **Project Showcase**: Highlights my key projects with descriptions and links.
-- **Responsive Design**: Optimized for both mobile and desktop devices.
-- **SEO Optimized**: Includes meta tags, Open Graph, and Twitter Cards for improved discoverability.
-- **PWA-Ready**: Can be installed as a Progressive Web App (PWA).
-- **Smooth Animations**: Leveraging Next.js and CSS animations for an interactive feel.
-- **Custom Fonts**: Uses the Lusitana font to align with my personal brand style.
+- AnalogJS with file-based routing under `src/app/pages`
+- Angular standalone components
+- SSR and prerendering through Vite/Analog
+- SCSS component styles
+- Angular signals for lightweight UI state
+- Static assets served from `public/`
 
+## Routes
+
+- `/` - portfolio homepage
+- `/cv` - PDF CV viewer
+
+Homepage section anchors:
+
+- `/#my-projects`
+- `/#skills`
+- `/#about`
+
+## Development
+
+```bash
+npm install
+npm run dev
+```
+
+If the local OS file watcher limit blocks Vite dev mode, use the production preview flow:
+
+```bash
+npm run build
+npm run preview
+```
+
+## Build
+
+```bash
+npm run typecheck
+npm run build
+```
+
+The build creates the Analog SSR output under `dist/analog` and generates `sitemap.xml` during the `sitemap` script.
 
 ## Project Structure
-This project follows the Next.js Pages Router structure:
 
-- **/pages:** Contains the main pages, such as index.js for the homepage.
-- **/components:** Reusable UI components, such as the project cards, layout, and navbar.
-- **/public:** Static assets like images, icons, and the manifest.json file.
-- **/styles:** Global styles and custom fonts.
-
-
-
-## Deployment
-This portfolio is optimized for deployment on **Vercel**, the recommended platform for Next.js applications:
-
-Push your code to a GitHub repository.
-Connect the repository to Vercel and follow the deployment steps.
-Once deployed, your portfolio will be live on your custom domain or Vercel URL.
-For more details on deployment, refer to the Next.js deployment documentation.
-
-
+- `src/app/pages` - Analog file-based routes
+- `src/app/components` - standalone Angular UI sections
+- `src/app/layouts` - shared page shell/navigation
+- `src/app/services` - typed application data services
+- `src/app/directives` - reusable Angular directives
+- `src/app/shared` - shared models and icon utilities
+- `public` - static images, PDFs, icons, manifest, robots file
